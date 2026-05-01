@@ -62,7 +62,7 @@
 - **Layout:** Prominent, full-width (or max-width) dedicated section.
 - **Role:** Software Engineer Intern
 - **Company:** Accenture Philippines
-- **Dates:** Jan 2026 - May 2026
+- **Dates:** Feb 2026 - May 2026
 - **Skills Used:** Display as a row of sleek tags/badges (e.g., `SAP ABAP`, `Enterprise Systems Development`, `Backend Development`, `ERP Systems`).
 
 ### 5. Education
