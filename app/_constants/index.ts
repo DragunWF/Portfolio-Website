@@ -57,7 +57,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "accenture-intern",
       role: "Software Engineer Intern",
-      company: "Accenture Philippines",
+      company: "Accenture in the Philippines",
       startDate: "Feb 2026",
       endDate: "May 2026",
       skills: [
@@ -184,17 +184,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "proj-1",
       title: "GitHub",
       description:
-        "Explore my open-source repositories and Clean Core implementations.",
-      buttonText: "View Source Code",
-      url: "https://github.com/marcplarisan",
+        "A comprehensive collection of my software development projects, encompassing automation tools, desktop applications, full-stack web apps, mobile apps, game development, and AI-powered chatbots.",
+      buttonText: "Explore Profile",
+      url: "https://github.com/DragunWF",
       platform: "github",
     },
     {
       id: "proj-2",
       title: "Itch.io",
-      description: "Play my latest indie game builds.",
+      description:
+        "Originally started during my Junior High School years, this page is a collection of my personal game development projects built using Unity, Godot, and PyGame. It highlights my journey through game development as a fun and meaningful side hobby.",
       buttonText: "Enter Realm",
-      url: "https://marcplarisan.itch.io",
+      url: "https://dragunwf.itch.io",
       platform: "itchio",
     },
   ],
