@@ -26,6 +26,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "monkeytype",
       label: "MonkeyType",
       value: "150+ WPM",
+      url: "https://monkeytype.com/profile/DragunWF",
       iconName: "keyboard",
     },
     {
@@ -38,6 +39,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "news",
       label: "National Recognition",
       value: "Featured on Rappler",
+      url: "https://www.rappler.com/bulletin-board/events/winners-nbdb-philippines-hackathon-2025",
       iconName: "newspaper",
     },
   ],
