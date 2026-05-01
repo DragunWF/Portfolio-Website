@@ -1,12 +1,14 @@
-export const LinkedinIcon = () => <BaseIcon />;
+import React from "react";
 
-export const LinkedInIconHighlight = () => (
-  <div className="mb-3">
-    <BaseIcon />
-  </div>
+export const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <BaseIcon {...props} />
 );
 
-const BaseIcon = () => (
+export const LinkedInIconHighlight = (props: React.SVGProps<SVGSVGElement>) => (
+  <BaseIcon {...props} />
+);
+
+const BaseIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -17,6 +19,7 @@ const BaseIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    {...props}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect width="4" height="12" x="2" y="9" />
