@@ -21,9 +21,9 @@ export default function PortfolioPage() {
           <Skills />
           <Experience />
           <Education />
-          <Volunteering />
-          <Achievements />
           <Projects />
+          <Achievements />
+          <Volunteering />
           <Blog />
           <Gallery />
           <Contact />
