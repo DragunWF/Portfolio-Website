@@ -4,7 +4,7 @@ export default function Skills() {
   const { skills } = PORTFOLIO_DATA;
 
   return (
-    <section className="px-6 max-w-5xl mx-auto py-8">
+    <section id="skills" className="px-6 max-w-5xl mx-auto py-8 scroll-mt-20">
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Technical Arsenal
       </h3>

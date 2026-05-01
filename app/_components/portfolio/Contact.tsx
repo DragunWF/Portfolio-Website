@@ -9,7 +9,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="px-6 max-w-5xl mx-auto py-16 mb-12">
+    <section id="contact" className="px-6 max-w-5xl mx-auto py-16 mb-12 scroll-mt-20">
       <div className="p-8 md:p-12 bg-slate-900/80 border border-slate-800 rounded-3xl backdrop-blur-md relative overflow-hidden">
         {/* Subtle glow behind the form */}
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
