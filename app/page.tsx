@@ -1,7 +1,11 @@
-export default function Home() {
+import Hero from "./_components/portfolio/Hero";
+import Socials from "./_components/portfolio/Socials";
+
+export default function PortfolioPage() {
   return (
-    <div>
-      <h1>Hello there!</h1>
+    <div className="min-h-screen">
+      <Hero />
+      <Socials />
     </div>
   );
 }
