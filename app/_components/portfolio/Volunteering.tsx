@@ -1,15 +1,12 @@
 import { PORTFOLIO_DATA } from "../../_constants";
+import SectionContainer from "../layout/SectionContainer";
 import { Users } from "lucide-react";
 
 export default function Volunteering() {
   const { volunteering } = PORTFOLIO_DATA;
 
-  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section
-      id="volunteering"
-      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
-    >
+    <SectionContainer id="volunteering" className="py-8 scroll-mt-20">
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Volunteering Organizations
       </h3>
@@ -53,6 +50,6 @@ export default function Volunteering() {
           </div>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }

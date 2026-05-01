@@ -5,7 +5,7 @@ import { LinkedinIcon } from "@/app/_components/icons/LinkedinIcon";
 export default function Footer() {
   return (
     <footer className="border-t border-slate-800/60 bg-slate-950/80 backdrop-blur-sm mt-auto relative z-10">
-      <div className="px-6 max-w-5xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="px-6 md:px-8 max-w-7xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-slate-500 font-medium">
           &copy; 2026 Marc Plarisan. All rights reserved.
         </p>

@@ -1,4 +1,5 @@
 import { PORTFOLIO_DATA } from "../../_constants";
+import SectionContainer from "../layout/SectionContainer";
 import { Trophy, Award, ExternalLink, Image as ImageIcon } from "lucide-react";
 
 export default function Achievements() {
@@ -6,12 +7,8 @@ export default function Achievements() {
   const tier1 = achievements.filter((a) => a.tier === 1);
   const tier2 = achievements.filter((a) => a.tier === 2);
 
-  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section
-      id="achievements"
-      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
-    >
+    <SectionContainer id="achievements" className="py-8 scroll-mt-20">
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Achievements
       </h3>
@@ -73,6 +70,6 @@ export default function Achievements() {
           View Certifications on LinkedIn
         </a>
       </div>
-    </section>
+    </SectionContainer>
   );
 }

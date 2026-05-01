@@ -1,6 +1,7 @@
 "use client";
 
 import { Send } from "lucide-react";
+import SectionContainer from "../layout/SectionContainer";
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -8,12 +9,8 @@ export default function Contact() {
     // Submission logic placeholder
   };
 
-  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section
-      id="contact"
-      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-16 mb-12 scroll-mt-20"
-    >
+    <SectionContainer id="contact" className="py-16 mb-12 scroll-mt-20">
       <div className="p-8 md:p-12 bg-slate-900/80 border border-slate-800 rounded-3xl backdrop-blur-md relative overflow-hidden">
         {/* Subtle glow behind the form */}
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
@@ -89,6 +86,6 @@ export default function Contact() {
           </button>
         </form>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
