@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
@@ -39,11 +41,32 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        {/* Mobile Menu Icon (Visual Only for now) */}
-        <button className="md:hidden text-slate-300 hover:text-emerald-500 transition-colors">
-          <Menu className="w-6 h-6" />
+        {/* Mobile Menu Icon */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-slate-300 hover:text-emerald-500 transition-colors"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-slate-950/95 border-b border-slate-800/60 backdrop-blur-md">
+          <div className="flex flex-col px-6 py-4 gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-base font-medium text-slate-300 hover:text-emerald-500 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
