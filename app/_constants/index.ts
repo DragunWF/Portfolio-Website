@@ -12,14 +12,14 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "linkedin",
       label: "LinkedIn",
       value: "Professional Profile",
-      url: "https://linkedin.com/in/marcplarisan",
+      url: "https://linkedin.com/in/marc-plarisan",
       iconName: "linkedin",
     },
     {
       id: "codewars",
       label: "CodeWars",
-      value: "Top 0.165% Global (1,500+ Katas solved)",
-      url: "https://www.codewars.com/users/marcplarisan",
+      value: "Top 0.165% Global",
+      url: "https://www.codewars.com/users/DragunWF",
       iconName: "code",
     },
     {
@@ -37,7 +37,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "news",
       label: "National Recognition",
-      value: "Featured on Rappler by the NBDB",
+      value: "Featured on Rappler",
       iconName: "newspaper",
     },
   ],
