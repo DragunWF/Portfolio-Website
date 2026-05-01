@@ -76,7 +76,16 @@
 ### 6. Volunteering Organizations
 
 - **Layout Constraint:** Prominent, full-width dedicated section. Must be on its own row.
-- **Items:** _(Placeholder area for specific community/tech volunteering roles, organizations, and brief descriptions)._
+- **Items:**
+  - **Role:** Software Development Associate
+    **Organization:** ALPHA: Alliance of Leading Programmers through Heuristic Adaptation
+    **Description:** Assigned as a Software Development Associate in an IT student organization in STI Ortigas-Cainta named ALPHA, responsible for building, maintaining, and enhancing digital platforms to improve member engagement and support event operations.
+  - **Role:** IT Representative | Web Developer
+    **Organization:** STI College Ortigas-Cainta: College Student Government
+    **Description:**
+    - Develops and maintains websites for the student organization.
+    - Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.
+    - Acts as a representative and advocate for IT students in the student council.
 
 ### 7. Achievements
 
