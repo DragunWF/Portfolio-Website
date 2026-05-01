@@ -73,7 +73,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "sti",
       institution: "STI College Ortigas-Cainta",
       degree: "Bachelor of Science in Information Technology",
-      startDate: "Aug 2022",
+      startDate: "Sep 2022",
       endDate: "Present",
       details:
         "(Placeholder text reserved for future graduation awards and Latin honors).",
@@ -83,6 +83,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "vol-alpha",
       role: "Software Development Associate",
+      startDate: "Aug 2025",
+      endDate: "Jan 2026",
       organization:
         "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
       description:
@@ -91,6 +93,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "vol-csg",
       role: "IT Representative | Web Developer",
+      startDate: "Apr 2024",
+      endDate: "Jun 2025",
       organization: "STI College Ortigas-Cainta: College Student Government",
       description: [
         "Develops and maintains websites for the student organization.",

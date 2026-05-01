@@ -38,6 +38,8 @@ export interface EducationData {
 export interface VolunteerData {
   id: string;
   role: string;
+  startDate: string;
+  endDate: string;
   organization: string;
   description: string | string[];
 }
@@ -56,7 +58,7 @@ export interface ProjectData {
   description: string;
   buttonText: string;
   url: string;
-  platform: 'github' | 'itchio';
+  platform: "github" | "itchio";
 }
 
 export interface BlogData {
