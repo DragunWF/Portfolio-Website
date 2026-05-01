@@ -39,7 +39,7 @@ export interface VolunteerData {
   id: string;
   role: string;
   organization: string;
-  description: string;
+  description: string | string[];
 }
 
 export interface AchievementData {

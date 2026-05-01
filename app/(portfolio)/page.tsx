@@ -3,6 +3,7 @@ import Socials from "../_components/portfolio/Socials";
 import Skills from "../_components/portfolio/Skills";
 import Experience from "../_components/portfolio/Experience";
 import Education from "../_components/portfolio/Education";
+import Volunteering from "../_components/portfolio/Volunteering";
 import Achievements from "../_components/portfolio/Achievements";
 import Projects from "../_components/portfolio/Projects";
 import Blog from "../_components/portfolio/Blog";
@@ -20,6 +21,7 @@ export default function PortfolioPage() {
           <Skills />
           <Experience />
           <Education />
+          <Volunteering />
           <Achievements />
           <Projects />
           <Blog />

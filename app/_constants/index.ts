@@ -81,12 +81,21 @@ export const PORTFOLIO_DATA: PortfolioData = {
   ],
   volunteering: [
     {
-      id: "vol-1",
-      role: "Volunteer",
-      organization: "Placeholder Organization",
-      description:
-        "(Placeholder area for specific community/tech volunteering roles, organizations, and brief descriptions).",
+      id: "vol-alpha",
+      role: "Software Development Associate",
+      organization: "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
+      description: "Assigned as a Software Development Associate in an IT student organization in STI Ortigas-Cainta named ALPHA, responsible for building, maintaining, and enhancing digital platforms to improve member engagement and support event operations."
     },
+    {
+      id: "vol-csg",
+      role: "IT Representative | Web Developer",
+      organization: "STI College Ortigas-Cainta: College Student Government",
+      description: [
+        "Develops and maintains websites for the student organization.",
+        "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
+        "Acts as a representative and advocate for IT students in the student council."
+      ]
+    }
   ],
   achievements: [
     {
