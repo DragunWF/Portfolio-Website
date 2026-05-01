@@ -3,8 +3,12 @@ import { PORTFOLIO_DATA } from "../../_constants";
 export default function Skills() {
   const { skills } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="skills" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="skills"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Technical Arsenal
       </h3>

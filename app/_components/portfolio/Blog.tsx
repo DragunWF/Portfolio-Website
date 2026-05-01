@@ -4,8 +4,12 @@ import { ChevronRight } from "lucide-react";
 export default function Blog() {
   const { blogs } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="blog" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="blog"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <div className="flex items-center justify-between mb-8">
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Devlogs

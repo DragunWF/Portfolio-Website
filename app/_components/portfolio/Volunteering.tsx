@@ -4,8 +4,12 @@ import { Users } from "lucide-react";
 export default function Volunteering() {
   const { volunteering } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="volunteering" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="volunteering"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Volunteering Organizations
       </h3>
@@ -17,7 +21,7 @@ export default function Volunteering() {
           >
             {/* Subtle glow effect */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
-            
+
             <div className="md:w-1/4 shrink-0 flex items-start">
               <p className="text-sm font-semibold text-emerald-500 tracking-wider uppercase mb-1">
                 {vol.role}
@@ -31,7 +35,7 @@ export default function Volunteering() {
                   {vol.organization}
                 </h4>
               </div>
-              
+
               <div className="pl-9 text-slate-400">
                 {Array.isArray(vol.description) ? (
                   <ul className="list-disc list-outside ml-4 space-y-2">

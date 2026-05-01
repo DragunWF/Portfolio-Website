@@ -3,8 +3,9 @@ import { PORTFOLIO_DATA } from "../../_constants";
 export default function Hero() {
   const { name, title, about } = PORTFOLIO_DATA.hero;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section className="max-w-5xl mx-auto w-full px-6 pt-32 pb-16 flex flex-col items-start">
+    <section className="max-w-7xl mx-auto w-full px-6 md:px-8 pt-32 pb-16 flex flex-col items-start">
       <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-100">
         {name}
       </h1>

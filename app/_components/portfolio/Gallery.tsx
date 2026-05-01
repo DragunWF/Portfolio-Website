@@ -4,8 +4,12 @@ import { Image as ImageIcon, ChevronRight } from "lucide-react";
 export default function Gallery() {
   const { gallery } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="gallery" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="gallery"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <div className="flex items-center justify-between mb-8">
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Event Gallery
@@ -20,11 +24,17 @@ export default function Gallery() {
             <div
               key={item.id}
               className={`bg-slate-800/80 rounded-xl border border-slate-700 flex items-center justify-center overflow-hidden relative group cursor-pointer
-                ${isLarge ? 'col-span-1 sm:col-span-2 sm:row-span-2 min-h-[250px] md:min-h-[300px]' : 'min-h-[200px] md:min-h-[142px]'}`}
+                ${isLarge ? "col-span-1 sm:col-span-2 sm:row-span-2 min-h-[250px] md:min-h-[300px]" : "min-h-[200px] md:min-h-[142px]"}`}
             >
-              <img src={item.imageUrl} alt={item.altText} className="object-cover w-full h-full opacity-50 group-hover:opacity-100 transition-opacity" />
+              <img
+                src={item.imageUrl}
+                alt={item.altText}
+                className="object-cover w-full h-full opacity-50 group-hover:opacity-100 transition-opacity"
+              />
               <div className="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                 <span className="text-sm font-medium text-white px-2 text-center drop-shadow-md">{item.altText}</span>
+                <span className="text-sm font-medium text-white px-2 text-center drop-shadow-md">
+                  {item.altText}
+                </span>
               </div>
             </div>
           );

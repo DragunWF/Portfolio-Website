@@ -13,8 +13,9 @@ const IconMap: Record<string, React.ElementType> = {
 export default function Socials() {
   const { highlights } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section className="max-w-5xl mx-auto w-full px-6 pb-20">
+    <section className="max-w-7xl mx-auto w-full px-6 md:px-8 pb-20">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
         {highlights.map((item) => {
           const Icon = IconMap[item.iconName] || Trophy;

@@ -3,8 +3,12 @@ import { PORTFOLIO_DATA } from "../../_constants";
 export default function Experience() {
   const { experience } = PORTFOLIO_DATA;
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="experience" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="experience"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Professional Experience
       </h3>
@@ -16,21 +20,17 @@ export default function Experience() {
           >
             {/* Subtle glow effect behind the card for visual depth */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
-            
+
             <div className="md:w-1/4 shrink-0">
               <p className="text-sm font-semibold text-emerald-500 tracking-wider uppercase mb-1">
                 {exp.startDate} - {exp.endDate}
               </p>
             </div>
-            
+
             <div className="md:w-3/4 flex flex-col">
-              <h4 className="text-xl font-bold text-slate-100">
-                {exp.role}
-              </h4>
-              <p className="text-lg text-slate-400 mt-1 mb-6">
-                {exp.company}
-              </p>
-              
+              <h4 className="text-xl font-bold text-slate-100">{exp.role}</h4>
+              <p className="text-lg text-slate-400 mt-1 mb-6">{exp.company}</p>
+
               <div className="flex flex-wrap gap-2 mt-auto">
                 {exp.skills.map((skill, index) => (
                   <span

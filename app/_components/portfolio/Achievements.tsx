@@ -6,12 +6,16 @@ export default function Achievements() {
   const tier1 = achievements.filter((a) => a.tier === 1);
   const tier2 = achievements.filter((a) => a.tier === 2);
 
+  // LAYOUT TWEAK: Adjust max-width here (e.g., max-w-5xl, max-w-6xl, max-w-7xl) to control desktop margins
   return (
-    <section id="achievements" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
+    <section
+      id="achievements"
+      className="max-w-7xl mx-auto w-full px-6 md:px-8 py-8 scroll-mt-20"
+    >
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Achievements
       </h3>
-      
+
       {/* Tier 1 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {tier1.map((ach) => (
@@ -47,9 +51,7 @@ export default function Achievements() {
               <span className="text-sm font-semibold text-slate-200">
                 {ach.title}
               </span>
-              <span className="text-xs text-slate-400 mt-1">
-                {ach.event}
-              </span>
+              <span className="text-xs text-slate-400 mt-1">{ach.event}</span>
             </div>
           </div>
         ))}
