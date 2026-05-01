@@ -9,13 +9,6 @@ export const PORTFOLIO_DATA: PortfolioData = {
   },
   highlights: [
     {
-      id: "linkedin",
-      label: "LinkedIn",
-      value: "Professional Profile",
-      url: "https://linkedin.com/in/marc-plarisan",
-      iconName: "linkedin",
-    },
-    {
       id: "codewars",
       label: "CodeWars",
       value: "Top 0.165% Global",
@@ -30,9 +23,16 @@ export const PORTFOLIO_DATA: PortfolioData = {
       iconName: "keyboard",
     },
     {
+      id: "linkedin",
+      label: "LinkedIn",
+      value: "Professional Profile",
+      url: "https://linkedin.com/in/marc-plarisan",
+      iconName: "linkedin",
+    },
+    {
       id: "hackathons",
       label: "Track Record",
-      value: "6-Time Hackathon Winner",
+      value: "6x Hackathon Winner",
       iconName: "trophy",
     },
     {
@@ -83,8 +83,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "vol-alpha",
       role: "Software Development Associate",
-      organization: "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
-      description: "Assigned as a Software Development Associate in an IT student organization in STI Ortigas-Cainta named ALPHA, responsible for building, maintaining, and enhancing digital platforms to improve member engagement and support event operations."
+      organization:
+        "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
+      description:
+        "Assigned as a Software Development Associate in an IT student organization in STI Ortigas-Cainta named ALPHA, responsible for building, maintaining, and enhancing digital platforms to improve member engagement and support event operations.",
     },
     {
       id: "vol-csg",
@@ -93,9 +95,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       description: [
         "Develops and maintains websites for the student organization.",
         "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
-        "Acts as a representative and advocate for IT students in the student council."
-      ]
-    }
+        "Acts as a representative and advocate for IT students in the student council.",
+      ],
+    },
   ],
   achievements: [
     {

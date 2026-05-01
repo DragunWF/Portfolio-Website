@@ -1,4 +1,12 @@
-export const LinkedinIcon = () => (
+export const LinkedinIcon = () => <BaseIcon />;
+
+export const LinkedInIconHighlight = () => (
+  <div className="mb-3">
+    <BaseIcon />
+  </div>
+);
+
+const BaseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
