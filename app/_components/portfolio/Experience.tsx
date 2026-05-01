@@ -11,8 +11,10 @@ export default function Experience() {
       </h3>
       <div className="flex flex-col gap-8">
         {experience.map((exp) => (
-          <div key={exp.id} className="flex flex-col p-6 bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-slate-700 w-full text-left gap-1 mb-4">
-            
+          <div
+            key={exp.id}
+            className="flex flex-col p-6 bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-slate-700 w-full text-left gap-1 mb-4"
+          >
             {/* Top Row: Title (Left) and Dates (Right) */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-1">
               <h3 className="text-slate-200 text-xl font-bold flex items-center gap-2">
@@ -24,16 +26,14 @@ export default function Experience() {
             </div>
 
             {/* Subtitle: Company */}
-            <p className="text-emerald-500 text-base mb-2">
-              {exp.company}
-            </p>
-            
+            <p className="text-emerald-500 text-base mb-2">{exp.company}</p>
+
             {/* Skills Badges */}
             <div className="flex flex-wrap gap-2 mt-2 mb-3">
               {exp.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full border border-emerald-500/30"
+                  className="px-4 py-1.5 bg-transparent text-emerald-500 text-xs font-medium rounded-full border border-emerald-500"
                 >
                   {skill}
                 </span>
