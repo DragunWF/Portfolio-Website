@@ -12,31 +12,29 @@ export default function Education() {
       </h3>
       <div className="flex flex-col gap-6">
         {education.map((edu) => (
-          <div
-            key={edu.id}
-            className="flex flex-col md:flex-row gap-6 p-6 lg:p-8 bg-slate-900/40 border border-slate-800/60 rounded-2xl backdrop-blur-sm"
-          >
-            <div className="md:w-1/4 shrink-0 flex items-start">
-              <p className="text-sm font-semibold text-emerald-500 tracking-wider uppercase mb-1">
-                {edu.startDate} - {edu.endDate}
-              </p>
-            </div>
-
-            <div className="md:w-3/4 flex flex-col">
-              <div className="flex items-center gap-3 mb-2">
+          <div key={edu.id} className="flex flex-col p-6 bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-slate-700 w-full text-left gap-1 mb-4">
+            
+            {/* Top Row: Title (Left) and Dates (Right) */}
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-1">
+              <h3 className="text-slate-200 text-xl font-bold flex items-center gap-2">
                 <GraduationCap className="w-6 h-6 text-emerald-500" />
-                <h4 className="text-xl font-bold text-slate-100">
-                  {edu.institution}
-                </h4>
-              </div>
-              <p className="text-lg text-slate-400 mb-4 pl-9">{edu.degree}</p>
-
-              <div className="pl-9">
-                <p className="text-sm text-slate-500 italic border-l-2 border-slate-700 pl-4 py-1">
-                  {edu.details}
-                </p>
-              </div>
+                {edu.institution}
+              </h3>
+              <span className="text-slate-400 text-sm font-mono tracking-widest uppercase shrink-0 mt-1">
+                {edu.startDate} - {edu.endDate}
+              </span>
             </div>
+
+            {/* Subtitle: Degree */}
+            <p className="text-slate-300 text-base mb-2">
+              {edu.degree}
+            </p>
+            
+            {/* Description / Placeholder */}
+            <p className="text-slate-400 text-sm italic mt-2">
+              {edu.details}
+            </p>
+
           </div>
         ))}
       </div>
