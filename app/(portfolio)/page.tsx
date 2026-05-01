@@ -3,17 +3,31 @@ import Socials from "../_components/portfolio/Socials";
 import Skills from "../_components/portfolio/Skills";
 import Experience from "../_components/portfolio/Experience";
 import Education from "../_components/portfolio/Education";
+import Achievements from "../_components/portfolio/Achievements";
+import Projects from "../_components/portfolio/Projects";
+import Blog from "../_components/portfolio/Blog";
+import Gallery from "../_components/portfolio/Gallery";
+import Contact from "../_components/portfolio/Contact";
+import Footer from "../_components/layout/Footer";
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen pb-24">
-      <Hero />
-      <Socials />
-      <div className="flex flex-col gap-4">
-        <Skills />
-        <Experience />
-        <Education />
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 pb-16">
+        <Hero />
+        <Socials />
+        <div className="flex flex-col gap-4">
+          <Skills />
+          <Experience />
+          <Education />
+          <Achievements />
+          <Projects />
+          <Blog />
+          <Gallery />
+          <Contact />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
