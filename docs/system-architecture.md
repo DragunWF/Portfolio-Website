@@ -11,7 +11,7 @@ The system adheres to "Clean Core" principles, maintaining strict decoupling bet
 
 ---
 
-## 2. The Public Portfolio (`/app/(portfolio)`)
+## 2. The Public Portfolio (`app/(portfolio)`)
 
 **Primary Goal:** Speed, SEO, and visual impact.
 **Access:** Public (Read-only).
@@ -23,11 +23,11 @@ The system adheres to "Clean Core" principles, maintaining strict decoupling bet
   - `/gallery`: A dedicated masonry gallery page showcasing all hackathon, seminar, and networking photos.
 - **Interactivity:** Client Components (`"use client"`) are strictly isolated to interactive islands, such as the `ArcaneBackground` canvas and the contact form.
 - **Data Flow:** Unidirectional. It only reads data; it never mutates it.
-- **Detailed Specs:** See `PORTFOLIO_PRD.md` for exact UI/UX and content requirements.
+- **Detailed Specs:** See `portfolio-requirements.md` for exact UI/UX and content requirements.
 
 ---
 
-## 3. The Admin CMS (`/app/(admin)`)
+## 3. The Admin CMS (`app/(admin)`)
 
 **Primary Goal:** Secure, frictionless content management.
 **Access:** Private (Protected by Supabase Auth).
@@ -47,7 +47,7 @@ The application uses a headless architecture for data management.
 
 - **Database:** Supabase (PostgreSQL) acts as the primary data store.
 - **ORM:** Prisma is used for strict type-safety and schema modeling.
-- **Phase 1 (Current):** Data is mocked in `src/constants/index.ts` to allow for rapid UI development without database bottlenecks.
+- **Phase 1 (Current):** Data is mocked in `app/_constants/index.ts` to allow for rapid UI development without database bottlenecks.
 - **Phase 2 (Integration):** The mock `constants` will be seamlessly replaced by Prisma Client calls within the Next.js Server Components. The UI components will not need to change, as they rely on strict TypeScript interfaces, not the data source itself.
 
 ---
@@ -55,21 +55,22 @@ The application uses a headless architecture for data management.
 ## 5. High-Level Directory Structure
 
 ```text
-src/
+portfolio-website/
 ├── app/
 │   ├── (portfolio)/       # Public routes
-│   │   ├── page.tsx       # Main landing page (Portfolio overview)
+│   │   ├── page.tsx       # Main landing page
 │   │   ├── blog/          # "View All Blogs" route
 │   │   └── gallery/       # "View Full Gallery" route
 │   ├── (admin)/           # Protected routes (Dashboard, Editor)
-│   ├── api/               # External API endpoints (if required)
+│   ├── _components/       # UI components (Private Folder)
+│   ├── _constants/        # Mock data (Private Folder)
+│   ├── _lib/              # Utility functions / Prisma client (Private Folder)
+│   ├── _types/            # TS Interfaces (Private Folder)
+│   ├── globals.css
 │   └── layout.tsx         # Root layout (Global providers)
-├── components/
-│   ├── portfolio/         # UI components strictly for the public site
-│   ├── admin/             # UI components strictly for the CMS (Tables, Forms)
-│   └── ui/                # Shared atomic primitives (Buttons, Inputs, Cards)
-├── lib/
-│   ├── prisma.ts          # Prisma client instantiation
-│   └── supabase.ts        # Supabase auth/storage client
-└── types/                 # Shared TypeScript interfaces (mirrors Prisma schema)
+├── docs/
+│   ├── admin-requirements.md
+│   ├── portfolio-requirements.md
+│   └── system-architecture.md
+└── public/
 ```
