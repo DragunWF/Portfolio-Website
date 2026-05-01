@@ -5,7 +5,7 @@ export default function Blog() {
   const { blogs } = PORTFOLIO_DATA;
 
   return (
-    <section id="blog" className="px-6 max-w-5xl mx-auto py-8">
+    <section id="blog" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
       <div className="flex items-center justify-between mb-8">
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Devlogs

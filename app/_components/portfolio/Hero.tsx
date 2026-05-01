@@ -4,7 +4,7 @@ export default function Hero() {
   const { name, title, about } = PORTFOLIO_DATA.hero;
 
   return (
-    <section className="pt-32 pb-16 px-6 max-w-5xl mx-auto flex flex-col items-start">
+    <section className="max-w-5xl mx-auto w-full px-6 pt-32 pb-16 flex flex-col items-start">
       <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-100">
         {name}
       </h1>

@@ -4,7 +4,7 @@ export default function Experience() {
   const { experience } = PORTFOLIO_DATA;
 
   return (
-    <section id="experience" className="px-6 max-w-5xl mx-auto py-8 scroll-mt-20">
+    <section id="experience" className="max-w-5xl mx-auto w-full px-6 py-8 scroll-mt-20">
       <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
         Professional Experience
       </h3>

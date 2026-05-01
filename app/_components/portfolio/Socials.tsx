@@ -14,7 +14,7 @@ export default function Socials() {
   const { highlights } = PORTFOLIO_DATA;
 
   return (
-    <section className="px-6 max-w-5xl mx-auto pb-20">
+    <section className="max-w-5xl mx-auto w-full px-6 pb-20">
       <div className="flex flex-wrap gap-4">
         {highlights.map((item) => {
           const Icon = IconMap[item.iconName] || Trophy;
