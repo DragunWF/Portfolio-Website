@@ -51,8 +51,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-slate-950/95 border-b border-slate-800/60 backdrop-blur-md">
+      <div
+        className={`md:hidden absolute top-16 left-0 w-full bg-slate-950/95 border-b border-slate-800/60 backdrop-blur-md grid transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
           <div className="flex flex-col px-6 py-4 gap-4">
             {navLinks.map((link) => (
               <Link
@@ -66,7 +70,7 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
