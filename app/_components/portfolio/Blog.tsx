@@ -9,7 +9,7 @@ export default function Blog() {
     <SectionContainer id="blog" className="py-8 scroll-mt-20">
       <div className="flex items-center justify-between mb-8">
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
-          Devlogs
+          Blogs
         </h3>
         <button className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors">
           View All Blogs <ChevronRight className="w-4 h-4" />

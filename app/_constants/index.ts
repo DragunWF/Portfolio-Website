@@ -44,14 +44,39 @@ export const PORTFOLIO_DATA: PortfolioData = {
     },
   ],
   skills: [
-    { id: "ts", name: "TypeScript" },
-    { id: "react-native", name: "React Native" },
-    { id: "express", name: "Express.js" },
-    { id: "prisma", name: "Prisma ORM" },
-    { id: "supabase", name: "Supabase" },
-    { id: "python", name: "Python" },
+    // Programming, Scripting, & Markup Languages
     { id: "sap-abap", name: "SAP ABAP" },
+    { id: "py", name: "Python" },
+    { id: "java", name: "Java" },
+    { id: "cs", name: "C#" },
+    { id: "c", name: "C" },
+    { id: "lua", name: "Lua" },
+    { id: "js", name: "JavaScript" },
+    { id: "typescript", name: "TypeScript" },
+    { id: "css", name: "CSS" },
+    { id: "html", name: "HTML" },
+
+    // Libraries, Frameworks, & Databases
+    { id: "express", name: "Express.js" },
+    { id: "react", name: "React" },
+    { id: "jquery", name: "jQuery" },
+    { id: "expo", name: "Expo" },
+    { id: "bootstrap", name: "Bootstrap" },
+    { id: "flask", name: "Flask" },
+    { id: "django", name: "Django" },
+    { id: "firebase", name: "Firebase" },
+    { id: "mongodb", name: "MongoDB" },
+    { id: "sqlite", name: "SQLite" },
+    { id: "mysql", name: "MySQL" },
+    { id: "sqlserver", name: "SQL Server" },
+    { id: "selenium", name: "Selenium" },
     { id: "unity", name: "Unity" },
+    { id: "godot", name: "Godot" },
+    { id: "pygame", name: "Pygame" },
+    { id: "dotnet", name: ".NET" },
+
+    // Environment & Tools
+    { id: "git", name: "Git" },
   ],
   experience: [
     {
