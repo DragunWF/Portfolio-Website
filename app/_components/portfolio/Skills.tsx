@@ -38,16 +38,25 @@ export default function Skills() {
           </button>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {displayedSkills.map((skill) => (
-          <div
-            key={skill}
-            className="px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-center text-slate-300 text-sm hover:border-emerald-500 transition-colors select-none flex items-center justify-center"
-          >
-            {skill}
-          </div>
-        ))}
+        {displayedSkills.map((skill, index) => {
+          // If we're expanding to the archive, reset the delay for the new items so they animate immediately
+          const isNewItem = view === "archive" && index >= CURRENT_FOCUS.length;
+          const staggerDelay = isNewItem
+            ? (index - CURRENT_FOCUS.length) * 30
+            : index * 30;
+
+          return (
+            <div
+              key={skill}
+              style={{ animationDelay: `${staggerDelay}ms` }}
+              className="px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-center text-slate-300 text-sm hover:border-emerald-500 transition-colors select-none flex items-center justify-center animate-fade-in-up"
+            >
+              {skill}
+            </div>
+          );
+        })}
       </div>
     </SectionContainer>
   );
