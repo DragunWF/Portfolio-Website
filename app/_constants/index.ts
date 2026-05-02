@@ -113,8 +113,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
       endDate: "Jan 2026",
       organization:
         "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
-      description:
-        "Assigned as a Software Development Associate in an IT student organization in STI Ortigas-Cainta named ALPHA, responsible for building, maintaining, and enhancing digital platforms to improve member engagement and support event operations.",
+      description: [
+        "Develops and maintains organizational websites (React, Next.js, MongoDB, Django) and Python Discord bots.  ",
+        "Provides technical support to ensure seamless execution of events.  ",
+      ],
     },
     {
       id: "vol-csg",
@@ -123,7 +125,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       endDate: "Jun 2025",
       organization: "STI College Ortigas-Cainta: College Student Government",
       description: [
-        "Develops and maintains websites for the student organization.",
+        "Develops and maintains websites for the student organization with React.",
         "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
         "Acts as a representative and advocate for IT students in the student council.",
       ],
