@@ -28,8 +28,9 @@ export default function BlogPage() {
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {BLOG_POSTS.map((post) => (
-          <div
+          <Link
             key={post.id}
+            href={`/blog/${post.id}`}
             className="flex flex-col bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-emerald-500 group cursor-pointer overflow-hidden"
           >
             {/* Edge-to-edge Cover Image */}
@@ -65,7 +66,7 @@ export default function BlogPage() {
                 {post.excerpt}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
