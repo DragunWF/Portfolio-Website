@@ -18,7 +18,7 @@ export default function Skills() {
         <div className="bg-slate-900 border border-slate-800 p-1 rounded-full flex">
           <button
             onClick={() => setView("focus")}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
               view === "focus"
                 ? "bg-emerald-500/10 text-emerald-500"
                 : "text-slate-400 hover:text-slate-200"
@@ -28,7 +28,7 @@ export default function Skills() {
           </button>
           <button
             onClick={() => setView("archive")}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
               view === "archive"
                 ? "bg-emerald-500/10 text-emerald-500"
                 : "text-slate-400 hover:text-slate-200"
