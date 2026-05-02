@@ -1,6 +1,5 @@
 import { PORTFOLIO_DATA } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
-import { Users } from "lucide-react";
 
 export default function Volunteering() {
   const { volunteering } = PORTFOLIO_DATA;
