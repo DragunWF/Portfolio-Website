@@ -318,6 +318,8 @@ export const BLOG_POSTS = [
     dateCreated: "Mar 10, 2026",
     dateUpdated: "Mar 15, 2026",
     readTime: "6 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "Exploring the system design choices that powered our reading comprehension platform. We dive into the robust data architecture that caught the attention of the NBDB Philippines.",
   },
@@ -327,6 +329,8 @@ export const BLOG_POSTS = [
     dateCreated: "Feb 22, 2026",
     dateUpdated: "Feb 23, 2026",
     readTime: "8 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "A look back at the chaotic 7-day development cycle of ChronoFrost. From core mechanics to achieving 1st place in Theme Integrity.",
   },
@@ -336,6 +340,8 @@ export const BLOG_POSTS = [
     dateCreated: "Jan 15, 2026",
     dateUpdated: "Jan 20, 2026",
     readTime: "5 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "Modernizing legacy ERP systems using the Clean Core philosophy. How strict boundaries and extensible code keep enterprise software maintainable.",
   },
@@ -345,6 +351,8 @@ export const BLOG_POSTS = [
     dateCreated: "Dec 05, 2025",
     dateUpdated: "Dec 10, 2025",
     readTime: "7 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "Tackling the challenge of local-first mobile applications in React Native. Syncing local SQLite with remote Supabase databases elegantly.",
   },
@@ -354,6 +362,8 @@ export const BLOG_POSTS = [
     dateCreated: "Nov 18, 2025",
     dateUpdated: "Nov 18, 2025",
     readTime: "4 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "How I apply analytical questioning to break down impossible competitive programming problems. A psychological approach to passing the Tagisan ng Talino Codefest.",
   },
@@ -363,6 +373,8 @@ export const BLOG_POSTS = [
     dateCreated: "Oct 30, 2025",
     dateUpdated: "Nov 02, 2025",
     readTime: "5 min read",
+    coverImage:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     excerpt:
       "Reviewing Apple's latest silicon from a full-stack engineer's perspective. It handled my Dockerized microservices and Unity builds flawlessly.",
   },

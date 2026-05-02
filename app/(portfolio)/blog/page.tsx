@@ -30,29 +30,41 @@ export default function BlogPage() {
         {BLOG_POSTS.map((post) => (
           <div
             key={post.id}
-            className="flex flex-col p-6 bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-emerald-500 group cursor-pointer gap-4"
+            className="flex flex-col bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-emerald-500 group cursor-pointer overflow-hidden"
           >
-            {/* Top Row: Dates */}
-            <div className="flex justify-between items-center text-xs font-mono uppercase text-slate-500">
-              <span>{post.dateCreated}</span>
-              <span>Updated: {post.dateUpdated}</span>
+            {/* Edge-to-edge Cover Image */}
+            <div className="relative w-full h-48 overflow-hidden bg-slate-950">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              />
             </div>
 
-            {/* Title */}
-            <h3 className="text-xl font-bold text-slate-200 group-hover:text-emerald-500 transition-colors">
-              {post.title}
-            </h3>
+            {/* Content Container */}
+            <div className="p-6 flex flex-col gap-4 flex-1">
+              {/* Top Row: Dates */}
+              <div className="flex justify-between items-center text-xs font-mono uppercase text-slate-500">
+                <span>{post.dateCreated}</span>
+                <span>Updated: {post.dateUpdated}</span>
+              </div>
 
-            {/* Read Time */}
-            <div className="flex items-center gap-1 text-emerald-500 text-sm font-medium">
-              <Clock size={14} />
-              <span>{post.readTime}</span>
+              {/* Title */}
+              <h3 className="text-xl font-bold text-slate-200 group-hover:text-emerald-500 transition-colors">
+                {post.title}
+              </h3>
+
+              {/* Read Time */}
+              <div className="flex items-center gap-1 text-emerald-500 text-sm font-medium">
+                <Clock size={14} />
+                <span>{post.readTime}</span>
+              </div>
+
+              {/* Excerpt */}
+              <p className="text-slate-400 text-sm leading-relaxed mt-auto">
+                {post.excerpt}
+              </p>
             </div>
-
-            {/* Excerpt */}
-            <p className="text-slate-400 text-sm leading-relaxed mt-auto">
-              {post.excerpt}
-            </p>
           </div>
         ))}
       </div>

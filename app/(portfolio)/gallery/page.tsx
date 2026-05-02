@@ -16,7 +16,7 @@ export default function GalleryPage() {
           href="/"
           className="inline-block text-slate-500 hover:text-emerald-500 transition-colors text-sm font-medium mb-6"
         >
-          &larr; Return to Main System
+          &larr; Return to Home Page
         </Link>
         <div className="flex items-center gap-4">
           {/* Signature green line prefix */}
