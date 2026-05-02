@@ -1,25 +1,62 @@
-import { PORTFOLIO_DATA } from "../../_constants";
+"use client";
+
+import { useState } from "react";
+import { CURRENT_FOCUS, FULL_ARCHIVE } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
 
 export default function Skills() {
-  const { skills } = PORTFOLIO_DATA;
+  const [view, setView] = useState<"focus" | "archive">("focus");
+
+  const displayedSkills = view === "focus" ? CURRENT_FOCUS : FULL_ARCHIVE;
 
   return (
     <SectionContainer id="skills" className="py-8 scroll-mt-20">
-      <h3 className="text-2xl font-bold text-slate-100 mb-8 tracking-tight">
-        Tech Stack
-      </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {skills.map((skill) => (
-          <div
-            key={skill.id}
-            className="group flex items-center justify-center p-4 bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-300 hover:border-emerald-500/50 hover:bg-slate-800/80 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-sm cursor-default"
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+        <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
+          Tech Stack
+        </h3>
+        <div className="bg-slate-900 border border-slate-800 p-1 rounded-full flex">
+          <button
+            onClick={() => setView("focus")}
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              view === "focus"
+                ? "bg-emerald-500/10 text-emerald-500"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
           >
-            <span className="font-medium text-slate-300 group-hover:text-emerald-400 transition-colors duration-300">
-              {skill.name}
-            </span>
-          </div>
-        ))}
+            Current Focus
+          </button>
+          <button
+            onClick={() => setView("archive")}
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              view === "archive"
+                ? "bg-emerald-500/10 text-emerald-500"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            Full Archive
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {displayedSkills.map((skill, index) => {
+          // If we're expanding to the archive, reset the delay for the new items so they animate immediately
+          const isNewItem = view === "archive" && index >= CURRENT_FOCUS.length;
+          const staggerDelay = isNewItem
+            ? (index - CURRENT_FOCUS.length) * 30
+            : index * 30;
+
+          return (
+            <div
+              key={skill}
+              style={{ animationDelay: `${staggerDelay}ms` }}
+              className="px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-center text-slate-300 text-sm hover:border-emerald-500 transition-colors select-none flex items-center justify-center animate-fade-in-up"
+            >
+              {skill}
+            </div>
+          );
+        })}
       </div>
     </SectionContainer>
   );
