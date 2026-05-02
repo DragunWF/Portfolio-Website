@@ -91,6 +91,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Backend Development",
         "ERP Systems",
       ],
+      description: "(Will update this description after the internship)",
     },
   ],
   education: [
@@ -101,7 +102,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       startDate: "Sep 2022",
       endDate: "Present",
       details:
-        "(Placeholder text reserved for future graduation awards and Latin honors).",
+        "(Description reserved for future graduation awards and Latin honors).",
     },
   ],
   volunteering: [

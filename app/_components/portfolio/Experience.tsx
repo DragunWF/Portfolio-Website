@@ -28,6 +28,13 @@ export default function Experience() {
             {/* Subtitle: Company */}
             <p className="text-emerald-500 text-base mb-2">{exp.company}</p>
 
+            {/* Description */}
+            {exp.description && (
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                {exp.description}
+              </p>
+            )}
+
             {/* Skills Badges */}
             <div className="flex flex-wrap gap-2 mt-2 mb-3">
               {exp.skills.map((skill, index) => (
