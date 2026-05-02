@@ -11,6 +11,9 @@ export default function Gallery() {
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Event Gallery
         </h3>
+        <button className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors">
+          View All Pictures <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
 
       {/* Grid Layout mimicking Masonry with varied heights */}
@@ -38,11 +41,9 @@ export default function Gallery() {
         })}
       </div>
 
-      <div className="flex justify-center">
-        <button className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-slate-300 border border-slate-700 rounded-lg font-medium transition-all hover:border-emerald-500 hover:text-emerald-400">
-          View Full Gallery <ChevronRight className="w-4 h-4" />
-        </button>
-      </div>
+      <button className="sm:hidden w-full mt-6 flex items-center justify-center gap-1 py-3 text-sm font-medium text-emerald-500 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10 transition-colors">
+        View All Pictures <ChevronRight className="w-4 h-4" />
+      </button>
     </SectionContainer>
   );
 }
