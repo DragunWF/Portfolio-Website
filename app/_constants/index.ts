@@ -269,6 +269,12 @@ export const PORTFOLIO_DATA: PortfolioData = {
   ],
 };
 
+export const FOOTER_LINKS = {
+  github: "https://github.com/DragunWF",
+  linkedin: "https://www.linkedin.com/in/marc-plarisan/",
+  email: "plarisanmarc.dev@gmail.com",
+};
+
 export const GALLERY_IMAGES = [
   {
     id: "gi-1",

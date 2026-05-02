@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react";
 import { GitHubIcon } from "@/app/_components/icons/GithubIcon";
 import { LinkedinIcon } from "@/app/_components/icons/LinkedinIcon";
+import { FOOTER_LINKS } from "@/app/_constants";
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com/marcplarisan"
+            href={FOOTER_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-emerald-500 transition-colors"
@@ -21,7 +22,7 @@ export default function Footer() {
             <GitHubIcon />
           </a>
           <a
-            href="https://linkedin.com/in/marc-plarisan"
+            href={FOOTER_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-emerald-500 transition-colors"
@@ -30,7 +31,7 @@ export default function Footer() {
             <LinkedinIcon />
           </a>
           <a
-            href="mailto:marcplarisan@example.com"
+            href={`mailto:${FOOTER_LINKS.email}`}
             className="text-slate-500 hover:text-emerald-500 transition-colors"
             aria-label="Email"
           >
