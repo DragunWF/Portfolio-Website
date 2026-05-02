@@ -59,7 +59,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       role: "Software Engineer Intern",
       company: "Accenture in the Philippines",
       startDate: "Feb 2026",
-      endDate: "May 2026",
+      endDate: "Present",
       skills: [
         "SAP ABAP",
         "Enterprise Systems Development",
