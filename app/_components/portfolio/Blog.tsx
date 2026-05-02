@@ -1,10 +1,11 @@
-import { PORTFOLIO_DATA } from "../../_constants";
-import { ChevronRight } from "lucide-react";
+import { BLOG_POSTS } from "../../_constants";
+import { ChevronRight, Clock } from "lucide-react";
 import Link from "next/link";
 import SectionContainer from "../layout/SectionContainer";
 
 export default function Blog() {
-  const { blogs } = PORTFOLIO_DATA;
+  // Only display the two most recent posts on the home page
+  const recentBlogs = BLOG_POSTS.slice(0, 2);
 
   return (
     <SectionContainer id="blog" className="py-8 scroll-mt-20">
@@ -21,28 +22,46 @@ export default function Blog() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogs.map((blog, index) => (
-          <div
-            key={blog.id}
-            className="flex flex-col bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_15px_rgba(16,185,129,0.1)] group cursor-pointer"
+        {recentBlogs.map((post) => (
+          <Link
+            key={post.id}
+            href={`/blog/${post.id}`}
+            className="flex flex-col bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-emerald-500 group cursor-pointer overflow-hidden"
           >
-            {/* Thumbnail Placeholder Area */}
-            <div
-              className={`h-48 w-full relative flex items-center justify-center border-b border-slate-800 ${index === 0 ? "bg-gradient-to-br from-slate-800 to-slate-900" : "bg-gradient-to-bl from-slate-800 to-slate-900"}`}
-            >
-              <span className="text-slate-600 font-medium tracking-widest uppercase text-xs">
-                Thumbnail Area
-              </span>
-              <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Edge-to-edge Cover Image */}
+            <div className="relative w-full h-48 overflow-hidden bg-slate-950">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              />
             </div>
 
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors mb-2">
-                {blog.title}
-              </h4>
-              <p className="text-sm text-slate-500">Read article &rarr;</p>
+            {/* Content Container */}
+            <div className="p-6 flex flex-col gap-4 flex-1">
+              {/* Top Row: Dates */}
+              <div className="flex justify-between items-center text-xs font-mono uppercase text-slate-500">
+                <span>{post.dateCreated}</span>
+                <span>Updated: {post.dateUpdated}</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-slate-200 group-hover:text-emerald-500 transition-colors">
+                {post.title}
+              </h3>
+
+              {/* Read Time */}
+              <div className="flex items-center gap-1 text-emerald-500 text-sm font-medium">
+                <Clock size={14} />
+                <span>{post.readTime}</span>
+              </div>
+
+              {/* Excerpt */}
+              <p className="text-slate-400 text-sm leading-relaxed mt-auto">
+                {post.excerpt}
+              </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
