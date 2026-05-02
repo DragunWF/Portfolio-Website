@@ -268,3 +268,41 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { id: "gal-4", imageUrl: "/images/gallery4.jpg", altText: "Another event" },
   ],
 };
+
+export const GALLERY_IMAGES = [
+  {
+    id: "gi-1",
+    title: "PyGame Community Winter Jam",
+    description: "Awarded 1st Place in Theme Integrity for the ChronoFrost project.",
+    heightClass: "h-64",
+    image: "",
+  },
+  {
+    id: "gi-2",
+    title: "Readers Rising Hackathon",
+    description: "Recognized as a Minor Awardee by the NBDB Philippines for BasaBuddy.",
+    heightClass: "h-96",
+    image: "",
+  },
+  {
+    id: "gi-3",
+    title: "NASA Space Apps Challenge 2024",
+    description: "Nominated globally for an innovative space technology solution.",
+    heightClass: "h-80",
+    image: "",
+  },
+  {
+    id: "gi-4",
+    title: "Tagisan ng Talino Codefest",
+    description: "Secured National Finalist and Dual-Champion across local and cluster levels.",
+    heightClass: "h-[22rem]",
+    image: "",
+  },
+  {
+    id: "gi-5",
+    title: "1st Cainta Research Congress",
+    description: "Achieved 8th Place with a recognized Best Capstone project.",
+    heightClass: "h-64",
+    image: "",
+  },
+];

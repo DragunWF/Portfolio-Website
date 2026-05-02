@@ -1,6 +1,7 @@
 import { PORTFOLIO_DATA } from "../../_constants";
 import { Image as ImageIcon, ChevronRight } from "lucide-react";
 import SectionContainer from "../layout/SectionContainer";
+import Link from "next/link";
 
 export default function Gallery() {
   const { gallery } = PORTFOLIO_DATA;
@@ -11,9 +12,12 @@ export default function Gallery() {
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Event Gallery
         </h3>
-        <button className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors">
+        <Link
+          href="/gallery"
+          className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors"
+        >
           View All Pictures <ChevronRight className="w-4 h-4" />
-        </button>
+        </Link>
       </div>
 
       {/* Grid Layout mimicking Masonry with varied heights */}
@@ -41,9 +45,12 @@ export default function Gallery() {
         })}
       </div>
 
-      <button className="sm:hidden w-full mt-6 flex items-center justify-center gap-1 py-3 text-sm font-medium text-emerald-500 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10 transition-colors">
+      <Link
+        href="/gallery"
+        className="sm:hidden w-full mt-6 flex items-center justify-center gap-1 py-3 text-sm font-medium text-emerald-500 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10 transition-colors"
+      >
         View All Pictures <ChevronRight className="w-4 h-4" />
-      </button>
+      </Link>
     </SectionContainer>
   );
 }

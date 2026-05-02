@@ -1,5 +1,6 @@
 import { PORTFOLIO_DATA } from "../../_constants";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import SectionContainer from "../layout/SectionContainer";
 
 export default function Blog() {
@@ -11,9 +12,12 @@ export default function Blog() {
         <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
           Blogs
         </h3>
-        <button className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors">
+        <Link
+          href="/blog"
+          className="hidden sm:flex items-center gap-1 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors"
+        >
           View All Blogs <ChevronRight className="w-4 h-4" />
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -42,9 +46,12 @@ export default function Blog() {
         ))}
       </div>
 
-      <button className="sm:hidden w-full mt-6 flex items-center justify-center gap-1 py-3 text-sm font-medium text-emerald-500 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10 transition-colors">
+      <Link
+        href="/blog"
+        className="sm:hidden w-full mt-6 flex items-center justify-center gap-1 py-3 text-sm font-medium text-emerald-500 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10 transition-colors"
+      >
         View All Blogs <ChevronRight className="w-4 h-4" />
-      </button>
+      </Link>
     </SectionContainer>
   );
 }
