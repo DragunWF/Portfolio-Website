@@ -273,28 +273,32 @@ export const GALLERY_IMAGES = [
   {
     id: "gi-1",
     title: "PyGame Community Winter Jam",
-    description: "Awarded 1st Place in Theme Integrity for the ChronoFrost project.",
+    description:
+      "Awarded 1st Place in Theme Integrity for the ChronoFrost project.",
     heightClass: "h-64",
     image: "",
   },
   {
     id: "gi-2",
     title: "Readers Rising Hackathon",
-    description: "Recognized as a Minor Awardee by the NBDB Philippines for BasaBuddy.",
+    description:
+      "Recognized as a Minor Awardee by the NBDB Philippines for BasaBuddy.",
     heightClass: "h-96",
     image: "",
   },
   {
     id: "gi-3",
     title: "NASA Space Apps Challenge 2024",
-    description: "Nominated globally for an innovative space technology solution.",
+    description:
+      "Nominated globally for an innovative space technology solution.",
     heightClass: "h-80",
     image: "",
   },
   {
     id: "gi-4",
     title: "Tagisan ng Talino Codefest",
-    description: "Secured National Finalist and Dual-Champion across local and cluster levels.",
+    description:
+      "Secured National Finalist and Dual-Champion across local and cluster levels.",
     heightClass: "h-[22rem]",
     image: "",
   },
@@ -304,5 +308,62 @@ export const GALLERY_IMAGES = [
     description: "Achieved 8th Place with a recognized Best Capstone project.",
     heightClass: "h-64",
     image: "",
+  },
+];
+
+export const BLOG_POSTS = [
+  {
+    id: "bp-1",
+    title: "Architecting BasaBuddy: Lessons from Readers Rising",
+    dateCreated: "Mar 10, 2026",
+    dateUpdated: "Mar 15, 2026",
+    readTime: "6 min read",
+    excerpt:
+      "Exploring the system design choices that powered our reading comprehension platform. We dive into the robust data architecture that caught the attention of the NBDB Philippines.",
+  },
+  {
+    id: "bp-2",
+    title: "Post-Mortem: Winning PyGame Winter Jam with ChronoFrost",
+    dateCreated: "Feb 22, 2026",
+    dateUpdated: "Feb 23, 2026",
+    readTime: "8 min read",
+    excerpt:
+      "A look back at the chaotic 7-day development cycle of ChronoFrost. From core mechanics to achieving 1st place in Theme Integrity.",
+  },
+  {
+    id: "bp-3",
+    title: "SAP ABAP & Clean Core: Enterprise Backend Strategies",
+    dateCreated: "Jan 15, 2026",
+    dateUpdated: "Jan 20, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Modernizing legacy ERP systems using the Clean Core philosophy. How strict boundaries and extensible code keep enterprise software maintainable.",
+  },
+  {
+    id: "bp-4",
+    title: "Building CogniTrack: Offline-First Habit Tracking",
+    dateCreated: "Dec 05, 2025",
+    dateUpdated: "Dec 10, 2025",
+    readTime: "7 min read",
+    excerpt:
+      "Tackling the challenge of local-first mobile applications in React Native. Syncing local SQLite with remote Supabase databases elegantly.",
+  },
+  {
+    id: "bp-5",
+    title: "The Socratic Method in Competitive Programming",
+    dateCreated: "Nov 18, 2025",
+    dateUpdated: "Nov 18, 2025",
+    readTime: "4 min read",
+    excerpt:
+      "How I apply analytical questioning to break down impossible competitive programming problems. A psychological approach to passing the Tagisan ng Talino Codefest.",
+  },
+  {
+    id: "bp-6",
+    title: "Why the M4 MacBook Pro is a Developer's Best Friend",
+    dateCreated: "Oct 30, 2025",
+    dateUpdated: "Nov 02, 2025",
+    readTime: "5 min read",
+    excerpt:
+      "Reviewing Apple's latest silicon from a full-stack engineer's perspective. It handled my Dockerized microservices and Unity builds flawlessly.",
   },
 ];
