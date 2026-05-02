@@ -1,5 +1,39 @@
 import { PortfolioData } from "../_types";
 
+export const CURRENT_FOCUS = [
+  "SAP ABAP",
+  "Python",
+  "TypeScript",
+  "React Native",
+  "React",
+  "Next.js",
+  "Supabase",
+  "Prisma ORM",
+];
+
+export const FULL_ARCHIVE = [
+  ...CURRENT_FOCUS,
+  "MongoDB",
+  "Git",
+  ".NET",
+  "Flask",
+  "Django",
+  "Lua",
+  "Java",
+  "C",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "jQuery",
+  "Bootstrap",
+  "SQLite",
+  "MySQL",
+  "Expo",
+  "Godot",
+  "Pygame",
+  "Firebase",
+  "Selenium",
+];
 export const PORTFOLIO_DATA: PortfolioData = {
   hero: {
     name: "Marc Plarisan",
