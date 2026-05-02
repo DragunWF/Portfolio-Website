@@ -5,7 +5,7 @@ export const CURRENT_FOCUS = [
   "Python",
   "TypeScript",
   "React Native",
-  "React",
+  "Tailwind CSS",
   "Next.js",
   "Supabase",
   "Prisma ORM",
@@ -13,6 +13,7 @@ export const CURRENT_FOCUS = [
 
 export const FULL_ARCHIVE = [
   ...CURRENT_FOCUS,
+  "React",
   "MongoDB",
   "Git",
   ".NET",
