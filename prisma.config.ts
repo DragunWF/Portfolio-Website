@@ -1,13 +1,11 @@
-// Prisma configuration file.
-// Reads environment variables from .env.local (Next.js convention).
 import { loadEnvFile } from "node:process";
 import { defineConfig } from "prisma/config";
 
-// Manually load .env.local so Prisma CLI picks it up (it doesn't read it natively).
+// Manually load .env.local for Prisma CLI
 try {
   loadEnvFile(".env.local");
 } catch {
-  // .env.local may not exist in CI/CD; fall through to system env.
+  // .env.local may not exist in CI
 }
 
 export default defineConfig({
@@ -16,10 +14,9 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    db: {
-      provider: "postgresql",
-      url: process.env["DATABASE_URL"],
-      directUrl: process.env["DIRECT_URL"],
-    },
+    url: process.env.DATABASE_URL,
+    // @ts-ignore - Prisma 6 CLI requires directUrl here for Supabase migrations,
+    // but the property is currently missing from the @prisma/config types.
+    directUrl: process.env.DIRECT_URL,
   },
 });
