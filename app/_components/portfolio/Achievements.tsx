@@ -1,6 +1,7 @@
 import { PORTFOLIO_DATA } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
 import { Trophy, Award, ExternalLink, Image as ImageIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Achievements() {
   const { achievements } = PORTFOLIO_DATA;
@@ -56,10 +57,12 @@ export default function Achievements() {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 items-center mt-8">
-        <button className="flex items-center gap-2 px-6 py-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-lg font-medium transition-all hover:bg-emerald-500 hover:text-slate-950 w-full sm:w-auto justify-center">
-          <ImageIcon className="w-4 h-4" />
-          View Achievement Gallery
-        </button>
+        <Link href="/gallery">
+          <button className="flex items-center gap-2 px-6 py-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-lg font-medium transition-all hover:bg-emerald-500 hover:text-slate-950 w-full sm:w-auto justify-center">
+            <ImageIcon className="w-4 h-4" />
+            View Achievement Gallery
+          </button>
+        </Link>
         <a
           href="https://linkedin.com/in/marc-plarisan"
           target="_blank"
