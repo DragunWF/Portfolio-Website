@@ -16,7 +16,7 @@ import {
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
+  title: "Marc Plarisan | Admin Dashboard",
   description: "Admin Dashboard for Marc Plarisan's Portfolio Website.",
 };
 
