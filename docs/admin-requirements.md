@@ -31,7 +31,7 @@ The `/admin` route is wrapped in a dedicated layout featuring two distinct zones
 - **Navigation Groups:**
   - `Portfolio Data`: (Locked/Disabled for V1) Displays Padlock icon.
   - `Engineering Notes`: "All Notes", "Write New Entry".
-  - `Media Vault`: "Event Gallery", "Bulk Upload".
+  - `Media Vault`: "Event Gallery"
 - **Footer:** System status indicator (pulsing emerald dot "Supabase: Connected") and Logout button.
 
 **B. Main Workspace (Flex-1)**
