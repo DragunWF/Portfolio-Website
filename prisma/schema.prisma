@@ -1,0 +1,38 @@
+// Learn more about Prisma: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Blog ────────────────────────────────────────────────────────────────────
+// Represents a single blog post managed via the CMS.
+// `slug` is derived from the post's URL and is unique.
+// `content` stores raw Markdown text, rendered on the public portfolio side.
+// `status` is a string enum: "DRAFT" (default) | "PUBLISHED".
+
+model Blog {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  imageUrl  String?
+  content   String   @db.Text
+  status    String   @default("DRAFT")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Gallery ─────────────────────────────────────────────────────────────────
+// Stores event/media images uploaded to Supabase Storage.
+// `imageUrl` is the public URL returned by Supabase Storage after upload.
+
+model Gallery {
+  id        String   @id @default(cuid())
+  imageUrl  String
+  altText   String
+  createdAt DateTime @default(now())
+}
