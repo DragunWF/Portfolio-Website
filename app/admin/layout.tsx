@@ -60,30 +60,30 @@ export default function AdminLayout({
             ))}
           </ul>
 
-          {/* Group 2: Engineering Notes */}
+          {/* Group 2: Blog */}
           <h3 className="px-6 text-xs font-mono text-slate-500 mt-6 mb-2">
-            ENGINEERING NOTES
+            BLOG
           </h3>
 
           <ul className="space-y-0.5">
-            {/* All Notes – Active */}
+            {/* All Blog Posts – Active */}
             <li>
               <Link
-                href="/admin/notes"
+                href="/admin/blog"
                 className="flex items-center gap-3 px-6 py-2 bg-slate-900 border-l-2 border-emerald-500 text-emerald-500"
               >
                 <FileText size={16} />
-                <span>All Notes</span>
+                <span>All Posts</span>
               </Link>
             </li>
-            {/* Write New Entry – Inactive */}
+            {/* Write New Post – Inactive */}
             <li>
               <Link
-                href="/admin/notes/new"
+                href="/admin/blog/new"
                 className="flex items-center gap-3 px-6 py-2 text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 border-l-2 border-transparent transition-colors"
               >
                 <PenTool size={16} />
-                <span>Write New Entry</span>
+                <span>Write New Post</span>
               </Link>
             </li>
           </ul>

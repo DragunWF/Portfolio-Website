@@ -31,7 +31,7 @@ export default function LoginPage() {
 
       // Refresh and redirect on success
       router.refresh();
-      router.push("/admin/notes");
+      router.push("/admin/blog");
     });
   };
 

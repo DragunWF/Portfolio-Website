@@ -38,8 +38,8 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Protect all /admin routes except the login page itself.
-  if (pathname.startsWith("/admin") && pathname !== "/admin/login" && !user) {
-    const loginUrl = new URL("/admin/login", request.url);
+  if (pathname.startsWith("/admin") && !user) {
+    const loginUrl = new URL("/login", request.url);
     return NextResponse.redirect(loginUrl);
   }
 
