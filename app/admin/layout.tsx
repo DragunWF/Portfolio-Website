@@ -103,15 +103,6 @@ export default function AdminLayout({
                 <span>Event Gallery</span>
               </Link>
             </li>
-            <li>
-              <Link
-                href="/admin/upload"
-                className="flex items-center gap-3 px-6 py-2 text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 border-l-2 border-transparent transition-colors"
-              >
-                <Upload size={16} />
-                <span>Bulk Upload</span>
-              </Link>
-            </li>
           </ul>
         </nav>
 
