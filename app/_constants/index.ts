@@ -68,6 +68,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "hackathons",
       label: "Track Record",
       value: "6x Hackathon Winner",
+      url: "#achievements",
       iconName: "trophy",
     },
     {

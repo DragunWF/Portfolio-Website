@@ -1,5 +1,5 @@
 import Hero from "../_components/portfolio/Hero";
-import Socials from "../_components/portfolio/Socials";
+import Highlights from "../_components/portfolio/Highlights";
 import Skills from "../_components/portfolio/Skills";
 import Experience from "../_components/portfolio/Experience";
 import Education from "../_components/portfolio/Education";
@@ -16,7 +16,7 @@ export default function PortfolioPage() {
     <div className="min-h-screen flex flex-col">
       <div className="flex-1 pb-16">
         <Hero />
-        <Socials />
+        <Highlights />
         <div className="flex flex-col gap-4">
           <Skills />
           <Experience />

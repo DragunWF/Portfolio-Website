@@ -11,7 +11,7 @@ const IconMap: Record<string, React.ElementType> = {
   newspaper: Newspaper,
 };
 
-export default function Socials() {
+export default function Highlights() {
   const { highlights } = PORTFOLIO_DATA;
 
   return (
@@ -40,7 +40,7 @@ export default function Socials() {
               <a
                 key={item.id}
                 href={item.url}
-                target="_blank"
+                target={item.url.startsWith("https") ? "_blank" : "_self"}
                 rel="noopener noreferrer"
                 className={className}
               >
