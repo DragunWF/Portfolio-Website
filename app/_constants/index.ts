@@ -30,10 +30,15 @@ export const FULL_ARCHIVE = [
   "SQLite",
   "MySQL",
   "Expo",
-  "Godot",
   "Pygame",
   "Firebase",
   "Selenium",
+  "Android Studio",
+  "Postman",
+  "Express.js",
+  "Discord.py",
+  "Microsoft SQL Server",
+  ".NET",
 ];
 export const PORTFOLIO_DATA: PortfolioData = {
   hero: {
