@@ -5,8 +5,8 @@ import { Edit, Trash2 } from "lucide-react";
 interface DataTableProps {
   columns: string[];
   data: Record<string, unknown>[];
-  onEdit: (id: number) => void;
-  onDelete: (id: number) => void;
+  onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 function StatusBadge({ status }: { status: string }) {
@@ -55,7 +55,7 @@ export default function DataTable({
           ) : (
             data.map((row) => (
               <tr
-                key={row.id as number}
+                key={row.id as string}
                 className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors group last:border-0"
               >
                 <td className="p-4 text-sm text-slate-300 font-medium max-w-xs truncate">
@@ -70,14 +70,14 @@ export default function DataTable({
                 <td className="p-4">
                   <div className="flex items-center gap-3">
                     <button
-                      onClick={() => onEdit(row.id as number)}
+                      onClick={() => onEdit(row.id as string)}
                       aria-label={`Edit row ${row.id}`}
                       className="text-slate-500 hover:text-emerald-500 transition-colors"
                     >
                       <Edit size={15} />
                     </button>
                     <button
-                      onClick={() => onDelete(row.id as number)}
+                      onClick={() => onDelete(row.id as string)}
                       aria-label={`Delete row ${row.id}`}
                       className="text-slate-500 hover:text-red-400 transition-colors"
                     >

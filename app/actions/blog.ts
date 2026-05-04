@@ -13,6 +13,14 @@ interface CreateBlogData {
   imageUrl?: string;
 }
 
+interface UpdateBlogData {
+  title?: string;
+  slug?: string;
+  content?: string;
+  status?: string;
+  imageUrl?: string;
+}
+
 // ── Actions ───────────────────────────────────────────────────────────────────
 
 /**
@@ -51,6 +59,46 @@ export async function createBlog(data: CreateBlogData) {
   } catch (error) {
     console.error("[createBlog] Failed to create blog:", error);
     return { success: false, error: "Failed to create blog post." };
+  }
+}
+
+/**
+ * Fetch a single blog post by ID. Returns null if not found.
+ */
+export async function getBlogById(id: string) {
+  try {
+    const blog = await prisma.blog.findUnique({ where: { id } });
+    return blog ?? null;
+  } catch (error) {
+    console.error("[getBlogById] Failed to fetch blog:", error);
+    return null;
+  }
+}
+
+/**
+ * Update an existing blog post and revalidate all relevant paths.
+ */
+export async function updateBlog(id: string, data: UpdateBlogData) {
+  try {
+    const blog = await prisma.blog.update({
+      where: { id },
+      data: {
+        ...(data.title !== undefined && { title: data.title }),
+        ...(data.slug !== undefined && { slug: data.slug }),
+        ...(data.content !== undefined && { content: data.content }),
+        ...(data.status !== undefined && { status: data.status }),
+        ...(data.imageUrl !== undefined && { imageUrl: data.imageUrl || null }),
+      },
+    });
+
+    revalidatePath("/admin/blog");
+    revalidatePath("/blog");
+    revalidatePath("/blog/[slug]", "page");
+
+    return { success: true, blog };
+  } catch (error) {
+    console.error("[updateBlog] Failed to update blog:", error);
+    return { success: false, error: "Failed to update blog post." };
   }
 }
 

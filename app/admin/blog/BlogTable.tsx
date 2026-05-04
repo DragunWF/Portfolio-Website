@@ -15,7 +15,7 @@ export default function BlogTable({ columns, data }: BlogTableProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleEdit = (id: string) => {
-    router.push(`/admin/blog/edit/${id}`);
+    router.push(`/admin/blog/${id}`);
   };
 
   const handleDelete = async (id: string) => {

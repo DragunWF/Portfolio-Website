@@ -38,7 +38,6 @@ export const FULL_ARCHIVE = [
   "Express.js",
   "Discord.py",
   "Microsoft SQL Server",
-  ".NET",
 ];
 export const PORTFOLIO_DATA: PortfolioData = {
   hero: {
