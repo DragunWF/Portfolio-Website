@@ -38,6 +38,39 @@ export async function getBlogs() {
 }
 
 /**
+ * Fetch all published blog posts, newest first.
+ * Optionally pass a limit to retrieve only the first N posts.
+ */
+export async function getPublishedBlogs(limit?: number) {
+  try {
+    return await prisma.blog.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { createdAt: "desc" },
+      ...(limit !== undefined && { take: limit }),
+    });
+  } catch (error) {
+    console.error("[getPublishedBlogs] Failed to fetch published blogs:", error);
+    return [];
+  }
+}
+
+/**
+ * Fetch a single published blog post by its slug. Returns null if not found.
+ */
+export async function getBlogBySlug(slug: string) {
+  try {
+    const blog = await prisma.blog.findFirst({
+      where: { slug, status: "PUBLISHED" },
+    });
+    return blog ?? null;
+  } catch (error) {
+    console.error("[getBlogBySlug] Failed to fetch blog by slug:", error);
+    return null;
+  }
+}
+
+
+/**
  * Create a new blog post and revalidate both the admin list and public blog.
  */
 export async function createBlog(data: CreateBlogData) {
