@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Image as ImageIcon, Save } from "lucide-react";
+import { ArrowLeft, ImageIcon, Pencil, Save } from "lucide-react";
 import { createBlog, updateBlog } from "@/app/actions/blog";
+import { uploadBlogImage } from "@/app/actions/storage";
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -35,24 +36,52 @@ interface BlogEditorProps {
 export default function BlogEditor({ initialData }: BlogEditorProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isEditing = Boolean(initialData?.id);
 
+  // ── Text State ───────────────────────────────────────────────────────────────
   const [title, setTitle] = useState(initialData?.title ?? "");
   const [content, setContent] = useState(initialData?.content ?? "");
   const [status, setStatus] = useState<"DRAFT" | "PUBLISHED">(
-    (initialData?.status as "DRAFT" | "PUBLISHED") ?? "DRAFT"
+    (initialData?.status as "DRAFT" | "PUBLISHED") ?? "DRAFT",
   );
   const [error, setError] = useState<string | null>(null);
+
+  // ── Image State ──────────────────────────────────────────────────────────────
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(
+    initialData?.imageUrl ?? null,
+  );
+  const [isUploading, setIsUploading] = useState(false);
 
   /**
    * When creating, the slug is always derived from the live title.
    * When editing, the slug is locked to the original value to prevent
    * breaking existing public URLs.
    */
-  const slug = isEditing
-    ? (initialData?.slug ?? "")
-    : generateSlug(title);
+  const slug = isEditing ? (initialData?.slug ?? "") : generateSlug(title);
+
+  // ── File Handlers ─────────────────────────────────────────────────────────────
+
+  const handleDropzoneClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Revoke the previous object URL to avoid memory leaks
+    if (previewUrl && previewUrl.startsWith("blob:")) {
+      URL.revokeObjectURL(previewUrl);
+    }
+
+    setImageFile(file);
+    setPreviewUrl(URL.createObjectURL(file));
+  };
+
+  // ── Save Handler ──────────────────────────────────────────────────────────────
 
   const handleSave = () => {
     if (!title.trim()) {
@@ -62,12 +91,32 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
     setError(null);
 
     startTransition(async () => {
+      // ── 1. Upload image if a new file was selected ──────────────────────────
+      let resolvedImageUrl: string = initialData?.imageUrl ?? "";
+
+      if (imageFile) {
+        setIsUploading(true);
+        const formData = new FormData();
+        formData.append("file", imageFile);
+
+        const uploadResult = await uploadBlogImage(formData);
+        setIsUploading(false);
+
+        if (!uploadResult.success) {
+          setError(uploadResult.error);
+          return;
+        }
+
+        resolvedImageUrl = uploadResult.url;
+      }
+
+      // ── 2. Persist the blog post ────────────────────────────────────────────
       const payload = {
         title: title.trim(),
         slug,
         content,
         status,
-        imageUrl: "",
+        imageUrl: resolvedImageUrl,
       };
 
       const result = isEditing
@@ -88,6 +137,11 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
     setStatus((prev) => (prev === "DRAFT" ? "PUBLISHED" : "DRAFT"));
   };
 
+  // Combines saving + uploading into a single busy signal for UI
+  const isBusy = isPending || isUploading;
+
+  // ── Render ────────────────────────────────────────────────────────────────────
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300 flex flex-col font-sans">
       {/* ── Top HUD ── */}
@@ -103,11 +157,19 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-3">
+          {/* Upload status indicator */}
+          {isUploading && (
+            <span className="text-xs font-mono text-slate-500 flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full border-2 border-slate-600 border-t-slate-300 animate-spin" />
+              Uploading image...
+            </span>
+          )}
+
           {/* Status Toggle */}
           <button
             type="button"
             onClick={toggleStatus}
-            disabled={isPending}
+            disabled={isBusy}
             className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium border transition-all ${
               status === "PUBLISHED"
                 ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20 hover:bg-emerald-500/20"
@@ -121,10 +183,10 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
           <button
             type="button"
             onClick={handleSave}
-            disabled={isPending}
+            disabled={isBusy}
             className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-4 py-1.5 rounded-md hover:bg-emerald-500/20 transition-all flex items-center gap-2 text-sm font-medium disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {isPending ? (
+            {isBusy ? (
               <>
                 <span className="h-3.5 w-3.5 rounded-full border-2 border-emerald-500/30 border-t-emerald-500 animate-spin" />
                 Saving...
@@ -149,19 +211,56 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
             </div>
           )}
 
-          {/* Cover Image Dropzone */}
-          <div className="w-full h-48 rounded-xl border-2 border-dashed border-slate-800 bg-slate-900/20 flex flex-col items-center justify-center text-slate-500 hover:border-emerald-500/50 hover:bg-slate-900/40 transition-all cursor-pointer group">
-            <ImageIcon
-              size={28}
-              className="mb-2 group-hover:text-emerald-500/60 transition-colors"
-            />
-            <p className="text-sm group-hover:text-slate-400 transition-colors">
-              Drag &amp; Drop Cover Image
-            </p>
-            <p className="text-xs text-slate-700 mt-1">
-              PNG, JPG or WEBP — max 4MB
-            </p>
-          </div>
+          {/* ── Cover Image Area ── */}
+          {/* Hidden file input — triggered programmatically */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/gif"
+            className="hidden"
+            onChange={handleFileChange}
+            disabled={isBusy}
+          />
+
+          {previewUrl ? (
+            /* ── Preview Mode: image with hover overlay ── */
+            <div
+              onClick={handleDropzoneClick}
+              className="relative w-full h-48 rounded-xl overflow-hidden cursor-pointer group"
+            >
+              <img
+                src={previewUrl}
+                alt="Cover preview"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Dark gradient overlay — always visible at bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+              {/* "Change Image" hint — appears on hover */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-950/50">
+                <Pencil size={20} className="text-emerald-400" />
+                <span className="text-sm font-medium text-slate-200">
+                  Change Image
+                </span>
+              </div>
+            </div>
+          ) : (
+            /* ── Empty Dropzone ── */
+            <div
+              onClick={handleDropzoneClick}
+              className="w-full h-48 rounded-xl border-2 border-dashed border-slate-800 bg-slate-900/20 flex flex-col items-center justify-center text-slate-500 hover:border-emerald-500/50 hover:bg-slate-900/40 transition-all cursor-pointer group"
+            >
+              <ImageIcon
+                size={28}
+                className="mb-2 group-hover:text-emerald-500/60 transition-colors"
+              />
+              <p className="text-sm group-hover:text-slate-400 transition-colors">
+                Click to Upload Cover Image
+              </p>
+              <p className="text-xs text-slate-700 mt-1">
+                PNG, JPG or WEBP — max 4MB
+              </p>
+            </div>
+          )}
 
           {/* Title Input */}
           <div className="flex flex-col gap-3">
@@ -171,7 +270,7 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
               placeholder="Untitled Post"
               autoFocus
               rows={2}
-              disabled={isPending}
+              disabled={isBusy}
               className="text-4xl md:text-5xl font-bold bg-transparent outline-none placeholder:text-slate-700 w-full text-slate-200 resize-none leading-tight disabled:opacity-60"
             />
 
@@ -195,7 +294,7 @@ export default function BlogEditor({ initialData }: BlogEditorProps) {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Start writing... (Markdown supported)"
-            disabled={isPending}
+            disabled={isBusy}
             className="w-full min-h-[500px] bg-transparent outline-none resize-none placeholder:text-slate-700 text-lg leading-relaxed text-slate-300 font-serif disabled:opacity-60"
           />
         </div>
