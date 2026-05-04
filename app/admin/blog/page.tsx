@@ -1,27 +1,25 @@
-"use client";
-
 import Link from "next/link";
 import { Plus, BookOpen } from "lucide-react";
-import DataTable from "@/app/_components/admin/DataTable";
-
-const mockBlogs = [
-  {
-    id: 1,
-    title: "Architecting BasaBuddy: Lessons from Readers Rising",
-    status: "Published",
-    date: "Mar 10, 2026",
-  },
-  {
-    id: 2,
-    title: "SAP ABAP & Clean Core: Enterprise Strategies",
-    status: "Draft",
-    date: "Mar 18, 2026",
-  },
-];
+import { getBlogs } from "@/app/actions/blog";
+import BlogTable from "./BlogTable";
 
 const TABLE_COLUMNS = ["Title", "Status", "Date Created", "Actions"];
 
-export default function BlogDashboardPage() {
+export default async function BlogDashboardPage() {
+  const blogs = await getBlogs();
+
+  const tableData = blogs.map((blog) => ({
+    id: blog.id,
+    title: blog.title,
+    status: blog.status === "PUBLISHED" ? "Published" : "Draft",
+    date: blog.createdAt.toLocaleDateString("en-US", {
+      month: "short", day: "numeric", year: "numeric"
+    }),
+  }));
+
+  const publishedCount = blogs.filter((b) => b.status === "PUBLISHED").length;
+  const draftCount = blogs.filter((b) => b.status === "DRAFT").length;
+
   return (
     <div className="p-8 max-w-6xl mx-auto w-full">
       {/* Page Header */}
@@ -42,38 +40,21 @@ export default function BlogDashboardPage() {
       {/* Stats Row */}
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
-            Total Posts
-          </p>
-          <p className="text-2xl font-semibold text-slate-200">
-            {mockBlogs.length}
-          </p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Total Posts</p>
+          <p className="text-2xl font-semibold text-slate-200">{blogs.length}</p>
         </div>
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
-            Published
-          </p>
-          <p className="text-2xl font-semibold text-emerald-500">
-            {mockBlogs.filter((b) => b.status === "Published").length}
-          </p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Published</p>
+          <p className="text-2xl font-semibold text-emerald-500">{publishedCount}</p>
         </div>
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
-            Drafts
-          </p>
-          <p className="text-2xl font-semibold text-slate-400">
-            {mockBlogs.filter((b) => b.status === "Draft").length}
-          </p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Drafts</p>
+          <p className="text-2xl font-semibold text-slate-400">{draftCount}</p>
         </div>
       </div>
 
-      {/* Data Table */}
-      <DataTable
-        columns={TABLE_COLUMNS}
-        data={mockBlogs}
-        onEdit={(id) => console.log("Edit blog:", id)}
-        onDelete={(id) => console.log("Delete blog:", id)}
-      />
+      {/* Data Table Wrapper (Client Component) */}
+      <BlogTable columns={TABLE_COLUMNS} data={tableData} />
     </div>
   );
 }

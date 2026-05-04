@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import Link from "next/link";
-import { ArrowLeft, Image as ImageIcon, Save, Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowLeft, Image as ImageIcon, Save } from "lucide-react";
+import { createBlog } from "@/app/actions/blog";
 
 function generateSlug(title: string): string {
   return title
@@ -14,15 +16,40 @@ function generateSlug(title: string): string {
 }
 
 export default function NewBlogPage() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [status, setStatus] = useState<"DRAFT" | "PUBLISHED">("DRAFT");
+  const [error, setError] = useState<string | null>(null);
 
   const slug = generateSlug(title);
 
   const handleSave = () => {
-    // Supabase / Prisma save logic will go here
-    console.log("Saving blog post:", { title, slug, content, status });
+    if (!title.trim()) {
+      setError("A title is required before saving.");
+      return;
+    }
+    setError(null);
+
+    startTransition(async () => {
+      const result = await createBlog({
+        title: title.trim(),
+        slug,
+        content,
+        status,
+        imageUrl: "",
+      });
+
+      if (!result.success) {
+        setError(result.error ?? "An unexpected error occurred.");
+        return;
+      }
+
+      router.push("/admin/blog");
+      router.refresh();
+    });
   };
 
   const toggleStatus = () => {
@@ -48,11 +75,12 @@ export default function NewBlogPage() {
           <button
             type="button"
             onClick={toggleStatus}
+            disabled={isPending}
             className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium border transition-all ${
               status === "PUBLISHED"
                 ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20 hover:bg-emerald-500/20"
                 : "bg-slate-800/80 text-slate-400 border-slate-700 hover:bg-slate-800 hover:text-slate-300"
-            }`}
+            } disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             {status === "PUBLISHED" ? "● Published" : "○ Draft"}
           </button>
@@ -61,10 +89,20 @@ export default function NewBlogPage() {
           <button
             type="button"
             onClick={handleSave}
-            className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-4 py-1.5 rounded-md hover:bg-emerald-500/20 transition-all flex items-center gap-2 text-sm font-medium"
+            disabled={isPending}
+            className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-4 py-1.5 rounded-md hover:bg-emerald-500/20 transition-all flex items-center gap-2 text-sm font-medium disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <Save size={15} />
-            Save Changes
+            {isPending ? (
+              <>
+                <span className="h-3.5 w-3.5 rounded-full border-2 border-emerald-500/30 border-t-emerald-500 animate-spin" />
+                Saving...
+              </>
+            ) : (
+              <>
+                <Save size={15} />
+                Save Changes
+              </>
+            )}
           </button>
         </div>
       </header>
@@ -72,6 +110,13 @@ export default function NewBlogPage() {
       {/* ── Zen Canvas ── */}
       <main className="flex-1 overflow-y-auto w-full">
         <div className="max-w-3xl mx-auto w-full py-12 px-6 flex flex-col gap-8">
+          {/* Error Banner */}
+          {error && (
+            <div className="rounded-lg border border-red-500/20 bg-red-950/30 px-4 py-3 text-sm text-red-400">
+              {error}
+            </div>
+          )}
+
           {/* Cover Image Dropzone */}
           <div className="w-full h-48 rounded-xl border-2 border-dashed border-slate-800 bg-slate-900/20 flex flex-col items-center justify-center text-slate-500 hover:border-emerald-500/50 hover:bg-slate-900/40 transition-all cursor-pointer group">
             <ImageIcon
@@ -94,7 +139,8 @@ export default function NewBlogPage() {
               placeholder="Untitled Post"
               autoFocus
               rows={2}
-              className="text-4xl md:text-5xl font-bold bg-transparent outline-none placeholder:text-slate-700 w-full text-slate-200 resize-none leading-tight"
+              disabled={isPending}
+              className="text-4xl md:text-5xl font-bold bg-transparent outline-none placeholder:text-slate-700 w-full text-slate-200 resize-none leading-tight disabled:opacity-60"
             />
 
             {/* Slug Display */}
@@ -114,7 +160,8 @@ export default function NewBlogPage() {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Start writing... (Markdown supported)"
-            className="w-full min-h-[500px] bg-transparent outline-none resize-none placeholder:text-slate-700 text-lg leading-relaxed text-slate-300 font-serif"
+            disabled={isPending}
+            className="w-full min-h-[500px] bg-transparent outline-none resize-none placeholder:text-slate-700 text-lg leading-relaxed text-slate-300 font-serif disabled:opacity-60"
           />
         </div>
       </main>
