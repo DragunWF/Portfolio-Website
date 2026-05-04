@@ -2,6 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/app/_utils/prisma";
+import { deleteBlogImage } from "./storage";
+
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -135,11 +137,26 @@ export async function updateBlog(id: string, data: UpdateBlogData) {
   }
 }
 
+
 /**
  * Delete a blog post by ID and revalidate the admin list.
+ * This also removes the associated cover image from Supabase Storage 
+ * if the image is hosted there.
  */
 export async function deleteBlog(id: string) {
   try {
+    // ── 1. Fetch blog to get image URL ───────────────────────────────────────
+    const blog = await prisma.blog.findUnique({
+      where: { id },
+      select: { imageUrl: true },
+    });
+
+    // ── 2. Delete Image from Storage if it exists ────────────────────────────
+    if (blog?.imageUrl) {
+      await deleteBlogImage(blog.imageUrl);
+    }
+
+    // ── 3. Delete from Database ──────────────────────────────────────────────
     await prisma.blog.delete({ where: { id } });
 
     revalidatePath("/admin/blog");
@@ -150,6 +167,7 @@ export async function deleteBlog(id: string) {
     return { success: false, error: "Failed to delete blog post." };
   }
 }
+
 
 /**
  * Update the published/draft status of a blog post.

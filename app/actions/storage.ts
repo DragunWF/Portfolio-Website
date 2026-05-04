@@ -85,3 +85,42 @@ export async function uploadBlogImage(
     };
   }
 }
+
+/**
+ * Deletes a blog image from Supabase Storage given its public URL.
+ * It strictly only attempts deletion if the URL belongs to our Supabase project
+ * and the specific `blog-images` bucket.
+ */
+export async function deleteBlogImage(url: string): Promise<boolean> {
+  if (!url) return false;
+
+  try {
+    // ── 1. Validate if URL belongs to our Supabase Storage ───────────────────
+    const isSupabase =
+      url.includes("supabase.co") && url.includes(`/${BUCKET}/`);
+    if (!isSupabase) return false;
+
+    // ── 2. Extract Filename ──────────────────────────────────────────────────
+    // Use URL constructor to safely strip query parameters if they exist
+    const urlObj = new URL(url);
+    const pathParts = urlObj.pathname.split("/");
+    const filename = pathParts[pathParts.length - 1];
+
+    if (!filename) return false;
+
+
+    // ── 3. Delete from Storage ───────────────────────────────────────────────
+    const supabase = await createClient();
+    const { error } = await supabase.storage.from(BUCKET).remove([filename]);
+
+    if (error) {
+      console.error("[deleteBlogImage] Supabase deletion error:", error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error("[deleteBlogImage] Unexpected error:", err);
+    return false;
+  }
+}
