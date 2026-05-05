@@ -36,17 +36,16 @@ export default async function GalleryPage() {
           <div
             key={item.id}
             className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 group break-inside-avoid mb-6 transition-colors duration-300 hover:border-emerald-500"
+            style={{ aspectRatio: "4/3" }}
           >
             {/* Image */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden">
-              <Image
-                src={item.imageUrl}
-                alt={item.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-            </div>
+            <Image
+              src={item.imageUrl}
+              alt={item.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
 
             {/* Default Overlay - opaque until hovered */}
             <div className="absolute inset-0 bg-slate-950/80 transition-opacity duration-300 group-hover:opacity-0" />
