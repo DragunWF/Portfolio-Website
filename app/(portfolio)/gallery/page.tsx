@@ -43,12 +43,11 @@ export default async function GalleryPage() {
               src={item.imageUrl}
               alt={item.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
 
-            {/* Default Overlay - opaque until hovered */}
-            <div className="absolute inset-0 bg-slate-950/80 transition-opacity duration-300 group-hover:opacity-0" />
+            {/* Subtle Gradient Overlay on Hover (handled by caption container below) */}
 
             {/* Caption Slide-up */}
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
