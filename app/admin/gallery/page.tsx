@@ -2,6 +2,7 @@ import React from "react";
 import { getGalleryItems } from "@/app/actions/gallery";
 import EventGrid from "@/app/_components/admin/EventGrid";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 
 export default async function GalleryAdminPage() {
   const items = await getGalleryItems();
@@ -15,10 +16,13 @@ export default async function GalleryAdminPage() {
             Manage your milestones and achievements.
           </p>
         </div>
-        <button className="flex items-center gap-2 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-500/20 transition-colors">
+        <Link
+          href="/admin/gallery/new"
+          className="flex items-center gap-2 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-500/20 transition-colors"
+        >
           <Plus className="w-4 h-4" />
           <span>Add New Milestone</span>
-        </button>
+        </Link>
       </header>
 
       <section>
