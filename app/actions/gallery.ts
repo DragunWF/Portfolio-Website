@@ -38,14 +38,11 @@ export async function updateGalleryOrder(
 export async function createGalleryItem(formData: FormData) {
   try {
     const title = formData.get("title") as string;
-    const dateStr = formData.get("date") as string;
     const file = formData.get("image") as File;
 
-    if (!title || !dateStr || !file) {
+    if (!title || !file) {
       return { success: false, error: "Missing required fields." };
     }
-
-    const date = new Date(dateStr);
 
     const supabase = await createClient();
     const arrayBuffer = await file.arrayBuffer();
@@ -81,7 +78,7 @@ export async function createGalleryItem(formData: FormData) {
     await prisma.gallery.create({
       data: {
         title,
-        date,
+        date: new Date(),
         imageUrl,
         order: newOrder,
       },

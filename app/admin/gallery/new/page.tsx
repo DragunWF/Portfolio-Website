@@ -14,7 +14,6 @@ export default function NewMilestonePage() {
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -49,7 +48,7 @@ export default function NewMilestonePage() {
     e.preventDefault();
     setError(null);
 
-    if (!file || !title || !date) {
+    if (!file || !title) {
       setError("Please fill out all fields and select an image.");
       return;
     }
@@ -59,7 +58,6 @@ export default function NewMilestonePage() {
     try {
       const formData = new FormData();
       formData.append("title", title);
-      formData.append("date", date);
       formData.append("image", file);
 
       const result = await createGalleryItem(formData);
@@ -79,8 +77,8 @@ export default function NewMilestonePage() {
   };
 
   return (
-    <div className="p-8 max-w-4xl mx-auto w-full">
-      <header className="mb-8">
+    <div className="p-8 max-w-3xl mx-auto w-full flex flex-col gap-6">
+      <header>
         <Link
           href="/admin/gallery"
           className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-300 transition-colors mb-4"
@@ -96,7 +94,7 @@ export default function NewMilestonePage() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 space-y-8"
+        className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 flex flex-col gap-6"
       >
         {/* Error Message */}
         {error && (
@@ -106,7 +104,7 @@ export default function NewMilestonePage() {
         )}
 
         {/* Image Upload Zone */}
-        <div>
+        <div className="flex flex-col">
           <label className="block text-sm font-medium text-slate-300 mb-2">
             Milestone Image
           </label>
@@ -114,7 +112,7 @@ export default function NewMilestonePage() {
             onClick={handleZoneClick}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
-            className="border-2 border-dashed border-slate-700 hover:border-emerald-500/50 bg-slate-950/50 rounded-xl transition-colors cursor-pointer relative flex flex-col items-center justify-center p-12 text-center overflow-hidden min-h-[300px]"
+            className="border-2 border-dashed border-slate-700 hover:border-emerald-500/50 bg-slate-950/50 rounded-xl transition-colors cursor-pointer relative flex flex-col items-center justify-center py-16 px-6 text-center overflow-hidden min-h-[300px] gap-4"
           >
             <input
               type="file"
@@ -139,55 +137,38 @@ export default function NewMilestonePage() {
                 </div>
               </>
             ) : (
-              <div className="flex flex-col items-center">
-                <UploadCloud size={48} className="text-emerald-500 mb-4" />
-                <p className="text-slate-300 font-medium">
-                  Click to upload or drag and drop
-                </p>
-                <p className="text-slate-500 text-sm mt-1">
-                  SVG, PNG, JPG or GIF (max. 5MB)
-                </p>
+              <div className="flex flex-col items-center justify-center gap-4">
+                <UploadCloud size={48} className="text-emerald-500" />
+                <div className="flex flex-col items-center gap-1">
+                  <p className="text-slate-200 font-medium">
+                    Click to upload or drag and drop
+                  </p>
+                  <p className="text-slate-500 text-sm">
+                    PNG, JPG, or HEIC (max. 4MB)
+                  </p>
+                </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Inputs (Title & Date) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col space-y-2">
-            <label
-              htmlFor="title"
-              className="text-sm font-medium text-slate-300"
-            >
-              Title
-            </label>
-            <input
-              id="title"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="e.g., Hackathon First Place"
-              className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:border-emerald-500/50 outline-none transition-colors"
-              required
-            />
-          </div>
-
-          <div className="flex flex-col space-y-2">
-            <label
-              htmlFor="date"
-              className="text-sm font-medium text-slate-300"
-            >
-              Date
-            </label>
-            <input
-              id="date"
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:border-emerald-500/50 outline-none transition-colors [color-scheme:dark]"
-              required
-            />
-          </div>
+        {/* Inputs (Title) */}
+        <div className="flex flex-col">
+          <label
+            htmlFor="title"
+            className="block text-sm font-medium text-slate-300 mb-2"
+          >
+            Title
+          </label>
+          <input
+            id="title"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="e.g., Hackathon First Place"
+            className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:border-emerald-500/50 outline-none transition-colors"
+            required
+          />
         </div>
 
         {/* Submit Button */}
