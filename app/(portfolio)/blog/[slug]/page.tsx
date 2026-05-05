@@ -3,6 +3,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/app/actions/blog";
 import { getReadTime } from "@/app/_utils/helpers";
+import { PORTFOLIO_DATA } from "@/app/_constants";
 
 export default async function BlogPost({
   params,
@@ -80,16 +81,13 @@ export default async function BlogPost({
           </div>
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold text-slate-100 mb-1">
-              Marc Plarisan
+              {PORTFOLIO_DATA.hero.name}
             </h3>
             <p className="text-emerald-500 text-sm font-medium mb-3">
-              Software Engineer
+              {PORTFOLIO_DATA.hero.title}
             </p>
             <p className="text-slate-400 text-sm leading-relaxed">
-              I am a software developer who builds websites, mobile apps, and
-              video games. When I'm not coding, you'll find me lost in a good
-              book or jotting down my thoughts in my journal, balancing personal
-              growth with technical curiosity.
+              {PORTFOLIO_DATA.hero.about}
             </p>
           </div>
         </div>
