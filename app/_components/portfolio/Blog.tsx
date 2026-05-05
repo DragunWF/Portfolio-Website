@@ -2,16 +2,13 @@ import { ChevronRight, Clock } from "lucide-react";
 import Link from "next/link";
 import SectionContainer from "../layout/SectionContainer";
 import { getPublishedBlogs } from "@/app/actions/blog";
-
-function getReadTime(content: string): string {
-  const words = content.trim().split(/\s+/).length;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
-}
+import { getReadTime } from "@/app/_utils/helpers";
 
 function getExcerpt(content: string, maxChars = 120): string {
   const plain = content.replace(/[#*`_>\-\[\]()!]/g, "").trim();
-  return plain.length > maxChars ? plain.slice(0, maxChars).trimEnd() + "…" : plain;
+  return plain.length > maxChars
+    ? plain.slice(0, maxChars).trimEnd() + "…"
+    : plain;
 }
 
 export default async function Blog() {
@@ -48,7 +45,9 @@ export default async function Blog() {
                 />
               ) : (
                 <div className="w-full h-full bg-slate-900 flex items-center justify-center">
-                  <span className="text-slate-700 text-sm font-mono">No cover image</span>
+                  <span className="text-slate-700 text-sm font-mono">
+                    No cover image
+                  </span>
                 </div>
               )}
             </div>

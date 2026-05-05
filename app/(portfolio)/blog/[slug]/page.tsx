@@ -2,12 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/app/actions/blog";
-
-function getReadTime(content: string): string {
-  const words = content.trim().split(/\s+/).length;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
-}
+import { getReadTime } from "@/app/_utils/helpers";
 
 export default async function BlogPost({
   params,
@@ -49,7 +44,7 @@ export default async function BlogPost({
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-12">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 lg:px-8 pb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6 leading-tight">
             {post.title}
           </h1>
@@ -70,12 +65,12 @@ export default async function BlogPost({
       </div>
 
       {/* Main Article Body */}
-      <article className="prose prose-invert prose-slate max-w-none prose-headings:text-slate-100 prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-strong:text-slate-100 prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1 py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-blockquote:border-emerald-500 prose-blockquote:bg-slate-900/30 prose-blockquote:py-2 prose-blockquote:pr-4 mx-auto max-w-3xl px-6 py-16">
+      <article className="prose prose-invert prose-slate mx-auto max-w-3xl px-6 md:px-12 lg:px-0 py-16 prose-headings:text-slate-100 prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-strong:text-slate-100 prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1 py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-blockquote:border-emerald-500 prose-blockquote:bg-slate-900/30 prose-blockquote:py-2 prose-blockquote:pr-4">
         <ReactMarkdown>{post.content ?? ""}</ReactMarkdown>
       </article>
 
       {/* Author Bio Footer */}
-      <div className="max-w-3xl mx-auto px-6 pb-24">
+      <div className="max-w-3xl mx-auto px-6 md:px-12 lg:px-8 pb-24">
         <div className="p-8 bg-slate-900/50 rounded-2xl border border-slate-800 flex flex-col md:flex-row gap-6 items-center md:items-start transition-colors hover:border-slate-700">
           <div className="w-20 h-20 shrink-0 bg-slate-800 rounded-full flex items-center justify-center border-2 border-emerald-500/30 overflow-hidden">
             {/* Fallback avatar shape if no image is provided */}
