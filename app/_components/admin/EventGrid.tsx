@@ -59,11 +59,12 @@ export default function EventGrid({ initialItems }: EventGridProps) {
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      setItems((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
+      const oldIndex = items.findIndex((item) => item.id === active.id);
+      const newIndex = items.findIndex((item) => item.id === over.id);
 
+      if (oldIndex !== -1 && newIndex !== -1) {
         const newItems = arrayMove(items, oldIndex, newIndex);
+        setItems(newItems);
 
         // Prepare items for DB update (map to id and new index)
         const updatedOrder = newItems.map((item, index) => ({
@@ -71,13 +72,11 @@ export default function EventGrid({ initialItems }: EventGridProps) {
           order: index,
         }));
 
-        // Trigger background sync
+        // Trigger background sync outside of the rendering phase
         updateGalleryOrder(updatedOrder).catch((err) => {
           console.error("Failed to sync order to database:", err);
         });
-
-        return newItems;
-      });
+      }
     }
   };
 
