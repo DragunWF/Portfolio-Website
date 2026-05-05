@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { GALLERY_IMAGES } from "../../_constants";
+import Image from "next/image";
+import { getGalleryItems } from "@/app/actions/gallery";
 
 export const metadata = {
   title: "Event Gallery | Marc Plarisan",
@@ -7,7 +8,9 @@ export const metadata = {
     "A masonry gallery of my past events, hackathons, and speaking engagements.",
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const galleryItems = await getGalleryItems();
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 py-12 px-6 md:px-8 max-w-7xl mx-auto">
       {/* Sticky Header */}
@@ -28,29 +31,22 @@ export default function GalleryPage() {
       </header>
 
       {/* Masonry Grid */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mt-12">
-        {GALLERY_IMAGES.map((item) => (
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 mt-12">
+        {galleryItems.map((item) => (
           <div
             key={item.id}
-            className={`relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 group break-inside-avoid transition-colors duration-300 hover:border-emerald-500 ${item.heightClass}`}
+            className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 group break-inside-avoid mb-6 transition-colors duration-300 hover:border-emerald-500"
           >
-            {/* Image Placeholder - renders an empty dark div if no image */}
-            {item.image ? (
-              <img
-                src={item.image}
+            {/* Image */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <Image
+                src={item.imageUrl}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-            ) : (
-              <div className="absolute inset-0 w-full h-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center">
-                <span className="text-slate-700 font-mono text-sm tracking-widest uppercase">
-                  [ Image Placeholder ]
-                </span>
-                <span className="text-slate-800 mt-2 text-xs">
-                  {item.title}
-                </span>
-              </div>
-            )}
+            </div>
 
             {/* Default Overlay - opaque until hovered */}
             <div className="absolute inset-0 bg-slate-950/80 transition-opacity duration-300 group-hover:opacity-0" />
@@ -59,7 +55,10 @@ export default function GalleryPage() {
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <h4 className="text-emerald-500 font-bold mb-1">{item.title}</h4>
               <p className="text-slate-300 text-sm leading-relaxed">
-                {item.description}
+                {new Date(item.date).toLocaleDateString(undefined, {
+                  month: "long",
+                  year: "numeric",
+                })}
               </p>
             </div>
           </div>
