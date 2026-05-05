@@ -51,11 +51,12 @@ export default function Contact() {
 
         <div className="max-w-2xl mx-auto text-center mb-10">
           <h3 className="text-3xl font-bold text-slate-100 mb-4 tracking-tight">
-            Let's Build Something
+            Contact the Developer
           </h3>
           <p className="text-slate-400 text-lg">
-            Whether it's an enterprise backend or an indie game, I'm always open
-            to discussing new projects.
+            Let&apos;s build something efficient. Whether it&apos;s a full-stack
+            web app, a cross-platform mobile app, or just a general inquiry,
+            I&apos;d love to hear from you.
           </p>
         </div>
 
@@ -163,7 +164,7 @@ export default function Contact() {
               Message Delivered!
             </h3>
             <p className="text-slate-400 text-base mb-8 leading-relaxed">
-              Thanks for reaching out. I've received your missive and will
+              Thanks for reaching out! I&apos;ve received your message and will
               respond soon.
             </p>
             <button
