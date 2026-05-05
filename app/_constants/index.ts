@@ -1,5 +1,6 @@
 import { PortfolioData } from "../_types";
 
+// Skills Section
 export const CURRENT_FOCUS = [
   "SAP ABAP",
   "Python",
@@ -39,6 +40,8 @@ export const FULL_ARCHIVE = [
   "Discord.py",
   "Microsoft SQL Server",
 ];
+
+// Primary Portfolio Data
 export const PORTFOLIO_DATA: PortfolioData = {
   hero: {
     name: "Marc Plarisan",
@@ -83,41 +86,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
       iconName: "newspaper",
     },
   ],
-  skills: [
-    // Programming, Scripting, & Markup Languages
-    { id: "sap-abap", name: "SAP ABAP" },
-    { id: "py", name: "Python" },
-    { id: "java", name: "Java" },
-    { id: "cs", name: "C#" },
-    { id: "c", name: "C" },
-    { id: "lua", name: "Lua" },
-    { id: "js", name: "JavaScript" },
-    { id: "typescript", name: "TypeScript" },
-    { id: "css", name: "CSS" },
-    { id: "html", name: "HTML" },
-
-    // Libraries, Frameworks, & Databases
-    { id: "express", name: "Express.js" },
-    { id: "react", name: "React" },
-    { id: "jquery", name: "jQuery" },
-    { id: "expo", name: "Expo" },
-    { id: "bootstrap", name: "Bootstrap" },
-    { id: "flask", name: "Flask" },
-    { id: "django", name: "Django" },
-    { id: "firebase", name: "Firebase" },
-    { id: "mongodb", name: "MongoDB" },
-    { id: "sqlite", name: "SQLite" },
-    { id: "mysql", name: "MySQL" },
-    { id: "sqlserver", name: "SQL Server" },
-    { id: "selenium", name: "Selenium" },
-    { id: "unity", name: "Unity" },
-    { id: "godot", name: "Godot" },
-    { id: "pygame", name: "Pygame" },
-    { id: "dotnet", name: ".NET" },
-
-    // Environment & Tools
-    { id: "git", name: "Git" },
-  ],
+  skills: {
+    currentFocus: CURRENT_FOCUS,
+    fullArchive: FULL_ARCHIVE,
+  },
   experience: [
     {
       id: "accenture-intern",

@@ -12,9 +12,9 @@ export interface HighlightData {
   iconName: string;
 }
 
-export interface SkillData {
-  id: string;
-  name: string;
+export interface SkillSet {
+  currentFocus: string[];
+  fullArchive: string[];
 }
 
 export interface ExperienceData {
@@ -78,7 +78,7 @@ export interface GalleryData {
 export interface PortfolioData {
   hero: HeroData;
   highlights: HighlightData[];
-  skills: SkillData[];
+  skills: SkillSet;
   experience: ExperienceData[];
   education: EducationData[];
   volunteering: VolunteerData[];

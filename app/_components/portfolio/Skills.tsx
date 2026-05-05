@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { CURRENT_FOCUS, FULL_ARCHIVE } from "../../_constants";
+import { PORTFOLIO_DATA } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
 
 export default function Skills() {
   const [view, setView] = useState<"focus" | "archive">("focus");
 
-  const displayedSkills = view === "focus" ? CURRENT_FOCUS : FULL_ARCHIVE;
+  const { currentFocus, fullArchive } = PORTFOLIO_DATA.skills;
+  const displayedSkills = view === "focus" ? currentFocus : fullArchive;
 
   return (
     <SectionContainer id="skills" className="py-8 scroll-mt-20">
@@ -42,9 +43,9 @@ export default function Skills() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {displayedSkills.map((skill, index) => {
           // If we're expanding to the archive, reset the delay for the new items so they animate immediately
-          const isNewItem = view === "archive" && index >= CURRENT_FOCUS.length;
+          const isNewItem = view === "archive" && index >= currentFocus.length;
           const staggerDelay = isNewItem
-            ? (index - CURRENT_FOCUS.length) * 30
+            ? (index - currentFocus.length) * 30
             : index * 30;
 
           return (
