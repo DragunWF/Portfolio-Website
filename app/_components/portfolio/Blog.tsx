@@ -15,7 +15,7 @@ function getExcerpt(content: string, maxChars = 120): string {
 }
 
 export default async function Blog() {
-  const recentBlogs = await getPublishedBlogs(2);
+  const { blogs: recentBlogs } = await getPublishedBlogs(1, 2);
 
   return (
     <SectionContainer id="blog" className="py-8 scroll-mt-20">

@@ -7,9 +7,12 @@ import { useRouter } from "next/navigation";
 interface BlogTableProps {
   columns: string[];
   data: any[];
+  totalPages?: number;
+  currentPage?: number;
 }
 
-export default function BlogTable({ columns, data }: BlogTableProps) {
+export default function BlogTable({ columns, data, totalPages, currentPage }: BlogTableProps) {
+
   const router = useRouter();
 
   const handleEdit = (id: string) => {
@@ -22,6 +25,8 @@ export default function BlogTable({ columns, data }: BlogTableProps) {
       data={data}
       onEdit={handleEdit}
       onDelete={deleteBlog}
+      totalPages={totalPages}
+      currentPage={currentPage}
     />
   );
 }

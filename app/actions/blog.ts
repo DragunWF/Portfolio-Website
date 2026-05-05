@@ -26,33 +26,55 @@ interface UpdateBlogData {
 // ── Actions ───────────────────────────────────────────────────────────────────
 
 /**
- * Fetch all blog posts ordered by creation date (newest first).
+ * Fetch all blog posts ordered by creation date (newest first) with pagination.
  */
-export async function getBlogs() {
+export async function getBlogs(page = 1, limit = 10) {
   try {
-    return await prisma.blog.findMany({
-      orderBy: { createdAt: "desc" },
-    });
+    const skip = (page - 1) * limit;
+    
+    const [blogs, totalCount] = await Promise.all([
+      prisma.blog.findMany({
+        orderBy: { createdAt: "desc" },
+        skip,
+        take: limit,
+      }),
+      prisma.blog.count(),
+    ]);
+
+    const totalPages = Math.max(1, Math.ceil(totalCount / limit));
+
+    return { blogs, totalPages, currentPage: page };
   } catch (error) {
     console.error("[getBlogs] Failed to fetch blogs:", error);
-    return [];
+    return { blogs: [], totalPages: 1, currentPage: page };
   }
 }
 
 /**
- * Fetch all published blog posts, newest first.
- * Optionally pass a limit to retrieve only the first N posts.
+ * Fetch all published blog posts, newest first, with pagination.
  */
-export async function getPublishedBlogs(limit?: number) {
+export async function getPublishedBlogs(page = 1, limit = 6) {
   try {
-    return await prisma.blog.findMany({
-      where: { status: "PUBLISHED" },
-      orderBy: { createdAt: "desc" },
-      ...(limit !== undefined && { take: limit }),
-    });
+    const skip = (page - 1) * limit;
+
+    const [blogs, totalCount] = await Promise.all([
+      prisma.blog.findMany({
+        where: { status: "PUBLISHED" },
+        orderBy: { createdAt: "desc" },
+        skip,
+        take: limit,
+      }),
+      prisma.blog.count({
+        where: { status: "PUBLISHED" },
+      }),
+    ]);
+
+    const totalPages = Math.max(1, Math.ceil(totalCount / limit));
+
+    return { blogs, totalPages, currentPage: page };
   } catch (error) {
     console.error("[getPublishedBlogs] Failed to fetch published blogs:", error);
-    return [];
+    return { blogs: [], totalPages: 1, currentPage: page };
   }
 }
 

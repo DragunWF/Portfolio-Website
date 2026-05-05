@@ -5,8 +5,14 @@ import BlogTable from "./BlogTable";
 
 const TABLE_COLUMNS = ["Title", "Status", "Date Created", "Actions"];
 
-export default async function BlogDashboardPage() {
-  const blogs = await getBlogs();
+export default async function BlogDashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
+  const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
+  const { blogs, totalPages, currentPage } = await getBlogs(page, 10);
 
   const tableData = blogs.map((blog) => ({
     id: blog.id,
@@ -54,7 +60,8 @@ export default async function BlogDashboardPage() {
       </div>
 
       {/* Data Table Wrapper (Client Component) */}
-      <BlogTable columns={TABLE_COLUMNS} data={tableData} />
+      <BlogTable columns={TABLE_COLUMNS} data={tableData} totalPages={totalPages} currentPage={currentPage} />
     </div>
+
   );
 }

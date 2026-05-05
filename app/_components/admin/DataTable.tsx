@@ -2,13 +2,18 @@
 
 import { useState } from "react";
 import { AlertTriangle, Edit, Trash2 } from "lucide-react";
+import Link from "next/link";
+
 
 interface DataTableProps {
   columns: string[];
   data: Record<string, unknown>[];
   onEdit: (id: string) => void;
   onDelete: (id: string) => Promise<unknown> | void;
+  totalPages?: number;
+  currentPage?: number;
 }
+
 
 function StatusBadge({ status }: { status: string }) {
   if (status === "Published") {
@@ -30,7 +35,10 @@ export default function DataTable({
   data,
   onEdit,
   onDelete,
+  totalPages,
+  currentPage,
 }: DataTableProps) {
+
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -110,6 +118,41 @@ export default function DataTable({
           </tbody>
         </table>
       </div>
+
+      {/* ── Pagination ── */}
+      {totalPages !== undefined && currentPage !== undefined && totalPages > 1 && (
+        <div className="flex items-center justify-between mt-4">
+          <p className="text-sm text-slate-400 font-medium">
+            Page {currentPage} of {totalPages}
+          </p>
+          <div className="flex items-center gap-2">
+            <Link
+              href={currentPage === 1 ? "#" : `?page=${currentPage - 1}`}
+              className={`px-3 py-1.5 text-sm font-medium rounded-md border border-slate-800 transition-colors ${
+                currentPage === 1
+                  ? "text-slate-500 opacity-50 cursor-not-allowed bg-slate-900/20"
+                  : "text-slate-300 hover:text-emerald-500 hover:border-emerald-500/50 bg-slate-900/50"
+              }`}
+              aria-disabled={currentPage === 1}
+              tabIndex={currentPage === 1 ? -1 : undefined}
+            >
+              Prev
+            </Link>
+            <Link
+              href={currentPage === totalPages ? "#" : `?page=${currentPage + 1}`}
+              className={`px-3 py-1.5 text-sm font-medium rounded-md border border-slate-800 transition-colors ${
+                currentPage === totalPages
+                  ? "text-slate-500 opacity-50 cursor-not-allowed bg-slate-900/20"
+                  : "text-slate-300 hover:text-emerald-500 hover:border-emerald-500/50 bg-slate-900/50"
+              }`}
+              aria-disabled={currentPage === totalPages}
+              tabIndex={currentPage === totalPages ? -1 : undefined}
+            >
+              Next
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* ── Delete Confirmation Modal ── */}
       {deletingId !== null && (
