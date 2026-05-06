@@ -1,12 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { getGalleryItems } from "@/app/actions/gallery";
 import EventGrid from "@/app/_components/admin/EventGrid";
 import { Plus } from "lucide-react";
 import Link from "next/link";
+import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 
-export default async function GalleryAdminPage() {
-  const items = await getGalleryItems();
-
+export default function GalleryAdminPage() {
   return (
     <main className="p-8 max-w-7xl mx-auto w-full">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
@@ -26,8 +25,15 @@ export default async function GalleryAdminPage() {
       </header>
 
       <section>
-        <EventGrid initialItems={items} />
+        <Suspense fallback={<ManaCoreLoader />}>
+          <GalleryContent />
+        </Suspense>
       </section>
     </main>
   );
+}
+
+async function GalleryContent() {
+  const items = await getGalleryItems();
+  return <EventGrid initialItems={items} />;
 }

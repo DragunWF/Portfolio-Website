@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import { getPublishedBlogs } from "@/app/actions/blog";
+import { Suspense } from "react";
+import { BlogSkeleton } from "@/app/_components/ui/Skeletons";
 
 export const metadata = {
   title: "Blog | Marc Plarisan",
@@ -21,18 +23,14 @@ function getExcerpt(content: string, maxChars = 120): string {
     : plain;
 }
 
-export default async function BlogPage({
+export default function BlogPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const resolvedParams = await searchParams;
-  const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
-  const { blogs, totalPages, currentPage } = await getPublishedBlogs(page, 6);
-
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 py-12 px-6 md:px-8 max-w-7xl mx-auto">
-      {/* Sticky Header */}
+      {/* Sticky Header — Rendered instantly */}
       <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md pt-4 pb-6 border-b border-slate-800/60 mb-12">
         <Link
           href="/"
@@ -46,6 +44,32 @@ export default async function BlogPage({
         </div>
       </header>
 
+      <Suspense
+        fallback={
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(6)].map((_, i) => (
+              <BlogSkeleton key={i} />
+            ))}
+          </div>
+        }
+      >
+        <BlogListContent searchParams={searchParams} />
+      </Suspense>
+    </main>
+  );
+}
+
+async function BlogListContent({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
+  const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
+  const { blogs, totalPages, currentPage } = await getPublishedBlogs(page, 6);
+
+  return (
+    <>
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.map((post) => (
@@ -144,6 +168,6 @@ export default async function BlogPage({
           </Link>
         </div>
       )}
-    </main>
+    </>
   );
 }
