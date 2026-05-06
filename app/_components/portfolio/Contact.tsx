@@ -10,6 +10,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -20,8 +21,23 @@ export default function Contact() {
     setIsSubmitting(true);
     setError(null);
 
+    const cleanName = name.trim();
+    const cleanEmail = email.trim();
+    const cleanMessage = message.trim();
+
+    if (!cleanName || !cleanEmail || !cleanMessage) {
+      setError("Please fill in all the fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const result = await sendContactMessage({ name, email, message });
+      const result = await sendContactMessage({
+        name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
+        honeypot: honeypot,
+      });
 
       if (result.success) {
         setIsSuccess(true);
@@ -40,6 +56,7 @@ export default function Contact() {
     setName("");
     setEmail("");
     setMessage("");
+    setHoneypot("");
     setError(null);
   };
 
@@ -70,6 +87,18 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="max-w-xl mx-auto flex flex-col gap-5"
         >
+          {/* Honeypot Field - Hidden from users, visible to bots */}
+          <input
+            type="text"
+            name="subject"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
           <div className="flex flex-col gap-2">
             <label
               htmlFor="name"
@@ -85,7 +114,7 @@ export default function Contact() {
               onChange={(e) => setName(e.target.value)}
               disabled={isSubmitting}
               className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
-              placeholder="John Doe"
+              placeholder="Marc Plarisan"
             />
           </div>
 
@@ -104,7 +133,7 @@ export default function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               disabled={isSubmitting}
               className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
-              placeholder="john@example.com"
+              placeholder="marc@example.com"
             />
           </div>
 

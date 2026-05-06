@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Terminal, 
-  Briefcase, 
-  GraduationCap, 
-  Trophy, 
-  Users, 
-  Lock, 
-  FileText, 
-  PenTool, 
-  Image 
+import {
+  Terminal,
+  Briefcase,
+  GraduationCap,
+  Trophy,
+  Users,
+  Lock,
+  FileText,
+  PenTool,
+  Image,
+  Upload,
+  Mail,
 } from "lucide-react";
 
 const portfolioLinks = [
@@ -29,6 +31,11 @@ const blogLinks = [
 
 const mediaLinks = [
   { href: "/admin/gallery", label: "Event Gallery", icon: Image },
+  { href: "/admin/gallery/new", label: "Upload Image", icon: Upload },
+];
+
+const communicationLinks = [
+  { href: "/admin/messages", label: "Inbox", icon: Mail },
 ];
 
 export default function SidebarNav() {
@@ -36,8 +43,9 @@ export default function SidebarNav() {
 
   return (
     <nav className="flex-1 overflow-y-auto py-4">
+      {/* NOTE: Feature to be considered for implementation (tentative) */}
       {/* Group 1: Portfolio Data (Locked) */}
-      <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
+      {/* <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
         Portfolio Data
       </h3>
       <ul className="space-y-0.5 mb-6">
@@ -51,7 +59,7 @@ export default function SidebarNav() {
             <Lock size={12} className="ml-auto" />
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Group 2: Blog */}
       <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
@@ -59,9 +67,10 @@ export default function SidebarNav() {
       </h3>
       <ul className="space-y-0.5 mb-6">
         {blogLinks.map(({ href, label, icon: Icon }) => {
-          const isActive = 
-            href === "/admin/blog" 
-              ? pathname.startsWith("/admin/blog") && pathname !== "/admin/blog/new"
+          const isActive =
+            href === "/admin/blog"
+              ? pathname.startsWith("/admin/blog") &&
+                pathname !== "/admin/blog/new"
               : pathname === href;
           return (
             <li key={href}>
@@ -88,6 +97,31 @@ export default function SidebarNav() {
       <ul className="space-y-0.5">
         {mediaLinks.map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href;
+          return (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`flex items-center gap-3 px-6 py-2 transition-colors border-l-2 ${
+                  isActive
+                    ? "bg-slate-900 border-emerald-500 text-emerald-500"
+                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 border-transparent"
+                }`}
+              >
+                <Icon size={16} />
+                <span>{label}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* Group 4: Communications */}
+      <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 mt-6 uppercase">
+        Communications
+      </h3>
+      <ul className="space-y-0.5">
+        {communicationLinks.map(({ href, label, icon: Icon }) => {
+          const isActive = pathname.startsWith(href);
           return (
             <li key={href}>
               <Link

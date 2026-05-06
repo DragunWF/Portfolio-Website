@@ -1,10 +1,12 @@
 import Link from "next/link";
 import SidebarNav from "@/app/_components/admin/SidebarNav";
-import { Search, LogOut } from "lucide-react";
+import AdminBreadcrumbs from "@/app/_components/admin/AdminBreadcrumbs";
+import { LogOut } from "lucide-react";
 import { Metadata } from "next";
+import { signOut } from "@/app/login/actions";
 
 export const metadata: Metadata = {
-  title: "Marc Plarisan | Admin Dashboard",
+  title: "Marc Plarisan | Admin",
   description: "Admin Dashboard for Marc Plarisan's Portfolio Website.",
 };
 
@@ -39,13 +41,15 @@ export default function AdminLayout({
             <span className="text-xs text-slate-500">Supabase: Connected</span>
           </div>
           {/* Logout */}
-          <button
-            type="button"
-            className="mt-4 flex items-center gap-2 text-slate-500 hover:text-red-400 transition-colors"
-          >
-            <LogOut size={16} />
-            <span>Log Out</span>
-          </button>
+          <form action={signOut}>
+            <button
+              type="submit"
+              className="mt-4 flex items-center gap-2 text-slate-500 hover:text-red-400 transition-colors w-full cursor-pointer"
+            >
+              <LogOut size={16} />
+              <span>Log Out</span>
+            </button>
+          </form>
         </div>
       </aside>
 
@@ -54,22 +58,7 @@ export default function AdminLayout({
         {/* Top HUD */}
         <header className="h-16 w-full border-b border-slate-800 flex items-center justify-between px-8 shrink-0">
           {/* Left: Breadcrumbs */}
-          <span className="text-slate-500 font-mono">
-            Admin / System / Ready
-          </span>
-
-          {/* Center: Command Palette Search */}
-          <div className="relative">
-            <Search
-              size={14}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
-            />
-            <input
-              type="text"
-              placeholder="Search or jump to... (Cmd + K)"
-              className="bg-slate-900 border border-slate-800 rounded-md py-1.5 pl-9 pr-4 w-64 text-slate-400 focus:border-emerald-500/50 outline-none placeholder:text-slate-600 text-xs"
-            />
-          </div>
+          <AdminBreadcrumbs />
 
           {/* Right: Contextual Actions Placeholder */}
           <div />

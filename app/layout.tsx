@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marc Plarisan | Software Engineer",
-  description: "Interactive Developer Portfolio showcasing enterprise-level backend expertise and game development achievements.",
+  title: "Marc Plarisan",
+  description:
+    "Interactive Developer Portfolio showcasing enterprise-level backend expertise and game development achievements.",
 };
 
 export default function RootLayout({
@@ -30,9 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-200">
         <ArcaneBackground />
-        <main className="relative z-10 flex-1">
-          {children}
-        </main>
+        <main className="relative z-10 flex-1">{children}</main>
       </body>
     </html>
   );

@@ -20,7 +20,9 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import Image from "next/image";
 import { Edit, Trash2 } from "lucide-react";
-import { updateGalleryOrder } from "@/app/actions/gallery";
+import { updateGalleryOrder, deleteGalleryItem } from "@/app/actions/gallery";
+import { useRouter } from "next/navigation";
+import DeleteModal from "./DeleteModal";
 
 export interface GalleryItem {
   id: string;
@@ -37,6 +39,8 @@ interface EventGridProps {
 export default function EventGrid({ initialItems }: EventGridProps) {
   const [items, setItems] = useState(initialItems);
   const [isMounted, setIsMounted] = React.useState(false);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const router = useRouter();
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -80,31 +84,84 @@ export default function EventGrid({ initialItems }: EventGridProps) {
     }
   };
 
+  const handleEdit = (id: string) => {
+    router.push(`/admin/gallery/${id}`);
+  };
+
+  const handleDeleteClick = (id: string) => {
+    setDeletingId(id);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!deletingId) return;
+
+    // Optimistic UI update
+    const previousItems = [...items];
+    setItems((prev) => prev.filter((item) => item.id !== deletingId));
+
+    try {
+      const result = await deleteGalleryItem(deletingId);
+      if (!result.success) {
+        // Rollback
+        setItems(previousItems);
+        console.error("Failed to delete item:", result.error);
+      } else {
+        router.refresh();
+      }
+    } catch (err) {
+      setItems(previousItems);
+      console.error("Failed to delete item:", err);
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <SortableContext
-          items={items.map((i) => i.id)}
-          strategy={rectSortingStrategy}
-        >
-          {items.map((item) => (
-            <SortableGalleryCard key={item.id} item={item} />
-          ))}
-        </SortableContext>
-      </div>
-    </DndContext>
+    <>
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <SortableContext
+            items={items.map((i) => i.id)}
+            strategy={rectSortingStrategy}
+          >
+            {items.map((item) => (
+              <SortableGalleryCard
+                key={item.id}
+                item={item}
+                onEdit={() => handleEdit(item.id)}
+                onDelete={() => handleDeleteClick(item.id)}
+              />
+            ))}
+          </SortableContext>
+        </div>
+      </DndContext>
+
+      <DeleteModal
+        isOpen={!!deletingId}
+        onClose={() => setDeletingId(null)}
+        onConfirm={handleConfirmDelete}
+        title="Delete Milestone"
+        description="Are you sure you want to delete this milestone? This action cannot be undone."
+      />
+    </>
   );
 }
 
 interface SortableGalleryCardProps {
   item: GalleryItem;
+  onEdit: () => void;
+  onDelete: () => void;
 }
 
-function SortableGalleryCard({ item }: SortableGalleryCardProps) {
+function SortableGalleryCard({
+  item,
+  onEdit,
+  onDelete,
+}: SortableGalleryCardProps) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: item.id });
 
@@ -149,7 +206,7 @@ function SortableGalleryCard({ item }: SortableGalleryCardProps) {
           onPointerDown={(e) => e.stopPropagation()} // Prevent dragging when clicking buttons
           onClick={(e) => {
             e.stopPropagation();
-            // Edit logic here
+            onEdit();
           }}
         >
           <Edit className="w-5 h-5" />
@@ -159,7 +216,7 @@ function SortableGalleryCard({ item }: SortableGalleryCardProps) {
           onPointerDown={(e) => e.stopPropagation()} // Prevent dragging when clicking buttons
           onClick={(e) => {
             e.stopPropagation();
-            // Delete logic here
+            onDelete();
           }}
         >
           <Trash2 className="w-5 h-5" />

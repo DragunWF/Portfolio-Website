@@ -2,33 +2,17 @@ import Link from "next/link";
 import { Plus, BookOpen } from "lucide-react";
 import { getBlogs } from "@/app/actions/blog";
 import BlogTable from "./BlogTable";
+import { Suspense } from "react";
+import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 
-const TABLE_COLUMNS = ["Title", "Status", "Date Created", "Actions"];
-
-export default async function BlogDashboardPage({
+export default function BlogDashboardPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const resolvedParams = await searchParams;
-  const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
-  const { blogs, totalPages, currentPage } = await getBlogs(page, 10);
-
-  const tableData = blogs.map((blog) => ({
-    id: blog.id,
-    title: blog.title,
-    status: blog.status === "PUBLISHED" ? "Published" : "Draft",
-    date: blog.createdAt.toLocaleDateString("en-US", {
-      month: "short", day: "numeric", year: "numeric"
-    }),
-  }));
-
-  const publishedCount = blogs.filter((b) => b.status === "PUBLISHED").length;
-  const draftCount = blogs.filter((b) => b.status === "DRAFT").length;
-
   return (
     <div className="p-8 max-w-6xl mx-auto w-full">
-      {/* Page Header */}
+      {/* Page Header — Rendered instantly */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
           <BookOpen className="text-emerald-500" size={22} />
@@ -43,25 +27,70 @@ export default async function BlogDashboardPage({
         </Link>
       </div>
 
+      <Suspense fallback={<ManaCoreLoader />}>
+        <BlogDashboardContent searchParams={searchParams} />
+      </Suspense>
+    </div>
+  );
+}
+
+async function BlogDashboardContent({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
+  const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
+  const { blogs, totalPages, currentPage } = await getBlogs(page, 10);
+
+  const tableData = blogs.map((blog) => ({
+    id: blog.id,
+    title: blog.title,
+    status: blog.status === "PUBLISHED" ? "Published" : "Draft",
+    date: blog.createdAt.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }),
+  }));
+
+  const publishedCount = blogs.filter((b) => b.status === "PUBLISHED").length;
+  const draftCount = blogs.filter((b) => b.status === "DRAFT").length;
+
+  return (
+    <>
       {/* Stats Row */}
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Total Posts</p>
-          <p className="text-2xl font-semibold text-slate-200">{blogs.length}</p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
+            Total Posts
+          </p>
+          <p className="text-2xl font-semibold text-slate-200">
+            {blogs.length}
+          </p>
         </div>
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Published</p>
-          <p className="text-2xl font-semibold text-emerald-500">{publishedCount}</p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
+            Published
+          </p>
+          <p className="text-2xl font-semibold text-emerald-500">
+            {publishedCount}
+          </p>
         </div>
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">Drafts</p>
+          <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
+            Drafts
+          </p>
           <p className="text-2xl font-semibold text-slate-400">{draftCount}</p>
         </div>
       </div>
 
       {/* Data Table Wrapper (Client Component) */}
-      <BlogTable columns={TABLE_COLUMNS} data={tableData} totalPages={totalPages} currentPage={currentPage} />
-    </div>
-
+      <BlogTable
+        data={tableData}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
+    </>
   );
 }

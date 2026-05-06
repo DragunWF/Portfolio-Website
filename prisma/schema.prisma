@@ -39,3 +39,15 @@ model Gallery {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// ─── Contact ───────────────────────────────────────────────────────────────────
+// Stores contact form submissions and acts as a rate-limiting ledger.
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String   @db.Text
+  ip        String
+  createdAt DateTime @default(now())
+}
