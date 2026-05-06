@@ -21,12 +21,22 @@ export default function Contact() {
     setIsSubmitting(true);
     setError(null);
 
+    const cleanName = name.trim();
+    const cleanEmail = email.trim();
+    const cleanMessage = message.trim();
+
+    if (!cleanName || !cleanEmail || !cleanMessage) {
+      setError("Please fill in all the fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const result = await sendContactMessage({
-        name,
-        email,
-        message,
-        honeypot,
+        name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
+        honeypot: honeypot,
       });
 
       if (result.success) {
