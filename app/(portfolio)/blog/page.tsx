@@ -3,25 +3,13 @@ import { Clock } from "lucide-react";
 import { getPublishedBlogs } from "@/app/actions/blog";
 import { Suspense } from "react";
 import { BlogSkeleton } from "@/app/_components/ui/Skeletons";
+import { getReadTime, getExcerpt } from "@/app/_utils/helpers";
 
 export const metadata = {
   title: "Blog | Marc Plarisan",
   description:
     "Technical deep-dives, post-mortems, and engineering lessons learned.",
 };
-
-function getReadTime(content: string): string {
-  const words = content.trim().split(/\s+/).length;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
-}
-
-function getExcerpt(content: string, maxChars = 120): string {
-  const plain = content.replace(/[#*`_>\-\[\]()!]/g, "").trim();
-  return plain.length > maxChars
-    ? plain.slice(0, maxChars).trimEnd() + "…"
-    : plain;
-}
 
 export default function BlogPage({
   searchParams,

@@ -2,14 +2,7 @@ import { ChevronRight, Clock } from "lucide-react";
 import Link from "next/link";
 import SectionContainer from "../layout/SectionContainer";
 import { getPublishedBlogs } from "@/app/actions/blog";
-import { getReadTime } from "@/app/_utils/helpers";
-
-function getExcerpt(content: string, maxChars = 120): string {
-  const plain = content.replace(/[#*`_>\-\[\]()!]/g, "").trim();
-  return plain.length > maxChars
-    ? plain.slice(0, maxChars).trimEnd() + "…"
-    : plain;
-}
+import { getReadTime, getExcerpt } from "@/app/_utils/helpers";
 
 export default async function Blog() {
   const { blogs: recentBlogs } = await getPublishedBlogs(1, 2);
