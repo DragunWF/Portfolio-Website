@@ -5,8 +5,6 @@ import BlogTable from "./BlogTable";
 import { Suspense } from "react";
 import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 
-
-
 export default function BlogDashboardPage({
   searchParams,
 }: {

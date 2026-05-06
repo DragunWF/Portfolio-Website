@@ -6,9 +6,9 @@ import { BlogSkeleton } from "@/app/_components/ui/Skeletons";
 import { getReadTime, getExcerpt } from "@/app/_utils/helpers";
 
 export const metadata = {
-  title: "Blog | Marc Plarisan",
+  title: "Marc Plarisan | Blog",
   description:
-    "Technical deep-dives, post-mortems, and engineering lessons learned.",
+    "Technical deep-dives, post-mortems, personal writings, and lessons learned.",
 };
 
 export default function BlogPage({

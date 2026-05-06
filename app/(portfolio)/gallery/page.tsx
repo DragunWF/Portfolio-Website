@@ -5,7 +5,7 @@ import { GallerySkeleton } from "@/app/_components/ui/Skeletons";
 import GalleryGrid from "@/app/_components/portfolio/GalleryGrid";
 
 export const metadata = {
-  title: "Event Gallery | Marc Plarisan",
+  title: "Marc Plarisan | Event Gallery",
   description:
     "A masonry gallery of my past events, hackathons, and speaking engagements.",
 };

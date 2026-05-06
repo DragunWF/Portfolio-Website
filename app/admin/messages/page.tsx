@@ -6,7 +6,7 @@ import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Inbox | Admin Dashboard",
+  title: "Marc Plarisan | Admin",
   description: "View and manage contact form submissions.",
 };
 

@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import { signOut } from "@/app/login/actions";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard | Marc Plarisan",
+  title: "Marc Plarisan | Admin",
   description: "Admin Dashboard for Marc Plarisan's Portfolio Website.",
 };
 
