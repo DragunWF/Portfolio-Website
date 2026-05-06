@@ -83,14 +83,14 @@ export default function DataTable({
                       <button
                         onClick={() => onEdit(row.id as string)}
                         aria-label={`Edit row ${row.id}`}
-                        className="text-slate-500 hover:text-emerald-500 transition-colors"
+                        className="text-slate-500 hover:text-emerald-500 transition-colors cursor-pointer"
                       >
                         <Edit size={15} />
                       </button>
                       <button
                         onClick={() => setDeletingId(row.id as string)}
                         aria-label={`Delete row ${row.id}`}
-                        className="text-slate-500 hover:text-red-400 transition-colors"
+                        className="text-slate-500 hover:text-red-400 transition-colors cursor-pointer"
                       >
                         <Trash2 size={15} />
                       </button>
