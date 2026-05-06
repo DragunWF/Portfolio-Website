@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SidebarNav from "@/app/_components/admin/SidebarNav";
 import AdminBreadcrumbs from "@/app/_components/admin/AdminBreadcrumbs";
-import { Search, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
