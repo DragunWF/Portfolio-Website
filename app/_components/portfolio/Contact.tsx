@@ -10,6 +10,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -21,7 +22,12 @@ export default function Contact() {
     setError(null);
 
     try {
-      const result = await sendContactMessage({ name, email, message });
+      const result = await sendContactMessage({
+        name,
+        email,
+        message,
+        honeypot,
+      });
 
       if (result.success) {
         setIsSuccess(true);
@@ -40,6 +46,7 @@ export default function Contact() {
     setName("");
     setEmail("");
     setMessage("");
+    setHoneypot("");
     setError(null);
   };
 
@@ -70,6 +77,18 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="max-w-xl mx-auto flex flex-col gap-5"
         >
+          {/* Honeypot Field - Hidden from users, visible to bots */}
+          <input
+            type="text"
+            name="subject"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
           <div className="flex flex-col gap-2">
             <label
               htmlFor="name"
