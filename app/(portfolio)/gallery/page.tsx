@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getGalleryItems } from "@/app/actions/gallery";
 import { Suspense } from "react";
 import { GallerySkeleton } from "@/app/_components/ui/Skeletons";
+import GalleryGrid from "@/app/_components/portfolio/GalleryGrid";
 
 export const metadata = {
   title: "Event Gallery | Marc Plarisan",
@@ -13,8 +13,8 @@ export const metadata = {
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 py-12 px-6 md:px-8 max-w-7xl mx-auto">
-      {/* Sticky Header — Rendered instantly */}
-      <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md pt-4 pb-6 border-b border-slate-800/60 mb-12">
+      {/* Sticky Header — Sticked below Navbar (h-16) */}
+      <header className="sticky top-16 z-40 bg-slate-950/90 backdrop-blur-md pt-4 pb-6 border-b border-slate-800/60 mb-12">
         <Link
           href="/"
           className="inline-block text-slate-500 hover:text-emerald-500 transition-colors text-sm font-medium mb-6"
@@ -31,11 +31,11 @@ export default function GalleryPage() {
 
       <Suspense
         fallback={
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 mt-12 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {[...Array(6)].map((_, i) => (
               <GallerySkeleton
                 key={i}
-                className="break-inside-avoid mb-6"
+                className="mb-6"
                 style={{ aspectRatio: "4/3" }}
               />
             ))}
@@ -53,34 +53,6 @@ async function GalleryContent() {
 
   return (
     /* Masonry Grid */
-    <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 mt-12">
-      {galleryItems.map((item) => (
-        <div
-          key={item.id}
-          className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 group break-inside-avoid mb-6 transition-colors duration-300 hover:border-emerald-500"
-          style={{ aspectRatio: "4/3" }}
-        >
-          {/* Image */}
-          <Image
-            src={item.imageUrl}
-            alt={item.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-
-          {/* Caption Slide-up */}
-          <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-            <h4 className="text-emerald-500 font-bold mb-1">{item.title}</h4>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              {new Date(item.date).toLocaleDateString(undefined, {
-                month: "long",
-                year: "numeric",
-              })}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <GalleryGrid items={galleryItems} layout="full" />
   );
 }
