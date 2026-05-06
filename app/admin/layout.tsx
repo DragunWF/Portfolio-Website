@@ -3,6 +3,7 @@ import SidebarNav from "@/app/_components/admin/SidebarNav";
 import AdminBreadcrumbs from "@/app/_components/admin/AdminBreadcrumbs";
 import { LogOut } from "lucide-react";
 import { Metadata } from "next";
+import { signOut } from "@/app/login/actions";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard | Marc Plarisan",
@@ -40,13 +41,15 @@ export default function AdminLayout({
             <span className="text-xs text-slate-500">Supabase: Connected</span>
           </div>
           {/* Logout */}
-          <button
-            type="button"
-            className="mt-4 flex items-center gap-2 text-slate-500 hover:text-red-400 transition-colors"
-          >
-            <LogOut size={16} />
-            <span>Log Out</span>
-          </button>
+          <form action={signOut}>
+            <button
+              type="submit"
+              className="mt-4 flex items-center gap-2 text-slate-500 hover:text-red-400 transition-colors w-full cursor-pointer"
+            >
+              <LogOut size={16} />
+              <span>Log Out</span>
+            </button>
+          </form>
         </div>
       </aside>
 
