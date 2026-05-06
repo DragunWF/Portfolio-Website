@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Hero from "../_components/portfolio/Hero";
 import Highlights from "../_components/portfolio/Highlights";
 import Skills from "../_components/portfolio/Skills";
@@ -10,6 +11,8 @@ import Blog from "../_components/portfolio/Blog";
 import Gallery from "../_components/portfolio/Gallery";
 import Contact from "../_components/portfolio/Contact";
 import Footer from "../_components/layout/Footer";
+import BlogFallback from "../_components/fallbacks/BlogFallback";
+import GalleryFallback from "../_components/fallbacks/GalleryFallback";
 
 export default function PortfolioPage() {
   return (
@@ -24,8 +27,12 @@ export default function PortfolioPage() {
           <Projects />
           <Achievements />
           <Volunteering />
-          <Blog />
-          <Gallery />
+          <Suspense fallback={<BlogFallback />}>
+            <Blog />
+          </Suspense>
+          <Suspense fallback={<GalleryFallback />}>
+            <Gallery />
+          </Suspense>
           <Contact />
         </div>
       </div>
