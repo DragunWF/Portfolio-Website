@@ -13,6 +13,7 @@ import {
   PenTool,
   Image,
   Upload,
+  Mail,
 } from "lucide-react";
 
 const portfolioLinks = [
@@ -31,6 +32,10 @@ const blogLinks = [
 const mediaLinks = [
   { href: "/admin/gallery", label: "Event Gallery", icon: Image },
   { href: "/admin/gallery/new", label: "Upload Image", icon: Upload },
+];
+
+const communicationLinks = [
+  { href: "/admin/messages", label: "Inbox", icon: Mail },
 ];
 
 export default function SidebarNav() {
@@ -92,6 +97,31 @@ export default function SidebarNav() {
       <ul className="space-y-0.5">
         {mediaLinks.map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href;
+          return (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`flex items-center gap-3 px-6 py-2 transition-colors border-l-2 ${
+                  isActive
+                    ? "bg-slate-900 border-emerald-500 text-emerald-500"
+                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 border-transparent"
+                }`}
+              >
+                <Icon size={16} />
+                <span>{label}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* Group 4: Communications */}
+      <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 mt-6 uppercase">
+        Communications
+      </h3>
+      <ul className="space-y-0.5">
+        {communicationLinks.map(({ href, label, icon: Icon }) => {
+          const isActive = pathname.startsWith(href);
           return (
             <li key={href}>
               <Link

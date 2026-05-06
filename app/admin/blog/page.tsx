@@ -5,7 +5,7 @@ import BlogTable from "./BlogTable";
 import { Suspense } from "react";
 import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 
-const TABLE_COLUMNS = ["Title", "Status", "Date Created", "Actions"];
+
 
 export default function BlogDashboardPage({
   searchParams,
@@ -89,7 +89,6 @@ async function BlogDashboardContent({
 
       {/* Data Table Wrapper (Client Component) */}
       <BlogTable
-        columns={TABLE_COLUMNS}
         data={tableData}
         totalPages={totalPages}
         currentPage={currentPage}

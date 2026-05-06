@@ -50,6 +50,9 @@ export default function AdminBreadcrumbs() {
       } else {
         parts.push("Edit Item");
       }
+    } else if (section === "messages") {
+      parts.push("Communications");
+      parts.push("Inbox");
     } else {
       // Fallback: capitalize the segment name
       parts.push(section.charAt(0).toUpperCase() + section.slice(1));

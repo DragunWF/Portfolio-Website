@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { z } from "zod";
 import { headers } from "next/headers";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/app/_utils/prisma";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -91,4 +92,30 @@ export async function sendContactMessage(formData: {
     console.error("[sendContactMessage] Unexpected error:", error);
     return { success: false, error: "An unexpected error occurred." };
   }
+}
+
+// ── Admin Actions ──────────────────────────────────────────────────────────
+
+export async function getContactMessages(page: number, limit: number) {
+  const skip = (page - 1) * limit;
+
+  const [messages, total] = await Promise.all([
+    prisma.contactMessage.findMany({
+      orderBy: { createdAt: "desc" },
+      skip,
+      take: limit,
+    }),
+    prisma.contactMessage.count(),
+  ]);
+
+  return {
+    messages,
+    totalPages: Math.max(1, Math.ceil(total / limit)),
+    currentPage: page,
+  };
+}
+
+export async function deleteContactMessage(id: string) {
+  await prisma.contactMessage.delete({ where: { id } });
+  revalidatePath("/admin/messages");
 }
