@@ -38,8 +38,9 @@ export default function SidebarNav() {
 
   return (
     <nav className="flex-1 overflow-y-auto py-4">
+      {/* NOTE: Feature to be considered for implementation (tentative) */}
       {/* Group 1: Portfolio Data (Locked) */}
-      <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
+      {/* <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
         Portfolio Data
       </h3>
       <ul className="space-y-0.5 mb-6">
@@ -53,7 +54,7 @@ export default function SidebarNav() {
             <Lock size={12} className="ml-auto" />
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Group 2: Blog */}
       <h3 className="px-6 text-xs font-mono text-slate-500 mb-2 uppercase">
