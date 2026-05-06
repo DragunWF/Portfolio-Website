@@ -1,12 +1,18 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-fade-in-up: fade-in-up 0.3s ease-out both;
   --animate-shimmer: shimmer 1.5s infinite;
+}
+
+@layer base {
+  ::selection {
+    background-color: theme("colors.emerald.500 / 30%");
+    color: theme("colors.emerald.300");
+  }
 }
 
 html {
