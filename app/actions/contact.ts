@@ -24,7 +24,7 @@ export async function sendContactMessage(formData: {
     const parsedData = contactSchema.safeParse(formData);
 
     if (!parsedData.success) {
-      return { success: false, error: parsedData.error.errors[0].message };
+      return { success: false, error: parsedData.error.issues[0].message };
     }
 
     const { name, email, message, honeypot } = parsedData.data;
