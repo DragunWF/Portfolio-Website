@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Terminal, 
-  Briefcase, 
-  GraduationCap, 
-  Trophy, 
-  Users, 
-  Lock, 
-  FileText, 
-  PenTool, 
-  Image 
+import {
+  Terminal,
+  Briefcase,
+  GraduationCap,
+  Trophy,
+  Users,
+  Lock,
+  FileText,
+  PenTool,
+  Image,
+  Upload,
 } from "lucide-react";
 
 const portfolioLinks = [
@@ -29,6 +30,7 @@ const blogLinks = [
 
 const mediaLinks = [
   { href: "/admin/gallery", label: "Event Gallery", icon: Image },
+  { href: "/admin/gallery/new", label: "Upload Image", icon: Upload },
 ];
 
 export default function SidebarNav() {
@@ -59,9 +61,10 @@ export default function SidebarNav() {
       </h3>
       <ul className="space-y-0.5 mb-6">
         {blogLinks.map(({ href, label, icon: Icon }) => {
-          const isActive = 
-            href === "/admin/blog" 
-              ? pathname.startsWith("/admin/blog") && pathname !== "/admin/blog/new"
+          const isActive =
+            href === "/admin/blog"
+              ? pathname.startsWith("/admin/blog") &&
+                pathname !== "/admin/blog/new"
               : pathname === href;
           return (
             <li key={href}>
