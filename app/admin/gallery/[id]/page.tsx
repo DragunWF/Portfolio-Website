@@ -33,9 +33,9 @@ export default async function EditGalleryPage({
           <ArrowLeft size={16} />
           Back to Gallery
         </Link>
-        <h1 className="text-3xl font-bold text-slate-200">Edit Milestone</h1>
+        <h1 className="text-3xl font-bold text-slate-200">Edit Event Image</h1>
         <p className="text-slate-400 mt-1">
-          Update the details and image for this milestone.
+          Update the details and image for this event.
         </p>
       </header>
 

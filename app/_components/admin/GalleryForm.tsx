@@ -23,7 +23,9 @@ export default function GalleryForm({ initialData }: GalleryFormProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [file, setFile] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(initialData?.imageUrl || null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(
+    initialData?.imageUrl || null,
+  );
   const [title, setTitle] = useState(initialData?.title || "");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -91,7 +93,7 @@ export default function GalleryForm({ initialData }: GalleryFormProps) {
         router.push("/admin/gallery");
         router.refresh();
       } else {
-        setError(result.error || "Failed to save milestone.");
+        setError(result.error || "Failed to save image.");
         setIsSubmitting(false);
       }
     } catch (err) {
@@ -114,7 +116,7 @@ export default function GalleryForm({ initialData }: GalleryFormProps) {
 
       <div className="flex flex-col">
         <label className="block text-sm font-medium text-slate-300 mb-2">
-          Milestone Image
+          Event Image
         </label>
         <div
           onClick={handleZoneClick}
@@ -189,7 +191,7 @@ export default function GalleryForm({ initialData }: GalleryFormProps) {
             <span>{initialData ? "Updating..." : "Uploading..."}</span>
           </>
         ) : (
-          <span>{initialData ? "Update Milestone" : "Save Milestone"}</span>
+          <span>{initialData ? "Update image" : "Save image"}</span>
         )}
       </button>
     </form>
