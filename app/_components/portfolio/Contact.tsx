@@ -85,7 +85,7 @@ export default function Contact() {
               onChange={(e) => setName(e.target.value)}
               disabled={isSubmitting}
               className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
-              placeholder="John Doe"
+              placeholder="Marc Plarisan"
             />
           </div>
 
@@ -104,7 +104,7 @@ export default function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               disabled={isSubmitting}
               className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
-              placeholder="john@example.com"
+              placeholder="marc@example.com"
             />
           </div>
 
