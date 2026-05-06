@@ -67,7 +67,9 @@ async function BlogDashboardContent({
           <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">
             Total Posts
           </p>
-          <p className="text-2xl font-semibold text-slate-200">{blogs.length}</p>
+          <p className="text-2xl font-semibold text-slate-200">
+            {blogs.length}
+          </p>
         </div>
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
           <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-1">

@@ -5,7 +5,7 @@ import { Search, LogOut } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marc Plarisan | Admin Dashboard",
+  title: "Admin Dashboard | Marc Plarisan",
   description: "Admin Dashboard for Marc Plarisan's Portfolio Website.",
 };
 
