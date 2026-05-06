@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SidebarNav from "@/app/_components/admin/SidebarNav";
+import AdminBreadcrumbs from "@/app/_components/admin/AdminBreadcrumbs";
 import { Search, LogOut } from "lucide-react";
 import { Metadata } from "next";
 
@@ -54,9 +55,7 @@ export default function AdminLayout({
         {/* Top HUD */}
         <header className="h-16 w-full border-b border-slate-800 flex items-center justify-between px-8 shrink-0">
           {/* Left: Breadcrumbs */}
-          <span className="text-slate-500 font-mono">
-            Admin / System / Ready
-          </span>
+          <AdminBreadcrumbs />
 
           {/* Right: Contextual Actions Placeholder */}
           <div />
