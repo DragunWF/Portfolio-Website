@@ -11,6 +11,7 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState(""); // Honeypot
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -20,6 +21,7 @@ export default function LoginPage() {
     const formData = new FormData();
     formData.append("email", email);
     formData.append("password", password);
+    formData.append("confirm_email", confirmEmail); // Honeypot
 
     startTransition(async () => {
       const result = await login(formData);
@@ -61,6 +63,18 @@ export default function LoginPage() {
         )}
 
         <div className="space-y-4">
+          {/* Honeypot Field - Hidden from humans */}
+          <div className="absolute opacity-0 -z-10 pointer-events-none" aria-hidden="true">
+            <input
+              type="email"
+              name="confirm_email"
+              value={confirmEmail}
+              onChange={(e) => setConfirmEmail(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           {/* Email Field */}
           <div className="relative flex items-center">
             <Mail className="absolute left-4 text-slate-500" size={20} />
