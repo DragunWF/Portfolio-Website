@@ -1,12 +1,46 @@
 "use client";
 
-import { Send } from "lucide-react";
+import { useState } from "react";
+import { Send, Loader2 } from "lucide-react";
+import Image from "next/image";
 import SectionContainer from "../layout/SectionContainer";
+import { sendContactMessage } from "@/app/actions/contact";
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Submission logic placeholder
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const result = await sendContactMessage({ name, email, message });
+
+      if (result.success) {
+        setIsSuccess(true);
+      } else {
+        setError(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleReset = () => {
+    setIsSuccess(false);
+    setName("");
+    setEmail("");
+    setMessage("");
+    setError(null);
   };
 
   return (
@@ -17,13 +51,20 @@ export default function Contact() {
 
         <div className="max-w-2xl mx-auto text-center mb-10">
           <h3 className="text-3xl font-bold text-slate-100 mb-4 tracking-tight">
-            Let's Build Something
+            Contact the Developer
           </h3>
           <p className="text-slate-400 text-lg">
-            Whether it's an enterprise backend or an indie game, I'm always open
-            to discussing new projects.
+            Let&apos;s build something efficient. Whether it&apos;s a full-stack
+            web app, a cross-platform mobile app, or just a general inquiry,
+            I&apos;d love to hear from you.
           </p>
         </div>
+
+        {error && (
+          <div className="max-w-xl mx-auto mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm text-center">
+            {error}
+          </div>
+        )}
 
         <form
           onSubmit={handleSubmit}
@@ -40,7 +81,10 @@ export default function Contact() {
               type="text"
               id="name"
               required
-              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              disabled={isSubmitting}
+              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
               placeholder="John Doe"
             />
           </div>
@@ -56,7 +100,10 @@ export default function Contact() {
               type="email"
               id="email"
               required
-              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
+              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 disabled:opacity-50"
               placeholder="john@example.com"
             />
           </div>
@@ -71,21 +118,64 @@ export default function Contact() {
             <textarea
               id="message"
               required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              disabled={isSubmitting}
               rows={4}
-              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 resize-none"
+              className="bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 resize-none disabled:opacity-50"
               placeholder="How can I help you?"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="mt-4 flex items-center justify-center gap-2 w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-colors duration-300"
+            disabled={isSubmitting}
+            className="mt-4 flex items-center justify-center gap-2 w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Message
-            <Send className="w-5 h-5" />
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                Send Message
+                <Send className="w-5 h-5" />
+              </>
+            )}
           </button>
         </form>
       </div>
+
+      {/* Success Modal Overlay */}
+      {isSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-md w-full flex flex-col items-center text-center shadow-2xl shadow-emerald-500/10">
+            <div className="relative w-48 h-48 mb-6 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50">
+              <Image
+                src="/mail-received.webp"
+                alt="Arcane Mage receiving a letter"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 200px"
+              />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-100 mb-3 tracking-tight">
+              Message Delivered!
+            </h3>
+            <p className="text-slate-400 text-base mb-8 leading-relaxed">
+              Thanks for reaching out! I&apos;ve received your message and will
+              respond soon.
+            </p>
+            <button
+              onClick={handleReset}
+              className="w-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 py-3 rounded-lg font-medium hover:bg-emerald-500/20 transition-all"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </SectionContainer>
   );
 }

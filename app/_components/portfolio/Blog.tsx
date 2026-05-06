@@ -1,11 +1,18 @@
-import { BLOG_POSTS } from "../../_constants";
 import { ChevronRight, Clock } from "lucide-react";
 import Link from "next/link";
 import SectionContainer from "../layout/SectionContainer";
+import { getPublishedBlogs } from "@/app/actions/blog";
+import { getReadTime } from "@/app/_utils/helpers";
 
-export default function Blog() {
-  // Only display the two most recent posts on the home page
-  const recentBlogs = BLOG_POSTS.slice(0, 2);
+function getExcerpt(content: string, maxChars = 120): string {
+  const plain = content.replace(/[#*`_>\-\[\]()!]/g, "").trim();
+  return plain.length > maxChars
+    ? plain.slice(0, maxChars).trimEnd() + "…"
+    : plain;
+}
+
+export default async function Blog() {
+  const { blogs: recentBlogs } = await getPublishedBlogs(1, 2);
 
   return (
     <SectionContainer id="blog" className="py-8 scroll-mt-20">
@@ -25,24 +32,37 @@ export default function Blog() {
         {recentBlogs.map((post) => (
           <Link
             key={post.id}
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.slug}`}
             className="flex flex-col bg-slate-900/80 rounded-xl border border-slate-800 transition-colors hover:border-emerald-500 group cursor-pointer overflow-hidden"
           >
             {/* Edge-to-edge Cover Image */}
             <div className="relative w-full h-48 overflow-hidden bg-slate-950">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-              />
+              {post.imageUrl ? (
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                />
+              ) : (
+                <div className="w-full h-full bg-slate-900 flex items-center justify-center">
+                  <span className="text-slate-700 text-sm font-mono">
+                    No cover image
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Content Container */}
             <div className="p-6 flex flex-col gap-4 flex-1">
-              {/* Top Row: Dates */}
+              {/* Top Row: Date */}
               <div className="flex justify-between items-center text-xs font-mono uppercase text-slate-500">
-                <span>{post.dateCreated}</span>
-                <span>Updated: {post.dateUpdated}</span>
+                <span>
+                  {post.createdAt.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </span>
               </div>
 
               {/* Title */}
@@ -53,12 +73,12 @@ export default function Blog() {
               {/* Read Time */}
               <div className="flex items-center gap-1 text-emerald-500 text-sm font-medium">
                 <Clock size={14} />
-                <span>{post.readTime}</span>
+                <span>{getReadTime(post.content ?? "")}</span>
               </div>
 
               {/* Excerpt */}
               <p className="text-slate-400 text-sm leading-relaxed mt-auto">
-                {post.excerpt}
+                {getExcerpt(post.content ?? "")}
               </p>
             </div>
           </Link>
