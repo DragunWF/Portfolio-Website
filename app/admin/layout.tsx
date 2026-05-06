@@ -58,19 +58,6 @@ export default function AdminLayout({
             Admin / System / Ready
           </span>
 
-          {/* Center: Command Palette Search */}
-          <div className="relative">
-            <Search
-              size={14}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
-            />
-            <input
-              type="text"
-              placeholder="Search or jump to... (Cmd + K)"
-              className="bg-slate-900 border border-slate-800 rounded-md py-1.5 pl-9 pr-4 w-64 text-slate-400 focus:border-emerald-500/50 outline-none placeholder:text-slate-600 text-xs"
-            />
-          </div>
-
           {/* Right: Contextual Actions Placeholder */}
           <div />
         </header>
