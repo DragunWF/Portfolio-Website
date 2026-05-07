@@ -4,12 +4,6 @@ import React, { useState, useTransition } from "react";
 import { Mail, Key, Lock, AlertCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { login } from "./actions";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Marc Plarisan | Login",
-  description: "Login to the admin dashboard.",
-};
 
 export default function LoginPage() {
   const router = useRouter();
