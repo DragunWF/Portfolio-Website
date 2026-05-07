@@ -7,14 +7,14 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
-    { name: "Volunteering", href: "#volunteering" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Projects", href: "#projects" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Education", href: "/#education" },
+    { name: "Volunteering", href: "/#volunteering" },
+    { name: "Achievements", href: "/#achievements" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Blog", href: "/#blog" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (

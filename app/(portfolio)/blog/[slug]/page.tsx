@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/app/actions/blog";
 import { getReadTime } from "@/app/_utils/helpers";
@@ -38,9 +39,10 @@ export default async function BlogPost({
         <div className="absolute top-0 left-0 w-full pt-8 px-6 md:px-12 z-20">
           <Link
             href="/blog"
-            className="text-slate-300 hover:text-emerald-500 transition-colors relative z-10 font-medium"
+            className="group flex items-center gap-2 w-fit px-4 py-2 rounded-full bg-slate-900/60 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300 shadow-lg shadow-black/20"
           >
-            &larr; Back to Blog
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span className="text-sm font-medium">Back to Blog</span>
           </Link>
         </div>
 
