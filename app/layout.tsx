@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ArcaneBackground from "./_components/layout/ArcaneBackground";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-200">
         <ArcaneBackground />
         <main className="relative z-10 flex-1">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
