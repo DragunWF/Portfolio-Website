@@ -35,6 +35,10 @@ Built with the **Next.js App Router** and **TypeScript**, this portfolio priorit
 
 ![](./docs/images/admin-site.png)
 
+### 🔍 Custom 404 Page
+
+![](./docs/images/404-page.png)
+
 ---
 
 ## 🚀 Setup & Installation
