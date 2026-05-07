@@ -60,7 +60,7 @@ export default function ImageModal({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-50 p-2 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50"
+            className="absolute top-6 right-6 z-50 p-2 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 cursor-pointer hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50"
             aria-label="Close modal"
           >
             <X className="w-6 h-6" />
@@ -69,7 +69,7 @@ export default function ImageModal({
           {/* Navigation - Prev */}
           <button
             onClick={onPrev}
-            className="absolute left-4 sm:left-8 z-50 p-2 sm:p-3 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50"
+            className="absolute left-4 sm:left-8 z-50 p-2 sm:p-3 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50 cursor-pointer"
             aria-label="Previous image"
           >
             <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -78,7 +78,7 @@ export default function ImageModal({
           {/* Navigation - Next */}
           <button
             onClick={onNext}
-            className="absolute right-4 sm:right-8 z-50 p-2 sm:p-3 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50"
+            className="absolute right-4 sm:right-8 z-50 p-2 sm:p-3 bg-slate-900/50 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 rounded-full transition-colors border border-transparent hover:border-emerald-500/50 cursor-pointer"
             aria-label="Next image"
           >
             <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -107,12 +107,6 @@ export default function ImageModal({
               <h4 className="text-xl font-bold text-emerald-500 mb-1">
                 {currentItem.title}
               </h4>
-              <p className="text-slate-300 text-sm">
-                {new Date(currentItem.date).toLocaleDateString(undefined, {
-                  month: "long",
-                  year: "numeric",
-                })}
-              </p>
             </div>
           </motion.div>
         </motion.div>
