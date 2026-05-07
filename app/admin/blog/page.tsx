@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Plus, BookOpen } from "lucide-react";
 import { getBlogs } from "@/app/actions/blog";
 import BlogTable from "./BlogTable";
+import { Blog } from "@prisma/client";
 import { Suspense } from "react";
 import { ManaCoreLoader } from "@/app/_components/ui/Loaders";
 
@@ -43,7 +44,7 @@ async function BlogDashboardContent({
   const page = parseInt((resolvedParams.page as string) ?? "1") || 1;
   const { blogs, totalPages, currentPage } = await getBlogs(page, 10);
 
-  const tableData = blogs.map((blog) => ({
+  const tableData = blogs.map((blog: Blog) => ({
     id: blog.id,
     title: blog.title,
     status: blog.status === "PUBLISHED" ? "Published" : "Draft",

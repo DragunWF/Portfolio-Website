@@ -4,6 +4,7 @@ import { getPublishedBlogs } from "@/app/actions/blog";
 import { Suspense } from "react";
 import { BlogSkeleton } from "@/app/_components/ui/Skeletons";
 import { getReadTime, getExcerpt } from "@/app/_utils/helpers";
+import { Blog } from "@prisma/client";
 
 export const metadata = {
   title: "Marc Plarisan | Blog",
@@ -60,7 +61,7 @@ async function BlogListContent({
     <>
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((post) => (
+        {blogs.map((post: Blog) => (
           <Link
             key={post.id}
             href={`/blog/${post.slug}`}
