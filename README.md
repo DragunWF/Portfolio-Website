@@ -110,15 +110,4 @@ The portal will be accessible at `http://localhost:3000`.
 
 ---
 
-## 🎨 Aesthetic Suggestions for README
-
-To further elevate this README, consider adding:
-
-1. **Banner Image**: A custom-designed header (1200x400) featuring the emerald constellation and your name.
-2. **Feature GIFs**: A short, optimized GIF showing the Arcane Background in motion.
-3. **Architecture Diagram**: A Mermaid.js diagram illustrating the "Clean Core" data flow.
-4. **Lighthouse Score Badges**: To showcase the project's performance.
-
----
-
 **Built with 💚 and Arcane Energy by Marc Plarisan.**
