@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Marc Plarisan",
   description:
-    "Interactive Developer Portfolio showcasing enterprise-level backend expertise and game development achievements.",
+    "Interactive Developer Portfolio showcasing Marc Plarisan's achievements, blogs, career, and milestones.",
 };
 
 export default function RootLayout({
