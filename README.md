@@ -29,11 +29,11 @@ Built with the **Next.js App Router** and **TypeScript**, this portfolio priorit
 
 ### 🖥 Public Portfolio
 
-[Add images]
+![](./docs/images/portfolio-site.png)
 
 ### 🔐 Admin Sanctuary
 
-[Add images here]
+![](./docs/images/admin-site.png)
 
 ---
 
