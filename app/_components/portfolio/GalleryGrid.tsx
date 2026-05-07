@@ -90,12 +90,6 @@ export default function GalleryGrid({ items, layout }: GalleryGridProps) {
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <h4 className="text-emerald-500 font-bold mb-1">{item.title}</h4>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                {new Date(item.date).toLocaleDateString(undefined, {
-                  month: "long",
-                  year: "numeric",
-                })}
-              </p>
             </div>
           </div>
         ))}
