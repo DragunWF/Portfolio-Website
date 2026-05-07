@@ -5,6 +5,8 @@ import { prisma } from "@/app/_utils/prisma";
 import { deleteBlogImage } from "./storage";
 
 
+import { Blog } from "@prisma/client";
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface CreateBlogData {
@@ -23,12 +25,18 @@ interface UpdateBlogData {
   imageUrl?: string;
 }
 
+export interface BlogsResponse {
+  blogs: Blog[];
+  totalPages: number;
+  currentPage: number;
+}
+
 // ── Actions ───────────────────────────────────────────────────────────────────
 
 /**
  * Fetch all blog posts ordered by creation date (newest first) with pagination.
  */
-export async function getBlogs(page = 1, limit = 10) {
+export async function getBlogs(page = 1, limit = 10): Promise<BlogsResponse> {
   try {
     const skip = (page - 1) * limit;
     
@@ -46,14 +54,14 @@ export async function getBlogs(page = 1, limit = 10) {
     return { blogs, totalPages, currentPage: page };
   } catch (error) {
     console.error("[getBlogs] Failed to fetch blogs:", error);
-    return { blogs: [], totalPages: 1, currentPage: page };
+    return { blogs: [] as Blog[], totalPages: 1, currentPage: page };
   }
 }
 
 /**
  * Fetch all published blog posts, newest first, with pagination.
  */
-export async function getPublishedBlogs(page = 1, limit = 6) {
+export async function getPublishedBlogs(page = 1, limit = 6): Promise<BlogsResponse> {
   try {
     const skip = (page - 1) * limit;
 
@@ -74,14 +82,14 @@ export async function getPublishedBlogs(page = 1, limit = 6) {
     return { blogs, totalPages, currentPage: page };
   } catch (error) {
     console.error("[getPublishedBlogs] Failed to fetch published blogs:", error);
-    return { blogs: [], totalPages: 1, currentPage: page };
+    return { blogs: [] as Blog[], totalPages: 1, currentPage: page };
   }
 }
 
 /**
  * Fetch a single published blog post by its slug. Returns null if not found.
  */
-export async function getBlogBySlug(slug: string) {
+export async function getBlogBySlug(slug: string): Promise<Blog | null> {
   try {
     const blog = await prisma.blog.findFirst({
       where: { slug, status: "PUBLISHED" },
@@ -122,7 +130,7 @@ export async function createBlog(data: CreateBlogData) {
 /**
  * Fetch a single blog post by ID. Returns null if not found.
  */
-export async function getBlogById(id: string) {
+export async function getBlogById(id: string): Promise<Blog | null> {
   try {
     const blog = await prisma.blog.findUnique({ where: { id } });
     return blog ?? null;

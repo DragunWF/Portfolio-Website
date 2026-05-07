@@ -3,8 +3,9 @@
 import { prisma } from "@/app/_utils/prisma";
 import { createClient } from "@/app/_utils/supabase/server";
 import { revalidatePath } from "next/cache";
+import { Gallery } from "@prisma/client";
 
-export async function getGalleryItems() {
+export async function getGalleryItems(): Promise<Gallery[]> {
   try {
     const items = await prisma.gallery.findMany({
       orderBy: { order: "asc" },
