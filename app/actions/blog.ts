@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/app/_utils/prisma";
 import { deleteBlogImage } from "./storage";
 
-
 import { Blog } from "@prisma/client";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -39,7 +38,7 @@ export interface BlogsResponse {
 export async function getBlogs(page = 1, limit = 10): Promise<BlogsResponse> {
   try {
     const skip = (page - 1) * limit;
-    
+
     const [blogs, totalCount] = await Promise.all([
       prisma.blog.findMany({
         orderBy: { createdAt: "desc" },
@@ -61,7 +60,10 @@ export async function getBlogs(page = 1, limit = 10): Promise<BlogsResponse> {
 /**
  * Fetch all published blog posts, newest first, with pagination.
  */
-export async function getPublishedBlogs(page = 1, limit = 6): Promise<BlogsResponse> {
+export async function getPublishedBlogs(
+  page = 1,
+  limit = 6,
+): Promise<BlogsResponse> {
   try {
     const skip = (page - 1) * limit;
 
@@ -81,7 +83,10 @@ export async function getPublishedBlogs(page = 1, limit = 6): Promise<BlogsRespo
 
     return { blogs, totalPages, currentPage: page };
   } catch (error) {
-    console.error("[getPublishedBlogs] Failed to fetch published blogs:", error);
+    console.error(
+      "[getPublishedBlogs] Failed to fetch published blogs:",
+      error,
+    );
     return { blogs: [] as Blog[], totalPages: 1, currentPage: page };
   }
 }
@@ -101,7 +106,6 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
   }
 }
 
-
 /**
  * Create a new blog post and revalidate both the admin list and public blog.
  */
@@ -119,6 +123,7 @@ export async function createBlog(data: CreateBlogData) {
 
     revalidatePath("/admin/blog");
     revalidatePath("/blog");
+    revalidatePath("/");
 
     return { success: true, blog };
   } catch (error) {
@@ -159,6 +164,7 @@ export async function updateBlog(id: string, data: UpdateBlogData) {
     revalidatePath("/admin/blog");
     revalidatePath("/blog");
     revalidatePath("/blog/[slug]", "page");
+    revalidatePath("/");
 
     return { success: true, blog };
   } catch (error) {
@@ -167,10 +173,9 @@ export async function updateBlog(id: string, data: UpdateBlogData) {
   }
 }
 
-
 /**
  * Delete a blog post by ID and revalidate the admin list.
- * This also removes the associated cover image from Supabase Storage 
+ * This also removes the associated cover image from Supabase Storage
  * if the image is hosted there.
  */
 export async function deleteBlog(id: string) {
@@ -190,6 +195,8 @@ export async function deleteBlog(id: string) {
     await prisma.blog.delete({ where: { id } });
 
     revalidatePath("/admin/blog");
+    revalidatePath("/blog");
+    revalidatePath("/");
 
     return { success: true };
   } catch (error) {
@@ -197,7 +204,6 @@ export async function deleteBlog(id: string) {
     return { success: false, error: "Failed to delete blog post." };
   }
 }
-
 
 /**
  * Update the published/draft status of a blog post.
@@ -211,6 +217,7 @@ export async function updateBlogStatus(id: string, status: string) {
 
     revalidatePath("/admin/blog");
     revalidatePath("/blog");
+    revalidatePath("/");
 
     return { success: true, blog };
   } catch (error) {
