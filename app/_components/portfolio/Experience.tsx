@@ -30,9 +30,17 @@ export default function Experience() {
 
             {/* Description */}
             {exp.description && (
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                {exp.description}
-              </p>
+              <div className="text-slate-400 text-sm leading-relaxed mb-4">
+                {Array.isArray(exp.description) ? (
+                  <ul className="list-disc list-inside space-y-1">
+                    {exp.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{exp.description}</p>
+                )}
+              </div>
             )}
 
             {/* Skills Badges */}

@@ -24,7 +24,7 @@ export interface ExperienceData {
   startDate: string;
   endDate: string;
   skills: string[];
-  description: string;
+  description: string | string[];
 }
 
 export interface EducationData {
