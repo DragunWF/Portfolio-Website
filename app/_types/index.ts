@@ -53,6 +53,17 @@ export interface AchievementData {
   project?: string;
 }
 
+// TODO: Implement featured projects section in the future
+export interface FeaturedProjectData {
+  id: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  imageUrl: string;
+  url: string;
+  categories: string[];
+}
+
 export interface ProjectData {
   id: string;
   title: string;
@@ -60,6 +71,15 @@ export interface ProjectData {
   buttonText: string;
   url: string;
   platform: "github" | "itchio";
+}
+
+// TODO: Implement this on the main portfolio data
+export interface CertificationData {
+  id: string;
+  title: string;
+  institution: string;
+  dateObtained: string;
+  url: string; // indicates the image URL from Supabase
 }
 
 export interface BlogData {
