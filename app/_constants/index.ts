@@ -149,7 +149,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       institution: "STI College Ortigas-Cainta",
       degree: "Bachelor of Science in Information Technology",
       startDate: "Sep 2022",
-      endDate: "Present",
+      endDate: "Jul 2026",
       details:
         "Magna Cum Laude candidate and Top 1 overall student with active leadership roles in the student government and developer associations.",
       grade: {
