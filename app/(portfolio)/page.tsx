@@ -36,13 +36,13 @@ export default function PortfolioPage() {
             <Education />
           </ScrollReveal>
           <ScrollReveal>
+            <Volunteering />
+          </ScrollReveal>
+          <ScrollReveal>
             <Projects />
           </ScrollReveal>
           <ScrollReveal>
             <Achievements />
-          </ScrollReveal>
-          <ScrollReveal>
-            <Volunteering />
           </ScrollReveal>
           <ScrollReveal>
             <Suspense fallback={<BlogFallback />}>
