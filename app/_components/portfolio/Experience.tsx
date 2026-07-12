@@ -138,35 +138,7 @@ export default function Experience() {
                         </div>
                       )}
 
-                      {/* Holographic Certificate Sub-Card */}
-                      {role.certificate && (
-                        <div className="bg-slate-950/50 border border-slate-850 p-3 rounded-lg flex items-center justify-between gap-3 hover:border-emerald-500/20 max-w-lg mt-4 transition-colors group">
-                          <div className="flex items-center gap-3">
-                            <div className="p-2 bg-purple-500/10 rounded-md border border-purple-500/20 shrink-0">
-                              <Award className="w-5 h-5 text-purple-400" />
-                            </div>
-                            <div className="flex flex-col overflow-hidden">
-                              <span className="text-slate-300 text-sm font-medium truncate">
-                                {role.certificate.title}
-                              </span>
-                              <span className="text-slate-500 text-xs mt-0.5">
-                                Verified Credential
-                              </span>
-                            </div>
-                          </div>
-                          {role.certificate.url &&
-                            role.certificate.url !== "#" && (
-                              <a
-                                href={role.certificate.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-slate-400 hover:text-emerald-400 p-2 transition-colors shrink-0"
-                              >
-                                <ExternalLink className="w-4 h-4" />
-                              </a>
-                            )}
-                        </div>
-                      )}
+                      {/* Skills/Details render block ends here */}
                     </div>
                   );
                 })}

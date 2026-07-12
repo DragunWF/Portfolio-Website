@@ -135,10 +135,6 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "Developed robust backend solutions utilizing Object-Oriented ABAP, ALV Reports, and custom Function Modules.",
             "Built cloud-ready applications on SAP BTP using ADT in Eclipse, leveraging CDS Views, OData Services, and the RESTful ABAP Programming Model (RAP).",
           ],
-          certificate: {
-            title: "Certificate of Completion - Accenture Academy (SAP ABAP)",
-            url: "#",
-          },
         },
       ],
     },
