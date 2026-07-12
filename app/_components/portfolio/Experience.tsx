@@ -122,19 +122,15 @@ export default function Experience() {
 
                       {/* Skill Badges */}
                       {role.skills && role.skills.length > 0 && (
-                        <div className="flex flex-wrap items-center gap-y-2 mt-4 text-xs font-mono text-slate-400">
-                          <span className="mx-2 text-emerald-500/40">♦</span>
+                        <div className="flex flex-wrap gap-2 mt-5">
                           {role.skills.map((skill, i) => (
-                            <div key={i} className="flex items-center">
-                              {i > 0 && (
-                                <span className="mx-2 text-emerald-500/40">
-                                  ♦
-                                </span>
-                              )}
-                              <span>{skill}</span>
-                            </div>
+                            <span
+                              key={i}
+                              className="bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md text-[11px] font-mono text-emerald-400 select-none hover:bg-emerald-500/15 hover:border-emerald-500/30 transition-all duration-300"
+                            >
+                              {skill}
+                            </span>
                           ))}
-                          <span className="mx-2 text-emerald-500/40">♦</span>
                         </div>
                       )}
 
