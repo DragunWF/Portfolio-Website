@@ -116,7 +116,7 @@ export default function Education() {
             </div>
 
             {/* Note Banner */}
-            <div className="bg-slate-900/40 border border-slate-800/80 p-4 rounded-lg flex items-start md:items-center gap-3 text-sm text-slate-400 mt-8 hover:border-slate-700 transition-colors">
+            <div className="bg-slate-900/40 border border-slate-800/80 p-4 rounded-lg flex items-start md:items-center gap-3 text-sm text-slate-400 mt-2 hover:border-slate-700 transition-colors">
               <Info className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5 md:mt-0" />
               <span>
                 Note: For a comprehensive breakdown of all competition rankings,
