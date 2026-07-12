@@ -17,14 +17,28 @@ export interface SkillSet {
   fullArchive: string[];
 }
 
-export interface ExperienceData {
+export interface RoleData {
   id: string;
   role: string;
-  company: string;
   startDate: string;
   endDate: string;
+  employmentType?: string; // e.g. "Full-time", "Internship"
+  locationType?: string; // e.g. "Hybrid", "Remote"
   skills: string[];
-  description: string | string[];
+  description: string[];
+  certificate?: {
+    title: string;
+    url?: string;
+  };
+}
+
+export interface ExperienceData {
+  id: string;
+  company: string;
+  logoUrl?: string; // Path to logo image
+  duration?: string; // Total duration, e.g., "6 mos"
+  location?: string; // e.g., "National Capital Region, Philippines"
+  roles: RoleData[];
 }
 
 export interface EducationData {
