@@ -34,6 +34,21 @@ export interface EducationData {
   startDate: string;
   endDate: string;
   details: string;
+  grade?: {
+    honor: string;
+    details: string;
+  };
+  achievements?: {
+    id: string;
+    title: string;
+    description: string;
+  }[];
+  leadership?: {
+    id: string;
+    role: string;
+    duration: string;
+    organization: string;
+  }[];
 }
 
 export interface VolunteerData {
