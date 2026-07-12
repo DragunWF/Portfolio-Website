@@ -92,9 +92,20 @@ export const PORTFOLIO_DATA: PortfolioData = {
   },
   experience: [
     {
+      id: "accenture-ase",
+      role: "Associate Software Engineer",
+      company: "Accenture",
+      startDate: "Jul 2026",
+      endDate: "Present",
+      skills: ["SAP ABAP", "Backend Development", "ERP Systems"],
+      description: [
+        "Will update this decription after gaining more experience",
+      ],
+    },
+    {
       id: "accenture-intern",
       role: "Software Engineer Intern",
-      company: "Accenture in the Philippines",
+      company: "Accenture",
       startDate: "Feb 2026",
       endDate: "Jun 2026",
       skills: [
