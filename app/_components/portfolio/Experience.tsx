@@ -2,6 +2,7 @@ import { PORTFOLIO_DATA } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
 import { Award, Diamond, Calendar, MapPin, ExternalLink } from "lucide-react";
 import CompanyLogo from "./CompanyLogo";
+import { calculateCompanyDuration } from "../../_utils/helpers";
 
 export default function Experience() {
   const { experience } = PORTFOLIO_DATA;
@@ -35,7 +36,7 @@ export default function Experience() {
                 <div className="flex flex-wrap items-center text-slate-400 text-sm font-mono gap-x-2 gap-y-1 mt-1.5">
                   <div className="flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-slate-500" />
-                    <span>{expGroup.duration}</span>
+                    <span>{calculateCompanyDuration(expGroup.roles)}</span>
                   </div>
                   {expGroup.location && (
                     <>
@@ -122,6 +123,7 @@ export default function Experience() {
                       {/* Skill Badges */}
                       {role.skills && role.skills.length > 0 && (
                         <div className="flex flex-wrap items-center gap-y-2 mt-4 text-xs font-mono text-slate-400">
+                          <span className="mx-2 text-emerald-500/40">♦</span>
                           {role.skills.map((skill, i) => (
                             <div key={i} className="flex items-center">
                               {i > 0 && (
@@ -132,6 +134,7 @@ export default function Experience() {
                               <span>{skill}</span>
                             </div>
                           ))}
+                          <span className="mx-2 text-emerald-500/40">♦</span>
                         </div>
                       )}
 

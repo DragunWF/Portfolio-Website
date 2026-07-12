@@ -95,7 +95,6 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "accenture-group",
       company: "Accenture",
       logoUrl: "/accenture-logo.jpg",
-      duration: "6 mos",
       location: "National Capital Region, Philippines",
       roles: [
         {
