@@ -16,18 +16,20 @@ export default function CompanyLogo({
 
   if (!logoUrl || hasError) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-slate-800">
+      <div className="w-full h-full flex items-center justify-center bg-slate-850">
         <Building2 className="w-6 h-6 text-emerald-500/80" />
       </div>
     );
   }
 
   return (
-    <img
-      src={logoUrl}
-      alt={`${companyName} logo`}
-      className="w-full h-full object-contain"
-      onError={() => setHasError(true)}
-    />
+    <div className="w-full h-full bg-white flex items-center justify-center overflow-hidden">
+      <img
+        src={logoUrl}
+        alt={`${companyName} logo`}
+        className="w-full h-full object-cover"
+        onError={() => setHasError(true)}
+      />
+    </div>
   );
 }

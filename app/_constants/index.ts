@@ -150,11 +150,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       degree: "Bachelor of Science in Information Technology",
       startDate: "Sep 2022",
       endDate: "Jul 2026",
-      details:
-        "Magna Cum Laude candidate and Top 1 overall student with active leadership roles in the student government and developer associations.",
+      logoUrl: "/sti-logo.jpg",
       grade: {
         honor: "Magna Cum Laude",
-        details: "Top 1 Overall for the BSIT Batch of 2026",
       },
       achievements: [
         {
@@ -162,33 +160,39 @@ export const PORTFOLIO_DATA: PortfolioData = {
           title: "Best Capstone Award",
           description:
             "Represented the institution at the 1st Cainta Research Congress",
+          emoji: "🥇",
         },
         {
           id: "edu-ach-2",
           title: "National Finalist & 2x Champion (Cluster/Local)",
           description: "Tagisan ng Talino Codefest (2024–2025)",
+          emoji: "🏆",
         },
         {
           id: "edu-ach-3",
           title: "Minor Awardee (2nd Place)",
           description:
             "Readers Rising Hackathon 2025 (Project featured on national news via Rappler)",
+          emoji: "🥈",
         },
         {
           id: "edu-ach-4",
           title: "Global Nominee",
           description: "NASA Space Apps Challenge 2024",
+          emoji: "🚀",
         },
         {
           id: "edu-ach-5",
           title: "Top Finalist in National Hackathons",
           description: "AppCon 2024 (Top 20) & KMC Hackathon 2024 (Top 10)",
+          emoji: "🌟",
         },
         {
           id: "edu-ach-6",
           title: "4x Champion & 6x Finalist/Medalist",
           description:
             "Collegiate hackathons & competitive programming contests (IT Skills Olympics, etc)",
+          emoji: "💻",
         },
       ],
       leadership: [
@@ -197,12 +201,14 @@ export const PORTFOLIO_DATA: PortfolioData = {
           role: "Service Awardee in Academics",
           duration: "Jan 2023 - Jul 2026",
           organization: "STI College Ortigas-Cainta",
+          emoji: "🤝",
         },
         {
           id: "edu-lead-2",
           role: "Consistent President's Honor Lister",
           duration: "Jan 2023 – Jul 2026",
           organization: "STI College Ortigas-Cainta",
+          emoji: "⭐",
         },
         {
           id: "edu-lead-3",
@@ -210,12 +216,14 @@ export const PORTFOLIO_DATA: PortfolioData = {
           duration: "Aug 2025 – Jan 2026",
           organization:
             "ALPHA (Alliance of Leading Programmers through Heuristic Adaptation)",
+          emoji: "💻",
         },
         {
           id: "edu-lead-4",
           role: "IT Representative & Web Developer",
           duration: "Apr 2024 – Jun 2025",
           organization: "College Student Government",
+          emoji: "🌐",
         },
       ],
     },
