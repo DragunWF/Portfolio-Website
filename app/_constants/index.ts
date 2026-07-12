@@ -228,6 +228,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       endDate: "Jan 2026",
       organization:
         "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
+      logoUrl: "/alpha-logo.jpg",
       description: [
         "Develops and maintains organizational websites (React, Next.js, MongoDB, Django) and Python Discord bots.  ",
         "Provides technical support to ensure seamless execution of events.  ",
@@ -239,6 +240,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       startDate: "Apr 2024",
       endDate: "Jun 2025",
       organization: "STI College Ortigas-Cainta: College Student Government",
+      logoUrl: "/csg-logo.jpg",
       description: [
         "Develops and maintains websites for the student organization with React.",
         "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
