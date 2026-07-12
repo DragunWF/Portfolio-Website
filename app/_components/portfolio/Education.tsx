@@ -53,7 +53,7 @@ export default function Education() {
             {/* Spotlight Grade Pill */}
             {edu.grade && (
               <div className="border border-emerald-500/30 text-emerald-400 bg-emerald-500/10 font-medium text-sm rounded-full py-1.5 px-4 inline-flex items-center gap-2 mt-6 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40 w-fit">
-                🏅 Grade: {edu.grade.honor}
+                🏅 Latin Honors: {edu.grade.honor}
               </div>
             )}
 
