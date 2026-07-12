@@ -53,7 +53,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "codewars",
       label: "CodeWars",
-      value: "Top 0.158% Global",
+      value: "Top 0.158% Globally",
       url: "https://www.codewars.com/users/DragunWF",
       iconName: "code",
     },
