@@ -1,67 +1,45 @@
-# AI-Assisted UI/UX and Feature Development Workflow
+# AI-Assisted UI/UX Web Development Workflow
 
-**Purpose**: This document outlines the standard operating procedure for designing, prototyping, and implementing new features, pages, or database interactions within the **Arcane Tech Portfolio**. The goal is to prevent premature integration of unverified code, enforce strict Next.js App Router boundaries, protect Lighthouse performance scores, and optimize resource allocation within Google Antigravity.
-
----
+**Purpose**: This document outlines the standard operating procedure for designing, prototyping, and implementing new features or UI components. The goal is to prevent premature integration of unverified code and maintain strict architectural integrity within the web application.
 
 ## Phase 1: Ideation & Concept Generation
 
-Before any code is written or database schemas are modified, the architectural approach and user experience must be strictly defined.
+Before any code is written, the architectural approach and user experience must be defined.
 
-- **User Action**: Provide the AI with raw specifications, feature concepts, or a wireframe layout for a specific view or server action.
+- **User Action**: Provide the AI with the raw requirements or a list of desired features for a specific page, layout, or component.
 - **AI Directive**: The AI must respond with a categorized list of conceptual approaches. These suggestions must include:
-  - **Visual Layouts**: How the screen elements or data structures should be organized for responsive web interfaces, with a focus on desktop command-center aesthetics.
-  - **Psychological Framing**: How the design reinforces the elite developer/digital wizard persona (e.g., mimicking terminal interfaces, minimizing layout shift via skeletons).
-  - **Thematic Alignment**: How it integrates with the established "Arcane Tech" aesthetic—deep slate backgrounds (`bg-slate-950`), high-visibility emerald green accents, and glassmorphism components.
-- **Outcome**: The user selects one specific concept or refined feature scope to advance to the sandbox.
+  - **Visual Layouts**: How the UI should be structured.
+  - **Psychological Framing**: How the design impacts user behavior (e.g., friction, reward loops).
+  - **Thematic Alignment**: How it fits the established project aesthetic (e.g., Dark slate, emerald accents, glassmorphism).
+- **Outcome**: The user selects one specific concept to move forward with.
 
 ---
 
-## Phase 2: The Prototype Sandbox (Gemini Canvas / v0)
+## Phase 2: The Sandbox Prototype
 
-Once a concept is selected, its visual and layout parameters are verified in an isolated environment before generating actual React components for the main codebase.
+Once a concept is selected, it must be visually verified in an isolated environment before touching the project codebase.
 
 - **User Action**: Command the AI to "Generate a prototype prompt for [Selected Concept]."
-- **AI Directive**: The AI must output a strict, highly detailed prompt optimized for **Gemini Canvas**, **v0.dev**, or **bolt.new**.
+- **AI Directive**: The AI must output a strict, highly detailed prompt designed specifically for an AI sandbox environment (like Gemini Canvas).
 - **Prototype Prompt Constraints**:
-  - **Self-Contained React Component**: Must render as a single, fully functional React component using Tailwind CSS.
-  - **Zero External Dependencies**: Use standard Lucide React icons. Avoid external image assets unless specifically testing Next.js `<Image>` fallbacks. For complex animations (like glowing runes or sweeps), inject standard HTML `<style>` tags with custom keyframes directly inside the component to ensure it runs standalone.
-  - **State Simulation**: Use lightweight React state (`useState`, `useEffect`) solely for interactive simulation (e.g., hovering on a gallery card, toggling a command menu). No backend fetching.
-  - **Focus**: Purely for aesthetic evaluation, testing staggered Framer Motion timings, copy validation, and verifying Tailwind utility mapping.
-- **Outcome**: The user reviews and refines the interactive mockup. Spacing variables, typography hierarchies (sans-serif/mono), and emerald glow effects are locked in.
+  - **Self-Contained**: Must be a standalone React component or a single HTML file using Tailwind CSS via CDN.
+  - **Zero Dependencies**: No external images or stylesheets; use SVGs and inline configurations.
+  - **Isolated Logic**: Use simple React state (or Vanilla JS if using HTML) solely for demonstrating UI state changes (e.g., modal toggles, active states, tab switching). No complex application logic, external data fetching, or routing.
+  - **Focus**: Purely for aesthetic review, structural layout, and verifying Tailwind utility classes.
+- **Outcome**: The user tests the generated prototype in the sandbox. Adjustments to colors, spacing, layout, and copy are made here.
 
 ---
 
-## Phase 3: Project Implementation & Model Selection
+## Phase 3: Project Implementation (The Architecture)
 
-Once the visual layout is verified, the design and underlying requirements are ported into the codebase. This step enforces strict compliance with the Next.js App Router architecture and selects the optimal engine within Google Antigravity for the task.
+Once the sandbox prototype is visually approved, the validated design is ported into the actual codebase under strict engineering standards.
 
-### 1. Intelligence Allocation (Model Selection & Ranking)
-
-Before generating the engineering prompt, the AI assistant must evaluate the engineering complexity of the task (e.g., UI component vs. Prisma ORM mutations) and output a ranked recommendation from the available **Google Antigravity** model pool:
-
-- Gemini 3.5 Flash (Low)
-- Gemini 3.5 Flash (Medium)
-- Gemini 3.5 Flash (High)
-- Gemini 3.1 Pro (Low)
-- Gemini 3.1 Pro (High)
-- Claude Sonnet 4.6 (Thinking)
-- Claude Opus 4.6 (Thinking)
-
-The assistant will categorize the task and rank the top 3 models using the following evaluation framework:
-
-- **High-Context Boilerplate / Simple UI Layouts**: Favor efficiency (e.g., _Gemini 3.5 Flash High/Medium_). Ideal for static pages or standard Tailwind structural updates.
-- **Complex Data Mutations / Prisma Schema Updates / Server Actions / Supabase Storage**: Favor reasoning depth (e.g., _Claude Sonnet 4.6 Thinking_ or _Gemini 3.1 Pro High_).
-
-### 2. Implementation Prompt Constraints
-
-The AI then outputs a precision prompt tailored to the top-ranked model to execute code integration. The prompt must enforce:
-
-- **Adherence to Next.js App Router Paradigms**: Enforce explicit separation across the layers:
-  - **Routing & Loading**: Utilize `page.tsx`, `layout.tsx`, and `loading.tsx` (for skeletons/spinners) correctly within the `app/` directory.
-  - **Data Mutations**: Use strictly typed Next.js Server Actions (`actions/`) for database operations, implementing `revalidatePath` to clear cache.
-  - **UI Components**: Encapsulate reusable visual elements (cards, dialogs, buttons) in the `_components/ui/` directory.
-- **Tech Stack Alignment**: Strict usage of Next.js Server/Client component boundaries (`"use client"` only when necessary), TypeScript types, Prisma ORM queries, Supabase bucket interactions, and `LazyMotion` for Framer Motion to preserve bundle size.
-- **No Black-Box Architectures**: All code modifications must provide complete, copy-pasteable file definitions rather than generic placeholders, ensuring existing Tailwind structural classes are preserved.
-
-- **Outcome**: A modular, type-safe, and visually verified Next.js feature is successfully integrated into the Arcane Tech portfolio.
+- **User Action**: Command the AI to "Generate the prompt for the actual implementation of this prototype."
+- **AI Directive**: The AI must output a precision prompt instructing a coding assistant (e.g., Cursor, Copilot) to integrate the UI into the project.
+- **Implementation Prompt Constraints**:
+  - **Adherence to Project Rules**: Must explicitly reference local architecture guidelines (Clean Architecture, SOLID, DRY).
+  - **Tech Stack**: Must specify the Next.js + TypeScript + Tailwind CSS configuration.
+  - **Separation of Concerns**: Must maintain a strict boundary between Server Components (for data fetching and SEO) and Client Components (`"use client"` for interactivity). Presentation markup should be decoupled from complex business logic, utilizing custom hooks for state and side effects.
+  - **No Black-Box Logic**: The generated prompt must require the AI to write modular components, extract reusable UI elements, avoid monolithic files, and define strict TypeScript interfaces for all props and state.
+  - **Platform Specifics**: Must account for Next.js optimizations and constraints (e.g., utilizing `next/image` for assets, `next/link` for navigation, proper routing paradigms, and avoiding browser-only APIs in server contexts).
+- **Outcome**: A modular, highly performant, and visually verified component is seamlessly integrated into the Next.js application.

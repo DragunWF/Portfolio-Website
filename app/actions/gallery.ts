@@ -29,6 +29,9 @@ export async function updateGalleryOrder(
         }),
       ),
     );
+    revalidatePath("/admin/gallery");
+    revalidatePath("/gallery");
+    revalidatePath("/");
     return true;
   } catch (error) {
     console.error("Failed to update gallery order:", error);
@@ -86,6 +89,8 @@ export async function createGalleryItem(formData: FormData) {
     });
 
     revalidatePath("/admin/gallery");
+    revalidatePath("/gallery");
+    revalidatePath("/");
     return { success: true };
   } catch (error) {
     console.error("Error creating gallery item:", error);
@@ -122,6 +127,8 @@ export async function deleteGalleryItem(id: string) {
     });
 
     revalidatePath("/admin/gallery");
+    revalidatePath("/gallery");
+    revalidatePath("/");
     return { success: true };
   } catch (error) {
     console.error("Error deleting gallery item:", error);
@@ -189,6 +196,8 @@ export async function updateGalleryItem(id: string, formData: FormData) {
     });
 
     revalidatePath("/admin/gallery");
+    revalidatePath("/gallery");
+    revalidatePath("/");
     return { success: true };
   } catch (error) {
     console.error("Error updating gallery item:", error);

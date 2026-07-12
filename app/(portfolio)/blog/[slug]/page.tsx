@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/app/actions/blog";
 import { getReadTime } from "@/app/_utils/helpers";
 import { PORTFOLIO_DATA } from "@/app/_constants";
+import { MarkdownCodeBlock } from "@/app/_components/portfolio/MarkdownCodeBlock";
 
 export default async function BlogPost({
   params,
@@ -68,8 +69,39 @@ export default async function BlogPost({
       </div>
 
       {/* Main Article Body */}
-      <article className="prose prose-invert prose-slate mx-auto max-w-3xl px-6 md:px-12 lg:px-0 py-16 prose-headings:text-slate-100 prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-strong:text-slate-100 prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1 py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-blockquote:border-emerald-500 prose-blockquote:bg-slate-900/30 prose-blockquote:py-2 prose-blockquote:pr-4">
-        <ReactMarkdown>{post.content ?? ""}</ReactMarkdown>
+      <article className="prose prose-invert prose-slate mx-auto max-w-3xl px-6 md:px-12 lg:px-0 py-16 prose-headings:text-slate-100 prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-strong:text-slate-100 prose-blockquote:border-emerald-500 prose-blockquote:bg-slate-900/30 prose-blockquote:py-2 prose-blockquote:pr-4">
+        <ReactMarkdown
+          components={{
+            code({ className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || "");
+              const isInline = !match;
+
+              if (!isInline) {
+                return (
+                  <MarkdownCodeBlock
+                    language={match[1]}
+                    value={String(children).replace(/\n$/, "")}
+                  />
+                );
+              }
+
+              return (
+                <code
+                  className="bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded font-mono text-[0.9em]"
+                  {...props}
+                >
+                  {children}
+                </code>
+              );
+            },
+            // Remove default pre styling since MarkdownCodeBlock handles its own container
+            pre({ children }) {
+              return <>{children}</>;
+            },
+          }}
+        >
+          {post.content ?? ""}
+        </ReactMarkdown>
       </article>
 
       {/* Author Bio Footer */}
