@@ -47,21 +47,23 @@ export interface EducationData {
   degree: string;
   startDate: string;
   endDate: string;
-  details: string;
+  logoUrl?: string; // Path to school logo
   grade?: {
     honor: string;
-    details: string;
+    details?: string; // Made optional
   };
   achievements?: {
     id: string;
     title: string;
     description: string;
+    emoji?: string; // Custom emoji bullet
   }[];
   leadership?: {
     id: string;
     role: string;
     duration: string;
     organization: string;
+    emoji?: string; // Custom emoji bullet
   }[];
 }
 
@@ -72,6 +74,7 @@ export interface VolunteerData {
   endDate: string;
   organization: string;
   description: string | string[];
+  logoUrl?: string; // Optional organization logo path
 }
 
 export interface AchievementData {
