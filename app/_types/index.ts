@@ -77,6 +77,9 @@ export interface AchievementData {
   title: string;
   event: string;
   project?: string;
+  imageUrl?: string;
+  isFeatured?: boolean;
+  badgeText?: string;
 }
 
 // TODO: Implement featured projects section in the future

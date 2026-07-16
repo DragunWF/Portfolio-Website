@@ -268,18 +268,26 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-1",
       tier: 1,
-      title: "Minor Awardee (2nd Highest Placement)",
+      title: "Minor Awardee (2nd Highest Award)",
       event: "Readers Rising Hackathon 2025",
       project:
         "Recognized by the NBDB Philippines and got featured on the national news (Rappler)",
+      isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152072945-vqcckq.jpg&w=3840&q=75",
     },
     {
       id: "ach-2",
       tier: 1,
-      title: "National Finalist",
-      event: "Tagisan ng Talino 2025: Codefest National Level",
+      title: "National Finalist & 2x Champion (Local/Cluster)",
+      event: "Tagisan ng Talino 2025: Codefest",
       project:
         "Recognized by the whole network of STI Colleges and got on a national news article",
+      isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152470324-rio6it.jpg&w=3840&q=75",
     },
     {
       id: "ach-3",
