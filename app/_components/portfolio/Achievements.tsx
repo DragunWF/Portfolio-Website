@@ -53,7 +53,7 @@ export default function Achievements() {
       {/* Action Button */}
       <div className="flex justify-center mt-8">
         <Link href="/achievements">
-          <button className="flex items-center gap-2 px-6 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-medium transition-all hover:border-emerald-500/40 hover:text-emerald-400">
+          <button className="cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-medium transition-all hover:border-emerald-500/40 hover:text-emerald-400">
             Explore All Hackathons & Competition Placements
             <ChevronRight className="w-4 h-4" />
           </button>

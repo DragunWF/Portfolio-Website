@@ -294,24 +294,36 @@ export const PORTFOLIO_DATA: PortfolioData = {
       tier: 1,
       title: "Champion",
       event: "Tagisan ng Talino 2025: Codefest Cluster Level",
+      badgeText: "CLUSTER COMPETITION",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-4",
       tier: 1,
       title: "Champion",
       event: "Tagisan ng Talino 2025: Codefest Local Level",
+      badgeText: "LOCAL COMPETITION",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-5",
       tier: 2,
       title: "Champion",
       event: "Techfest 2025 Python Programming",
+      badgeText: "PROGRAMMING",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-6",
       tier: 2,
       title: "Champion",
       event: "App Development: ICT Week of November 2024",
+      badgeText: "APP DEVELOPMENT",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-7",
@@ -319,48 +331,72 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title: "1st Place in Theme Integrity",
       event: "PyGame Community Winter Jam 2026",
       project: "ChronoFrost",
+      badgeText: "GAME DEVELOPMENT",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-8",
       tier: 2,
       title: "1st Runner-Up",
       event: "Tagisan ng Talino 2024: Codefest Local Level",
+      badgeText: "LOCAL COMPETITION",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-9",
       tier: 2,
       title: "1st Runner-Up",
       event: "App Development: ICT Week of June 2024",
+      badgeText: "APP DEVELOPMENT",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-10",
       tier: 2,
       title: "Finalist",
       event: "13th & 14th IT Skills Olympics, Python Programming",
+      badgeText: "PROGRAMMING",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-11",
       tier: 2,
       title: "Global Nominee",
       event: "NASA Space Apps Challenge 2024",
+      badgeText: "GLOBAL HACKATHON",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-12",
       tier: 2,
       title: "8th Place",
       event: "1st Cainta Research Congress",
+      badgeText: "RESEARCH CONGRESS",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-13",
       tier: 2,
       title: "Top 10 Finalist",
       event: "KMC Hackathon 2024",
+      badgeText: "HACKATHON",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "ach-14",
       tier: 2,
       title: "Top 20 Finalist",
       event: "AppCon 2024 Hackathon",
+      badgeText: "HACKATHON",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
     },
   ],
   projects: [
