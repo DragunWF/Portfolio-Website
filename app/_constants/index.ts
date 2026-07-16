@@ -194,7 +194,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
           id: "edu-ach-7",
           title: "Service Awardee in Academics",
           description:
-            "Represented the school on multiple national competitions and won placements.",
+            "Represented the school on multiple local, regional, & national competitions and won placements.",
           emoji: "🎖️",
         },
         {
@@ -233,6 +233,21 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Built the organization's Python Discord bot, automating a membership verification process for 60+ members and developing interactive utility commands.",
         "Engineered and maintained internal digital platforms, websites, and mobile apps using Next.js, React Native, TypeScript, and MongoDB.",
       ],
+      skills: [
+        "React",
+        "Django",
+        "Python",
+        "Discord.py",
+        "Next.js",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "JavaScript",
+        "MongoDB",
+        "HTML",
+        "CSS",
+        "Git",
+      ],
     },
     {
       id: "vol-csg",
@@ -246,6 +261,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
         "Acts as a representative and advocate for IT students in the student council.",
       ],
+      skills: ["React", "HTML", "CSS", "JavaScript", "Git"],
     },
   ],
   achievements: [

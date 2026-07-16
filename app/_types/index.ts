@@ -67,6 +67,7 @@ export interface VolunteerData {
   endDate: string;
   organization: string;
   description: string | string[];
+  skills: string[];
   logoUrl?: string; // Optional organization logo path
 }
 
