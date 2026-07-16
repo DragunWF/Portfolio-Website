@@ -55,14 +55,7 @@ export interface EducationData {
   achievements?: {
     id: string;
     title: string;
-    description: string;
-    emoji?: string; // Custom emoji bullet
-  }[];
-  leadership?: {
-    id: string;
-    role: string;
-    duration: string;
-    organization: string;
+    description?: string;
     emoji?: string; // Custom emoji bullet
   }[];
 }
