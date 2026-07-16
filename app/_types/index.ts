@@ -55,14 +55,7 @@ export interface EducationData {
   achievements?: {
     id: string;
     title: string;
-    description: string;
-    emoji?: string; // Custom emoji bullet
-  }[];
-  leadership?: {
-    id: string;
-    role: string;
-    duration: string;
-    organization: string;
+    description?: string;
     emoji?: string; // Custom emoji bullet
   }[];
 }
@@ -74,6 +67,7 @@ export interface VolunteerData {
   endDate: string;
   organization: string;
   description: string | string[];
+  skills: string[];
   logoUrl?: string; // Optional organization logo path
 }
 

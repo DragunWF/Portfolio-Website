@@ -65,6 +65,20 @@ export default function Volunteering() {
                   {vol.description}
                 </p>
               )}
+
+              {/* Skill Badges */}
+              {vol.skills && vol.skills.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {vol.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md text-[11px] font-mono text-emerald-400 select-none hover:bg-emerald-500/15 hover:border-emerald-500/30 transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}

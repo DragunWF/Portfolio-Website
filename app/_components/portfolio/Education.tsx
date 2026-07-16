@@ -1,8 +1,7 @@
 import { PORTFOLIO_DATA } from "../../_constants";
 import SectionContainer from "../layout/SectionContainer";
 import CompanyLogo from "./CompanyLogo";
-import { Calendar, Trophy, Award, Info } from "lucide-react";
-import { calculateDuration } from "../../_utils/helpers";
+import { Calendar, Trophy, Info } from "lucide-react";
 
 export default function Education() {
   const { education } = PORTFOLIO_DATA;
@@ -58,65 +57,33 @@ export default function Education() {
             )}
 
             {/* List Layout Columns (Grid) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              {/* Left Column: Competitions */}
-              <div>
-                <h4 className="text-slate-200 font-bold mb-4 flex items-center gap-2 text-base border-b border-slate-800/80 pb-2">
-                  <Trophy className="w-4 h-4 text-emerald-500" />
-                  Key Competitions & Achievements
-                </h4>
-                <div className="flex flex-col">
-                  {edu.achievements?.map((ach) => (
-                    <div
-                      key={ach.id}
-                      className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed mb-4"
-                    >
-                      <span className="flex-shrink-0 text-base leading-tight mt-0.5">
-                        {ach.emoji}
-                      </span>
-                      <span>
-                        <strong className="text-slate-200 font-bold">
-                          {ach.title}
-                        </strong>{" "}
-                        — {ach.description}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: Recognitions */}
-              <div>
-                <h4 className="text-slate-200 font-bold mb-4 flex items-center gap-2 text-base border-b border-slate-800/80 pb-2">
-                  <Award className="w-4 h-4 text-emerald-500" />
-                  Academic & Leadership Recognition
-                </h4>
-                <div className="flex flex-col">
-                  {edu.leadership?.map((lead) => (
-                    <div
-                      key={lead.id}
-                      className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed mb-4"
-                    >
-                      <span className="flex-shrink-0 text-base leading-tight mt-0.5">
-                        {lead.emoji}
-                      </span>
-                      <span>
-                        <strong className="text-slate-200 font-bold">
-                          {lead.role}
-                        </strong>{" "}
-                        {lead.organization}{" "}
-                        <span className="text-slate-400">
-                          ({lead.duration})
-                        </span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
+            <div className="mt-8">
+              <h4 className="text-slate-200 font-bold mb-4 flex items-center gap-2 text-base border-b border-slate-800/80 pb-2">
+                <Trophy className="w-4 h-4 text-emerald-500" />
+                Key Achievements & Leadership
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+                {edu.achievements?.map((ach) => (
+                  <div
+                    key={ach.id}
+                    className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed mb-4"
+                  >
+                    <span className="flex-shrink-0 text-base leading-tight mt-0.5">
+                      {ach.emoji}
+                    </span>
+                    <span>
+                      <strong className="text-slate-200 font-bold">
+                        {ach.title}
+                      </strong>
+                      {ach.description && ` — ${ach.description}`}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Note Banner */}
-            <div className="bg-slate-900/40 border border-slate-800/80 p-4 rounded-lg flex items-start md:items-center gap-3 text-sm text-slate-400 mt-8 hover:border-slate-700 transition-colors">
+            <div className="bg-slate-900/40 border border-slate-800/80 p-4 rounded-lg flex items-start md:items-center gap-3 text-sm text-slate-400 mt-2 hover:border-slate-700 transition-colors">
               <Info className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5 md:mt-0" />
               <span>
                 Note: For a comprehensive breakdown of all competition rankings,

@@ -106,7 +106,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
           locationType: "Hybrid",
           skills: ["SAP ABAP", "Backend Development", "ERP Systems"],
           description: [
-            "Will update this decription after gaining more experience",
+            "Will update this description after gaining more experience",
           ],
         },
         {
@@ -153,20 +153,20 @@ export const PORTFOLIO_DATA: PortfolioData = {
       achievements: [
         {
           id: "edu-ach-1",
-          title: "Best Capstone Award",
+          title: "Best Capstone",
           description:
-            "Represented the institution at the 1st Cainta Research Congress",
+            "Selected as the top capstone project and represented the institution at the 1st Cainta Research Congress to compete against other leading capstone/thesis projects from other universities.",
           emoji: "🥇",
         },
         {
           id: "edu-ach-2",
           title: "National Finalist & 2x Champion (Cluster/Local)",
-          description: "Tagisan ng Talino Codefest (2024–2025)",
+          description: "Tagisan ng Talino Codefest 2025",
           emoji: "🏆",
         },
         {
           id: "edu-ach-3",
-          title: "Minor Awardee (2nd Place)",
+          title: "Minor Awardee (2nd Highest Award)",
           description:
             "Readers Rising Hackathon 2025 (Project featured on national news via Rappler)",
           emoji: "🥈",
@@ -174,8 +174,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
         {
           id: "edu-ach-4",
           title: "Global Nominee",
-          description: "NASA Space Apps Challenge 2024",
-          emoji: "🚀",
+          description: "NASA International Space Apps Challenge 2024 Hackathon",
+          emoji: "🌍",
         },
         {
           id: "edu-ach-5",
@@ -190,35 +190,30 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "Collegiate hackathons & competitive programming contests (IT Skills Olympics, etc)",
           emoji: "💻",
         },
-      ],
-      leadership: [
         {
-          id: "edu-lead-1",
-          role: "Service Awardee in Academics",
-          duration: "Jan 2023 - Jul 2026",
-          organization: "STI College Ortigas-Cainta",
-          emoji: "🤝",
+          id: "edu-ach-7",
+          title: "Service Awardee in Academics",
+          description:
+            "Represented the school on multiple local, regional, & national competitions and won placements.",
+          emoji: "🎖️",
         },
         {
-          id: "edu-lead-2",
-          role: "Consistent President's Honor Lister",
-          duration: "Jan 2023 – Jul 2026",
-          organization: "STI College Ortigas-Cainta",
+          id: "edu-ach-8",
+          title: "Consistent President's Honor Lister",
+          description:
+            "Maintained a high academic standing throughout multiple semesters (Jan 2023 - Jul 2026)",
           emoji: "⭐",
         },
         {
-          id: "edu-lead-3",
-          role: "Software Development Associate",
-          duration: "Aug 2025 – Jan 2026",
-          organization:
-            "ALPHA (Alliance of Leading Programmers through Heuristic Adaptation)",
+          id: "edu-ach-9",
+          title: "Software Development Associate (Aug 2025 – Jan 2026)",
+          description: "ALPHA (IT Student Organization)",
           emoji: "💻",
         },
         {
-          id: "edu-lead-4",
-          role: "IT Representative & Web Developer",
-          duration: "Apr 2024 – Jun 2025",
-          organization: "College Student Government",
+          id: "edu-ach-10",
+          title: "IT Representative & Web Developer (Apr 2024 – Jun 2025)",
+          description: "College Student Government",
           emoji: "🌐",
         },
       ],
@@ -234,8 +229,24 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
       logoUrl: "/alpha-logo.jpg",
       description: [
-        "Develops and maintains organizational websites (React, Next.js, MongoDB, Django) and Python Discord bots.  ",
-        "Provides technical support to ensure seamless execution of events.  ",
+        "Developed the official General Assembly registration and event website using React and Django, successfully streamlining operations for over 200+ attendees.",
+        "Built the organization's Python Discord bot, automating a membership verification process for 60+ members and developing interactive utility commands.",
+        "Engineered and maintained internal digital platforms, websites, and mobile apps using Next.js, React Native, TypeScript, and MongoDB.",
+      ],
+      skills: [
+        "React",
+        "Django",
+        "Python",
+        "Discord.py",
+        "Next.js",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "JavaScript",
+        "MongoDB",
+        "HTML",
+        "CSS",
+        "Git",
       ],
     },
     {
@@ -250,6 +261,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Provides technical support and manpower assistance for various campus-wide events, including seminars, competitions, talent shows, hackathons, and special activities.",
         "Acts as a representative and advocate for IT students in the student council.",
       ],
+      skills: ["React", "HTML", "CSS", "JavaScript", "Git"],
     },
   ],
   achievements: [
