@@ -229,8 +229,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "ALPHA: Alliance of Leading Programmers through Heuristic Adaptation",
       logoUrl: "/alpha-logo.jpg",
       description: [
-        "Develops and maintains organizational websites (React, Next.js, MongoDB, Django) and Python Discord bots.  ",
-        "Provides technical support to ensure seamless execution of events.  ",
+        "Developed the official General Assembly registration and event website using React and Django, successfully streamlining operations for over 200+ attendees.",
+        "Built the organization's Python Discord bot, automating a membership verification process for 60+ members and developing interactive utility commands.",
+        "Engineered and maintained internal digital platforms, websites, and mobile apps using Next.js, React Native, TypeScript, and MongoDB.",
       ],
     },
     {
