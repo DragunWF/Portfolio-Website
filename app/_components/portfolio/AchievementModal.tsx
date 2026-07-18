@@ -69,15 +69,26 @@ export default function AchievementModal({
             className="relative bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden max-w-4xl w-full flex flex-col md:flex-row shadow-[0_0_50px_rgba(16,185,129,0.1)] z-10 max-h-[90vh]"
           >
             {/* Left Side: Image */}
-            <div className="md:w-1/2 h-64 md:h-auto w-full relative object-cover shrink-0 bg-slate-800">
+            <div className="md:w-1/2 h-64 md:h-auto w-full relative shrink-0 bg-slate-950/40 overflow-hidden">
               {activeAchievement.imageUrl ? (
-                <Image
-                  src={activeAchievement.imageUrl}
-                  alt={activeAchievement.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                <>
+                  {/* Blurred background to fill aspect ratio */}
+                  <Image
+                    src={activeAchievement.imageUrl}
+                    alt=""
+                    fill
+                    className="object-cover blur-lg opacity-25 select-none pointer-events-none"
+                    sizes="10vw"
+                  />
+                  {/* Main non-cropped image */}
+                  <Image
+                    src={activeAchievement.imageUrl}
+                    alt={activeAchievement.title}
+                    fill
+                    className="object-contain relative z-10 p-2"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-slate-500 text-sm">
                   No Image Available
