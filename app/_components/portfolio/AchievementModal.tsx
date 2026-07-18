@@ -107,11 +107,16 @@ export default function AchievementModal({
                 <X className="w-5 h-5" />
               </button>
 
-              {activeAchievement.badgeText && (
-                <span className="self-start px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-4">
-                  {activeAchievement.badgeText}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {activeAchievement.badgeText && (
+                  <span className="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
+                    {activeAchievement.badgeText}
+                  </span>
+                )}
+                <span className="px-3 py-1 rounded-md bg-slate-950/70 border border-slate-800 text-slate-400 text-[10px] font-bold uppercase tracking-wider font-mono">
+                  {activeAchievement.date}
                 </span>
-              )}
+              </div>
 
               <h3 className="text-2xl md:text-3xl font-bold text-slate-50 mb-2">
                 {activeAchievement.title}

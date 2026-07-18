@@ -44,11 +44,16 @@ export default function AchievementsGrid({
               <p className="text-sm font-medium text-emerald-400 mt-1">
                 {ach.event}
               </p>
-              {ach.badgeText && (
-                <span className="self-start mt-3 px-2 py-0.5 rounded-md bg-emerald-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider">
-                  {ach.badgeText}
+              <div className="flex flex-wrap gap-2 mt-3">
+                {ach.badgeText && (
+                  <span className="px-2 py-0.5 rounded-md bg-emerald-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider">
+                    {ach.badgeText}
+                  </span>
+                )}
+                <span className="px-2 py-0.5 rounded-md bg-slate-950/70 border border-slate-800 text-emerald-400 text-[10px] font-bold uppercase tracking-wider font-mono">
+                  {ach.date}
                 </span>
-              )}
+              </div>
             </div>
           </div>
         ))}

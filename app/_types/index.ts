@@ -80,7 +80,8 @@ export interface AchievementData {
   imageUrl?: string;
   isFeatured?: boolean;
   badgeText?: string;
-  description?: string; // Detailed story/description of the win
+  description?: string;
+  date: string; // e.g. "April 2025"
 }
 
 // TODO: Implement featured projects section in the future
