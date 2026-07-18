@@ -396,7 +396,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-10",
       tier: 2,
-      title: "Finalist (Top 20 Universities/Colleges)",
+      title: "Ranked among the top 20 finalists",
       event: "14th IT Skills Olympics (Python Programming Category)",
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
@@ -407,7 +407,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-23",
       tier: 2,
-      title: "Finalist (Top 20 Universities/Colleges)",
+      title: "Ranked among the top 20 finalists",
       event: "13th IT Skills Olympics (Python Programming Category)",
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
@@ -456,9 +456,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "InterCICSkewla Programming Challenge 2026",
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
-        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784384264/Screenshot_2026-07-18_at_10.16.17_PM_oa2xiz.png",
       description:
-        "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
+        "Represented STI College Ortigas-Cainta in a national competitive programming challenge, solving complex algorithmic problems using Python.",
     },
   ],
   projects: [
