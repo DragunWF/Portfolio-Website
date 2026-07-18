@@ -90,7 +90,7 @@ export default function AchievementModal({
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-100 bg-slate-900/50 hover:bg-slate-800 rounded-full transition-colors z-20 backdrop-blur-sm"
+                className="cursor-pointer absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-100 bg-slate-900/50 hover:bg-slate-800 rounded-full transition-colors z-20 backdrop-blur-sm"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
