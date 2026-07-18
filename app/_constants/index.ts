@@ -489,6 +489,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       buttonText: "Explore Profile",
       url: "https://github.com/DragunWF",
       platform: "github",
+      imageUrl: "/github-banner.webp",
     },
     {
       id: "proj-2",
@@ -498,6 +499,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       buttonText: "Enter Realm",
       url: "https://dragunwf.itch.io",
       platform: "itchio",
+      imageUrl: "/game-dev-banner.webp",
     },
   ],
   blogs: [

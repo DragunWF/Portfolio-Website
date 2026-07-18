@@ -102,6 +102,7 @@ export interface ProjectData {
   buttonText: string;
   url: string;
   platform: "github" | "itchio";
+  imageUrl: string;
 }
 
 // TODO: Implement this on the main portfolio data
