@@ -289,7 +289,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152072945-vqcckq.jpg&w=3840&q=75",
       description:
-        "Recognized by the NBDB Philippines and got featured on the national news (Rappler). Built a comprehensive reading comprehension platform with offline capabilities.",
+        "Recognized as a Minor Awardee (2nd highest award) as the leader of Team Hackademics at the Readers Rising Hackathon 2025 for developing BasaBuddy, a cross-platform mobile reading app built with React Native. BasaBuddy introduces an AI companion named Tassie, whose personality evolves based on the books a user reads. The app features a chatbot, OCR-powered book page scanning with AI insights, and gamified elements including a leveling system, achievements, pomodoro timers, streaks, and more, making reading more interactive and engaging.",
     },
     {
       id: "ach-2",
@@ -312,7 +312,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://media.licdn.com/dms/image/v2/D4D2DAQGPBn8maNLXZQ/profile-treasury-image-shrink_1280_1280/B4DZ5kwFfgHMAY-/0/1779806788156?e=1784973600&v=beta&t=wzsPcaw4MXZrrNN8LVTPW7_17AMnqAJHKCHto99T_oA",
       description:
-        "Secured 1st place among all participating campuses in the cluster level. Demonstrated proficiency in advanced data structures and algorithms under extreme time pressure.",
+        "Led a three-member team as the team captain to victory as the cluster-level champion in a 6-hour mobile development hackathon. Competed against fellow local-level Codefest champions from other STI Colleges. The event took place at STI College Ortigas-Cainta inside a computer laboratory on April 4, 2025.",
     },
     {
       id: "ach-4",
@@ -323,7 +323,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152161951-unj39.jpg&w=3840&q=75",
       description:
-        "Emerged as the top competitive programmer at the local campus level, earning the right to represent the institution at the cluster and national finals.",
+        "Led a three-member team as captain to secure the championship title in a 6-hour mobile development hackathon. Competed against fellow students within the campus in a local-level coding competition held in a computer laboratory on March 5, 2025.",
     },
     {
       id: "ach-5",
@@ -335,7 +335,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152055847-rdw06.jpg&w=3840&q=75",
       description:
-        "Won 1st place in the advanced Python programming category. Tasks involved algorithmic problem solving, scripting, and optimized logic implementation.",
+        "Solved 6 Python programming problems at an onsite competitive programming contest at STI College Ortigas-Cainta. The competition lasted for 2 hours and took place on November 17, 2025 at a computer laboratory.",
     },
     {
       id: "ach-6",
@@ -346,7 +346,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152198572-oyr8uc.jpg&w=3840&q=75",
       description:
-        "Developed and pitched a fully functional mobile application during ICT Week, securing the top spot for innovation, design, and technical execution.",
+        "Successfully led a team of three to design and develop an Android app with Android Studio and Java in a 6-hour competition, organized by a student organization named ALPHA at STI College Ortigas-Cainta.",
     },
     {
       id: "ach-11",
@@ -380,7 +380,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152396490-t96w7w.jpg&w=3840&q=75",
       description:
-        "Placed 2nd overall in the 2024 iteration of the campus Codefest, marking the beginning of a multi-year competitive programming journey.",
+        "Led a team of three developers to 1st Runner-Up in the Tagisan ng Talino: Codefest Locals, a hackathon focused on mobile development with Java and Android Studio. The event took place on March 15, 2024, at STI College Ortigas-Cainta.",
     },
     {
       id: "ach-9",
@@ -391,7 +391,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://media.licdn.com/dms/image/v2/D562DAQFy4rlBoMizFA/profile-treasury-image-shrink_1920_1920/B56ZwDhcQlHAAc-/0/1769585624772?e=1784988000&v=beta&t=FSoypSnwlMiQNS8jEhp7tncrzk__uJu5rjO03kUWCvw",
       description:
-        "Secured 2nd place for an innovative mobile application solution developed within a tight deadline during the June ICT Week activities.",
+        "Led a team of three developers to design and build an Android app using Android Studio and Java in a 6-hour hackathon hosted by ALPHA, a student organization at STI College Ortigas-Cainta.",
     },
     {
       id: "ach-10",
@@ -402,7 +402,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152627546-bwbjh5.jpg&w=3840&q=75",
       description:
-        "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
+        "Represented STI College Ortigas-Cainta on a national competition at the University of Makati (UMAK), solving 6 Python algorithmic programming problems and landed on the final round (Ranked among the top 20 out of 60+ universities)",
     },
     {
       id: "ach-23",
@@ -413,7 +413,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152611153-g3ekx9.JPG&w=3840&q=75",
       description:
-        "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
+        "Represented STI College Ortigas-Cainta in the Python Programming category at a national-level competition, the 13th IT Skills Olympics held at the University of Makati (UMAK). Achieved a top 2 ranking among participants from 35+ universities and colleges in the elimination round and advanced to the finals, solving 7 Python programming challenges.",
     },
     {
       id: "ach-12",
@@ -424,7 +424,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778166115813-shr4a.jpg&w=3840&q=75",
       description:
-        "Achieved 8th place representing the institution's top capstone project, defending the technical architecture and research findings against other universities.",
+        "Selected as the top BSIT capstone project among the entire 4th-year batch, earning the distinction to represent STI College Ortigas-Cainta. As Project Leader, I guided our team to an 8th Place finish at the 1st Cainta Research Congress, successfully competing against leading thesis and capstone entries from multiple universities/colleges. Capstone Project Title: An online resort booking, reservation, and monitoring system with payment verification, and sales and auditing report generation, and a website with AI integration for Curvera Rest House. ",
     },
     {
       id: "ach-13",
@@ -435,7 +435,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778076714562-e8j9ip.jpg&w=3840&q=75",
       description:
-        "Advanced to the Top 10 Finals out of numerous competing teams, developing a disruptive technological solution for enterprise real estate and workflow management.",
+        "Led a team of three developers in a two-day hackathon focused on addressing KMC's internal HR challenges through a web-based solution. Our team successfully built a working prototype and was selected as one of the finalists. The event welcomed not only students but also graduates and industry professionals, providing a diverse and competitive environment that made the experience both challenging and rewarding.",
     },
     {
       id: "ach-14",
@@ -447,7 +447,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
       description:
-        "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
+        "Achieved a position among the top 20 out of 178 teams nationwide at the AppCon 2024 Hackathon, a national competition that challenged students to develop web or mobile applications addressing social issues in the Philippines using AI or IoT technologies. Represented STI College Ortigas-Cainta as part of Team Hackademics. The project spanned six months from November 2024 to April 2025, culminating in a final awarding ceremony held at Adamson University Theatre on June 28, 2025.",
     },
     {
       id: "ach-14",
