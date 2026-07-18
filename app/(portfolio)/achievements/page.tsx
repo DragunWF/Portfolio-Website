@@ -40,6 +40,13 @@ export default function AchievementsPage() {
             Hackathons & Competitions
           </h1>
         </div>
+        <p className="mt-4 text-slate-400 text-sm max-w-2xl leading-relaxed">
+          A detailed chronicle of my competitive programming placements,
+          hackathons, and technical honors.{" "}
+          <span className="text-emerald-400/90 font-medium">
+            Click on any achievement to inspect details and descriptions.
+          </span>
+        </p>
       </header>
 
       {/* Render the sections */}

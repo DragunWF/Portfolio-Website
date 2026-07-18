@@ -275,7 +275,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152072945-vqcckq.jpg&w=3840&q=75",
-      description: "Recognized by the NBDB Philippines and got featured on the national news (Rappler). Built a comprehensive reading comprehension platform with offline capabilities.",
+      description:
+        "Recognized by the NBDB Philippines and got featured on the national news (Rappler). Built a comprehensive reading comprehension platform with offline capabilities.",
     },
     {
       id: "ach-2",
@@ -286,7 +287,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152470324-rio6it.jpg&w=3840&q=75",
-      description: "Recognized by the whole network of STI Colleges and featured in a national news article. Competed across multiple levels solving complex algorithmic challenges.",
+      description:
+        "Recognized by the whole network of STI Colleges and featured in a national news article. Competed across multiple levels solving complex algorithmic challenges.",
     },
     {
       id: "ach-3",
@@ -296,7 +298,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "CLUSTER COMPETITION",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Secured 1st place among all participating campuses in the cluster level. Demonstrated proficiency in advanced data structures and algorithms under extreme time pressure.",
+      description:
+        "Secured 1st place among all participating campuses in the cluster level. Demonstrated proficiency in advanced data structures and algorithms under extreme time pressure.",
     },
     {
       id: "ach-4",
@@ -306,7 +309,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "LOCAL COMPETITION",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Emerged as the top competitive programmer at the local campus level, earning the right to represent the institution at the cluster and national finals.",
+      description:
+        "Emerged as the top competitive programmer at the local campus level, earning the right to represent the institution at the cluster and national finals.",
     },
     {
       id: "ach-5",
@@ -314,9 +318,11 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title: "Champion",
       event: "Techfest 2025 Python Programming",
       badgeText: "PROGRAMMING",
+      isFeatured: true,
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Won 1st place in the advanced Python programming category. Tasks involved algorithmic problem solving, scripting, and optimized logic implementation.",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152055847-rdw06.jpg&w=3840&q=75",
+      description:
+        "Won 1st place in the advanced Python programming category. Tasks involved algorithmic problem solving, scripting, and optimized logic implementation.",
     },
     {
       id: "ach-6",
@@ -326,7 +332,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "APP DEVELOPMENT",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Developed and pitched a fully functional mobile application during ICT Week, securing the top spot for innovation, design, and technical execution.",
+      description:
+        "Developed and pitched a fully functional mobile application during ICT Week, securing the top spot for innovation, design, and technical execution.",
     },
     {
       id: "ach-7",
@@ -337,7 +344,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "GAME DEVELOPMENT",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Awarded 1st Place for perfectly integrating the jam's secret theme into 'ChronoFrost', a Python-based 2D game. Handled all physics, rendering, and logic using PyGame.",
+      description:
+        "Awarded 1st Place for perfectly integrating the jam's secret theme into 'ChronoFrost', a Python-based 2D game. Handled all physics, rendering, and logic using PyGame.",
     },
     {
       id: "ach-8",
@@ -347,7 +355,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "LOCAL COMPETITION",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Placed 2nd overall in the 2024 iteration of the campus Codefest, marking the beginning of a multi-year competitive programming journey.",
+      description:
+        "Placed 2nd overall in the 2024 iteration of the campus Codefest, marking the beginning of a multi-year competitive programming journey.",
     },
     {
       id: "ach-9",
@@ -357,7 +366,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "APP DEVELOPMENT",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Secured 2nd place for an innovative mobile application solution developed within a tight deadline during the June ICT Week activities.",
+      description:
+        "Secured 2nd place for an innovative mobile application solution developed within a tight deadline during the June ICT Week activities.",
     },
     {
       id: "ach-10",
@@ -367,7 +377,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "PROGRAMMING",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
+      description:
+        "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
     },
     {
       id: "ach-11",
@@ -377,7 +388,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "GLOBAL HACKATHON",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
+      description:
+        "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
     },
     {
       id: "ach-12",
@@ -387,7 +399,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "RESEARCH CONGRESS",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Achieved 8th place representing the institution's top capstone project, defending the technical architecture and research findings against other universities.",
+      description:
+        "Achieved 8th place representing the institution's top capstone project, defending the technical architecture and research findings against other universities.",
     },
     {
       id: "ach-13",
@@ -397,17 +410,20 @@ export const PORTFOLIO_DATA: PortfolioData = {
       badgeText: "HACKATHON",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Advanced to the Top 10 Finals out of numerous competing teams, developing a disruptive technological solution for enterprise real estate and workflow management.",
+      description:
+        "Advanced to the Top 10 Finals out of numerous competing teams, developing a disruptive technological solution for enterprise real estate and workflow management.",
     },
     {
       id: "ach-14",
       tier: 2,
       title: "Top 20 Finalist",
       event: "AppCon 2024 Hackathon",
+      isFeatured: true,
       badgeText: "HACKATHON",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      description: "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
+      description:
+        "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
     },
   ],
   projects: [
