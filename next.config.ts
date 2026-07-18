@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "marc-plarisan.vercel.app",
       },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
       ...(supabaseHost
         ? [
             {
