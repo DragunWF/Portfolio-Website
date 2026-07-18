@@ -99,21 +99,22 @@ export function HonorsVictories({
                   <span className="text-slate-500 text-xs">No Image</span>
                 </div>
               )}
-              {/* Top-Right Absolute Date Badge */}
-              <span className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded bg-slate-950/80 border border-slate-850 text-[10px] text-slate-400 font-bold uppercase tracking-wider font-mono backdrop-blur-sm">
-                {ach.date}
-              </span>
             </div>
             <div className="flex flex-col flex-1">
               <h4 className="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">
                 {ach.title}
               </h4>
               <p className="text-sm text-slate-400 mt-1 mb-3">{ach.event}</p>
-              {ach.badgeText && (
-                <span className="mt-auto self-start px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
-                  {ach.badgeText}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {ach.badgeText && (
+                  <span className="px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
+                    {ach.badgeText}
+                  </span>
+                )}
+                <span className="px-2 py-0.5 rounded-md bg-slate-950/70 border border-slate-800 text-slate-400 text-[10px] font-bold uppercase tracking-wider font-mono">
+                  {ach.date}
                 </span>
-              )}
+              </div>
             </div>
           </div>
         ))}
