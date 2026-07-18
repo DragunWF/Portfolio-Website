@@ -51,13 +51,11 @@ export function FeaturedAchievements({
         ))}
       </div>
 
-      {selectedAchievement && (
-        <AchievementModal
-          achievement={selectedAchievement}
-          isOpen={!!selectedAchievement}
-          onClose={() => setSelectedAchievement(null)}
-        />
-      )}
+      <AchievementModal
+        achievement={selectedAchievement}
+        isOpen={!!selectedAchievement}
+        onClose={() => setSelectedAchievement(null)}
+      />
     </section>
   );
 }
@@ -112,13 +110,11 @@ export function HonorsVictories({
         ))}
       </div>
 
-      {selectedAchievement && (
-        <AchievementModal
-          achievement={selectedAchievement}
-          isOpen={!!selectedAchievement}
-          onClose={() => setSelectedAchievement(null)}
-        />
-      )}
+      <AchievementModal
+        achievement={selectedAchievement}
+        isOpen={!!selectedAchievement}
+        onClose={() => setSelectedAchievement(null)}
+      />
     </section>
   );
 }
@@ -173,13 +169,11 @@ export function FinalistTrials({
         ))}
       </div>
 
-      {selectedAchievement && (
-        <AchievementModal
-          achievement={selectedAchievement}
-          isOpen={!!selectedAchievement}
-          onClose={() => setSelectedAchievement(null)}
-        />
-      )}
+      <AchievementModal
+        achievement={selectedAchievement}
+        isOpen={!!selectedAchievement}
+        onClose={() => setSelectedAchievement(null)}
+      />
     </section>
   );
 }

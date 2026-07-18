@@ -55,13 +55,11 @@ export default function AchievementsGrid({
       </div>
 
       {/* Render Modal */}
-      {selectedAchievement && (
-        <AchievementModal
-          achievement={selectedAchievement}
-          isOpen={!!selectedAchievement}
-          onClose={() => setSelectedAchievement(null)}
-        />
-      )}
+      <AchievementModal
+        achievement={selectedAchievement}
+        isOpen={!!selectedAchievement}
+        onClose={() => setSelectedAchievement(null)}
+      />
     </>
   );
 }
