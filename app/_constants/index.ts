@@ -109,9 +109,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "JavaScript",
             "HTML",
             "CSS",
-            "Salesforce",
             "VisualForce",
             "Lightning Web Components (LWC)",
+            "Salesforce",
+            "CRM Systems",
           ],
           description: [
             "Will update this description after gaining more experience",
