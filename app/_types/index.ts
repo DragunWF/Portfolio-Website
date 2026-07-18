@@ -77,6 +77,11 @@ export interface AchievementData {
   title: string;
   event: string;
   project?: string;
+  imageUrl?: string;
+  isFeatured?: boolean;
+  badgeText?: string;
+  description?: string;
+  date: string; // e.g. "April 2025"
 }
 
 // TODO: Implement featured projects section in the future
@@ -97,6 +102,7 @@ export interface ProjectData {
   buttonText: string;
   url: string;
   platform: "github" | "itchio";
+  imageUrl: string;
 }
 
 // TODO: Implement this on the main portfolio data

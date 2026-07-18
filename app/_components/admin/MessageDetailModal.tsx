@@ -40,12 +40,12 @@ export default function MessageDetailModal({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative bg-slate-900/80 border border-emerald-500/20 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
+      <div className="relative bg-slate-900/80 border border-emerald-500/20 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
         {/* Ambient glow */}
         <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl" />
 
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 shrink-0">
           <div className="flex items-center gap-2 text-emerald-500">
             <Mail size={16} />
             <span className="text-sm font-mono font-medium uppercase tracking-wider">
@@ -62,7 +62,7 @@ export default function MessageDetailModal({
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 space-y-5">
+        <div className="px-6 py-5 space-y-5 overflow-y-auto flex-1">
           {/* Sender meta */}
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -101,7 +101,7 @@ export default function MessageDetailModal({
             <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">
               Message
             </p>
-            <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+            <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-4 max-h-64 overflow-y-auto">
               <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap font-mono">
                 {message.message}
               </p>

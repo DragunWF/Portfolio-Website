@@ -2,6 +2,7 @@ import { PORTFOLIO_DATA } from "@/app/_constants";
 import { Gamepad2, ExternalLink } from "lucide-react";
 import { GitHubIcon } from "@/app/_components/icons/GithubIcon";
 import SectionContainer from "../layout/SectionContainer";
+import Image from "next/image";
 
 export default function Projects() {
   const { projects } = PORTFOLIO_DATA;
@@ -19,7 +20,7 @@ export default function Projects() {
           return (
             <div
               key={proj.id}
-              className="flex flex-col p-8 bg-slate-900/60 border border-slate-800 rounded-2xl transition-all duration-300 hover:border-slate-600 backdrop-blur-sm relative overflow-hidden group"
+              className="flex flex-col h-full p-8 bg-slate-900/60 border border-slate-800 rounded-2xl transition-all duration-300 hover:border-slate-600 backdrop-blur-sm relative group"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 text-emerald-500 transition-colors group-hover:bg-slate-800">
@@ -29,15 +30,26 @@ export default function Projects() {
                   {proj.title}
                 </h4>
               </div>
-              <p className="text-slate-400 mb-8 leading-relaxed grow">
+              <p className="text-slate-400 mb-6 leading-relaxed flex-grow">
                 {proj.description}
               </p>
+
+              {proj.imageUrl && (
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-800 group-hover:border-emerald-500/25 transition-colors duration-300">
+                  <Image
+                    src={proj.imageUrl}
+                    alt={`${proj.title} showcase`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+              )}
 
               <a
                 href={proj.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium transition-colors border border-slate-700"
+                className="flex items-center justify-center gap-2 w-full mt-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium transition-colors border border-slate-700"
               >
                 {proj.buttonText}
                 <ExternalLink className="w-4 h-4" />

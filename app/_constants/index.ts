@@ -104,7 +104,23 @@ export const PORTFOLIO_DATA: PortfolioData = {
           endDate: "Present",
           employmentType: "Full-time",
           locationType: "Hybrid",
-          skills: ["SAP ABAP", "Backend Development", "ERP Systems"],
+          skills: [
+            "Salesforce",
+            "CRM Systems",
+            "Apex",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Git",
+            "SOQL",
+            "VisualForce",
+            "Lightning Web Components (LWC)",
+            "REST APIs",
+            "SOAP APIs",
+            "Waterfall Methodology",
+            "Agile Methodology",
+            "SCRUM",
+          ],
           description: [
             "Will update this description after gaining more experience",
           ],
@@ -118,11 +134,11 @@ export const PORTFOLIO_DATA: PortfolioData = {
           locationType: "Remote",
           skills: [
             "SAP ABAP",
-            "Backend Development",
             "ERP Systems",
             "OpenSQL",
             "SAP GUI",
             "SAP S/4HANA",
+            "ALV Reports",
             "SAP RAP (RESTful Application Programming Model)",
             "Core Data Services (CDS)",
             "Clean Core",
@@ -130,7 +146,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
           ],
           description: [
             "Completed the Accenture SAP Advanced Business Application Programming (ABAP) Academy internship program (OJT), building expertise in classical SAP ABAP development with SAP GUI.",
-            "Executed the full software development lifecycle (SDLC) during a collaborative technical case study, managing requirements analysis, debugging, testing, and transport logistics and successfully passing the evaluation to officially be tagged as an Accenture Academy Internship Program Completer.",
+            "Executed the full software development lifecycle (SDLC) during a collaborative technical case study as a leader, managing requirements analysis, debugging, testing, and transport logistics and successfully passing the evaluation to officially be tagged as an Accenture Academy Internship Program Completer.",
             "Attained the SAP Certified Implementation Consultant for End-to-End Business Processes (C_IEE2E) certificate, effectively bridging technical execution with core business process integration.",
             "Developed robust backend solutions utilizing Object-Oriented ABAP, ALV Reports, and custom Function Modules.",
             "Built cloud-ready applications on SAP BTP using ADT in Eclipse, leveraging CDS Views, OData Services, and the RESTful ABAP Programming Model (RAP).",
@@ -268,91 +284,200 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-1",
       tier: 1,
-      title: "Minor Awardee (2nd Highest Placement)",
+      title: "Minor Awardee (2nd Highest Award)",
       event: "Readers Rising Hackathon 2025",
-      project:
-        "Recognized by the NBDB Philippines and got featured on the national news (Rappler)",
+      project: "BasaBuddy",
+      isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152072945-vqcckq.jpg&w=3840&q=75",
+      description:
+        "Recognized as a Minor Awardee (2nd highest award) as the leader of Team Hackademics at the Readers Rising Hackathon 2025 for developing BasaBuddy, a cross-platform mobile reading app built with React Native. BasaBuddy introduces an AI companion named Tassie, whose personality evolves based on the books a user reads. The app features a chatbot, OCR-powered book page scanning with AI insights, and gamified elements including a leveling system, achievements, pomodoro timers, streaks, and more, making reading more interactive and engaging.",
+      date: "Sep 2025",
     },
     {
       id: "ach-2",
       tier: 1,
-      title: "National Finalist",
-      event: "Tagisan ng Talino 2025: Codefest National Level",
-      project:
-        "Recognized by the whole network of STI Colleges and got on a national news article",
+      title: "National Finalist & 2x Champion (Local/Cluster)",
+      event: "Tagisan ng Talino 2025: Codefest",
+      isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152470324-rio6it.jpg&w=3840&q=75",
+      description:
+        "Recognized by the whole network of STI Colleges and featured in a national news article. Competed across multiple levels solving complex algorithmic challenges.",
+      date: "May 2025",
     },
     {
       id: "ach-3",
       tier: 1,
-      title: "Champion",
+      title: "Cluster Champion",
       event: "Tagisan ng Talino 2025: Codefest Cluster Level",
+      badgeText: "CLUSTER COMPETITION",
+      imageUrl:
+        "https://media.licdn.com/dms/image/v2/D4D2DAQGPBn8maNLXZQ/profile-treasury-image-shrink_1280_1280/B4DZ5kwFfgHMAY-/0/1779806788156?e=1784973600&v=beta&t=wzsPcaw4MXZrrNN8LVTPW7_17AMnqAJHKCHto99T_oA",
+      description:
+        "Led a three-member team as the team captain to victory as the cluster-level champion in a 6-hour mobile development hackathon. Competed against fellow local-level Codefest champions from other STI Colleges. The event took place at STI College Ortigas-Cainta inside a computer laboratory on April 4, 2025.",
+      date: "April 2025",
     },
     {
       id: "ach-4",
       tier: 1,
-      title: "Champion",
+      title: "Local Champion",
       event: "Tagisan ng Talino 2025: Codefest Local Level",
+      badgeText: "LOCAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152161951-unj39.jpg&w=3840&q=75",
+      description:
+        "Led a three-member team as captain to secure the championship title in a 6-hour mobile development hackathon. Competed against fellow students within the campus in a local-level coding competition held in a computer laboratory on March 5, 2025.",
+      date: "March 2025",
     },
     {
       id: "ach-5",
-      tier: 2,
+      tier: 1,
       title: "Champion",
       event: "Techfest 2025 Python Programming",
+      badgeText: "LOCAL COMPETITION",
+      isFeatured: true,
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152055847-rdw06.jpg&w=3840&q=75",
+      description:
+        "Solved 6 Python programming problems at an onsite competitive programming contest at STI College Ortigas-Cainta. The competition lasted for 2 hours and took place on November 17, 2025 at a computer laboratory.",
+      date: "November 2025",
     },
     {
       id: "ach-6",
-      tier: 2,
+      tier: 1,
       title: "Champion",
       event: "App Development: ICT Week of November 2024",
+      badgeText: "LOCAL HACKATHON",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152198572-oyr8uc.jpg&w=3840&q=75",
+      description:
+        "Successfully led a team of three to design and develop an Android app with Android Studio and Java in a 6-hour competition, organized by a student organization named ALPHA at STI College Ortigas-Cainta.",
+      date: "November 2024",
+    },
+    {
+      id: "ach-11",
+      tier: 1,
+      title: "Global Nominee",
+      event: "NASA International Space Apps Challenge 2024",
+      badgeText: "INTERNATIONAL COMPETITION",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784382262/Screenshot_2026-07-18_at_9.43.43_PM_ktw3cn.png",
+      description:
+        "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
+      date: "October 2024",
     },
     {
       id: "ach-7",
-      tier: 2,
+      tier: 1,
       title: "1st Place in Theme Integrity",
       event: "PyGame Community Winter Jam 2026",
       project: "ChronoFrost",
+      badgeText: "ONLINE GAME JAM",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784381788/Screenshot_2026-07-18_at_9.36.14_PM_zhh9cn.png",
+      description:
+        "Awarded 1st Place for perfectly integrating the jam's secret theme into 'ChronoFrost', a Python-based 2D game. Handled all physics, rendering, and logic using PyGame.",
+      date: "March 2026",
     },
     {
       id: "ach-8",
-      tier: 2,
+      tier: 1,
       title: "1st Runner-Up",
       event: "Tagisan ng Talino 2024: Codefest Local Level",
+      badgeText: "LOCAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152396490-t96w7w.jpg&w=3840&q=75",
+      description:
+        "Led a team of three developers to 1st Runner-Up in the Tagisan ng Talino: Codefest Locals, a hackathon focused on mobile development with Java and Android Studio. The event took place on March 15, 2024, at STI College Ortigas-Cainta.",
+      date: "March 2024",
     },
     {
       id: "ach-9",
-      tier: 2,
+      tier: 1,
       title: "1st Runner-Up",
       event: "App Development: ICT Week of June 2024",
+      badgeText: "LOCAL HACKATHON",
+      imageUrl:
+        "https://media.licdn.com/dms/image/v2/D562DAQFy4rlBoMizFA/profile-treasury-image-shrink_1920_1920/B56ZwDhcQlHAAc-/0/1769585624772?e=1784988000&v=beta&t=FSoypSnwlMiQNS8jEhp7tncrzk__uJu5rjO03kUWCvw",
+      description:
+        "Led a team of three developers to design and build an Android app using Android Studio and Java in a 6-hour hackathon hosted by ALPHA, a student organization at STI College Ortigas-Cainta.",
+      date: "June 2024",
     },
     {
       id: "ach-10",
       tier: 2,
-      title: "Finalist",
-      event: "13th & 14th IT Skills Olympics, Python Programming",
+      title: "Ranked among the top 20 finalists",
+      event: "14th IT Skills Olympics (Python Programming Category)",
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152627546-bwbjh5.jpg&w=3840&q=75",
+      description:
+        "Represented STI College Ortigas-Cainta on a national competition at the University of Makati (UMAK), solving 6 Python algorithmic programming problems and landed on the final round (Ranked among the top 20 out of 60+ universities)",
+      date: "November 2025",
     },
     {
-      id: "ach-11",
+      id: "ach-23",
       tier: 2,
-      title: "Global Nominee",
-      event: "NASA Space Apps Challenge 2024",
+      title: "Ranked among the top 20 finalists",
+      event: "13th IT Skills Olympics (Python Programming Category)",
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152611153-g3ekx9.JPG&w=3840&q=75",
+      description:
+        "Represented STI College Ortigas-Cainta in the Python Programming category at a national-level competition, the 13th IT Skills Olympics held at the University of Makati (UMAK). Achieved a top 2 ranking among participants from 35+ universities and colleges in the elimination round and advanced to the finals, solving 7 Python programming challenges.",
+      date: "November 2024",
     },
     {
       id: "ach-12",
-      tier: 2,
+      tier: 1,
       title: "8th Place",
       event: "1st Cainta Research Congress",
+      badgeText: "RESEARCH CONGRESS",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778166115813-shr4a.jpg&w=3840&q=75",
+      description:
+        "Selected as the top BSIT capstone project among the entire 4th-year batch, earning the distinction to represent STI College Ortigas-Cainta. As Project Leader, I guided our team to an 8th Place finish at the 1st Cainta Research Congress, successfully competing against leading thesis and capstone entries from multiple universities/colleges. Capstone Project Title: An online resort booking, reservation, and monitoring system with payment verification, and sales and auditing report generation, and a website with AI integration for Curvera Rest House. ",
+      date: "March 2026",
     },
     {
       id: "ach-13",
       tier: 2,
       title: "Top 10 Finalist",
       event: "KMC Hackathon 2024",
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778076714562-e8j9ip.jpg&w=3840&q=75",
+      description:
+        "Led a team of three developers in a two-day hackathon focused on addressing KMC's internal HR challenges through a web-based solution. Our team successfully built a working prototype and was selected as one of the finalists. The event welcomed not only students but also graduates and industry professionals, providing a diverse and competitive environment that made the experience both challenging and rewarding.",
+      date: "October 2024",
     },
     {
       id: "ach-14",
       tier: 2,
-      title: "Top 20 Finalist",
+      title: "Ranked among the Top 20 finalists",
       event: "AppCon 2024 Hackathon",
+      isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
+      description:
+        "Achieved a position among the top 20 out of 178 teams nationwide at the AppCon 2024 Hackathon, a national competition that challenged students to develop web or mobile applications addressing social issues in the Philippines using AI or IoT technologies. Represented STI College Ortigas-Cainta as part of Team Hackademics. The project spanned six months from November 2024 to April 2025, culminating in a final awarding ceremony held at Adamson University Theatre on June 28, 2025.",
+      date: "June 2025",
+    },
+    {
+      id: "ach-15",
+      tier: 2,
+      title: "Finalist",
+      event: "InterCICSkewla Programming Challenge 2026",
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784384264/Screenshot_2026-07-18_at_10.16.17_PM_oa2xiz.png",
+      description:
+        "Represented STI College Ortigas-Cainta in a national competitive programming challenge, solving complex algorithmic problems using Python.",
+      date: "April 2026",
     },
   ],
   projects: [
@@ -364,6 +489,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       buttonText: "Explore Profile",
       url: "https://github.com/DragunWF",
       platform: "github",
+      imageUrl: "/github-banner.webp",
     },
     {
       id: "proj-2",
@@ -373,6 +499,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       buttonText: "Enter Realm",
       url: "https://dragunwf.itch.io",
       platform: "itchio",
+      imageUrl: "/game-dev-banner.webp",
     },
   ],
   blogs: [
