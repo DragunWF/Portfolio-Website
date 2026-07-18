@@ -387,7 +387,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "13th IT Skills Olympics (Python Programming Category)",
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
-        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152627546-bwbjh5.jpg&w=3840&q=75",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152611153-g3ekx9.JPG&w=3840&q=75",
       description:
         "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
     },

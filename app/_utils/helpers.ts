@@ -12,8 +12,18 @@ export function getExcerpt(content: string, maxChars = 120): string {
 }
 
 const MONTHS: Record<string, number> = {
-  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  May: 4,
+  Jun: 5,
+  Jul: 6,
+  Aug: 7,
+  Sep: 8,
+  Oct: 9,
+  Nov: 10,
+  Dec: 11,
 };
 
 function parseDateString(dateStr: string): Date {
@@ -30,7 +40,10 @@ function parseDateString(dateStr: string): Date {
   return new Date(year, month, 1);
 }
 
-export function calculateDuration(startDateStr: string, endDateStr: string): string {
+export function calculateDuration(
+  startDateStr: string,
+  endDateStr: string,
+): string {
   const start = parseDateString(startDateStr);
   const end = parseDateString(endDateStr);
 
@@ -40,8 +53,8 @@ export function calculateDuration(startDateStr: string, endDateStr: string): str
   const endMonth = end.getMonth();
 
   const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
-  
-  if (totalMonths <= 0) return "0 mos";
+
+  if (totalMonths <= 0) return "0 months";
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
 
@@ -54,8 +67,10 @@ export function calculateDuration(startDateStr: string, endDateStr: string): str
   return yearParts || monthParts;
 }
 
-export function calculateCompanyDuration(roles: { startDate: string; endDate: string }[]): string {
-  if (!roles || roles.length === 0) return "0 mos";
+export function calculateCompanyDuration(
+  roles: { startDate: string; endDate: string }[],
+): string {
+  if (!roles || roles.length === 0) return "0 months";
 
   let earliestStart = parseDateString(roles[0].startDate);
   let latestEnd = parseDateString(roles[0].endDate);
@@ -73,8 +88,8 @@ export function calculateCompanyDuration(roles: { startDate: string; endDate: st
   const endMonth = latestEnd.getMonth();
 
   const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
-  
-  if (totalMonths <= 0) return "0 mos";
+
+  if (totalMonths <= 0) return "0 months";
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
 
