@@ -106,6 +106,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
           locationType: "Hybrid",
           skills: [
             "Salesforce",
+            "CRM Systems",
             "Apex",
             "JavaScript",
             "HTML",
@@ -114,7 +115,6 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "SOQL",
             "VisualForce",
             "Lightning Web Components (LWC)",
-            "CRM Systems",
             "REST APIs",
             "SOAP APIs",
             "Waterfall Methodology",
