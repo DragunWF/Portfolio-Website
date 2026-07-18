@@ -104,7 +104,15 @@ export const PORTFOLIO_DATA: PortfolioData = {
           endDate: "Present",
           employmentType: "Full-time",
           locationType: "Hybrid",
-          skills: ["SAP ABAP", "Backend Development", "ERP Systems"],
+          skills: [
+            "Apex",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Salesforce",
+            "VisualForce",
+            "Lightning Web Components (LWC)",
+          ],
           description: [
             "Will update this description after gaining more experience",
           ],
@@ -293,7 +301,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-3",
       tier: 1,
-      title: "Champion",
+      title: "Cluster Champion",
       event: "Tagisan ng Talino 2025: Codefest Cluster Level",
       badgeText: "CLUSTER COMPETITION",
       imageUrl:
@@ -304,7 +312,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-4",
       tier: 1,
-      title: "Champion",
+      title: "Local Champion",
       event: "Tagisan ng Talino 2025: Codefest Local Level",
       badgeText: "LOCAL COMPETITION",
       imageUrl:
@@ -341,9 +349,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title: "1st Place in Theme Integrity",
       event: "PyGame Community Winter Jam 2026",
       project: "ChronoFrost",
-      badgeText: "GAME DEVELOPMENT",
+      badgeText: "ONLINE GAME JAM",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784381788/Screenshot_2026-07-18_at_9.36.14_PM_zhh9cn.png",
       description:
         "Awarded 1st Place for perfectly integrating the jam's secret theme into 'ChronoFrost', a Python-based 2D game. Handled all physics, rendering, and logic using PyGame.",
     },
