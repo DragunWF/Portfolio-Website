@@ -297,7 +297,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "Tagisan ng Talino 2025: Codefest Cluster Level",
       badgeText: "CLUSTER COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://media.licdn.com/dms/image/v2/D4D2DAQGPBn8maNLXZQ/profile-treasury-image-shrink_1280_1280/B4DZ5kwFfgHMAY-/0/1779806788156?e=1784973600&v=beta&t=wzsPcaw4MXZrrNN8LVTPW7_17AMnqAJHKCHto99T_oA",
       description:
         "Secured 1st place among all participating campuses in the cluster level. Demonstrated proficiency in advanced data structures and algorithms under extreme time pressure.",
     },
@@ -308,16 +308,16 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "Tagisan ng Talino 2025: Codefest Local Level",
       badgeText: "LOCAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152161951-unj39.jpg&w=3840&q=75",
       description:
         "Emerged as the top competitive programmer at the local campus level, earning the right to represent the institution at the cluster and national finals.",
     },
     {
       id: "ach-5",
-      tier: 2,
+      tier: 1,
       title: "Champion",
       event: "Techfest 2025 Python Programming",
-      badgeText: "PROGRAMMING",
+      badgeText: "LOCAL COMPETITION",
       isFeatured: true,
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152055847-rdw06.jpg&w=3840&q=75",
@@ -326,18 +326,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
     },
     {
       id: "ach-6",
-      tier: 2,
+      tier: 1,
       title: "Champion",
       event: "App Development: ICT Week of November 2024",
-      badgeText: "APP DEVELOPMENT",
+      badgeText: "LOCAL HACKATHON",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152198572-oyr8uc.jpg&w=3840&q=75",
       description:
         "Developed and pitched a fully functional mobile application during ICT Week, securing the top spot for innovation, design, and technical execution.",
     },
     {
       id: "ach-7",
-      tier: 2,
+      tier: 1,
       title: "1st Place in Theme Integrity",
       event: "PyGame Community Winter Jam 2026",
       project: "ChronoFrost",
@@ -349,18 +349,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
     },
     {
       id: "ach-8",
-      tier: 2,
+      tier: 1,
       title: "1st Runner-Up",
       event: "Tagisan ng Talino 2024: Codefest Local Level",
       badgeText: "LOCAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152396490-t96w7w.jpg&w=3840&q=75",
       description:
         "Placed 2nd overall in the 2024 iteration of the campus Codefest, marking the beginning of a multi-year competitive programming journey.",
     },
     {
       id: "ach-9",
-      tier: 2,
+      tier: 1,
       title: "1st Runner-Up",
       event: "App Development: ICT Week of June 2024",
       badgeText: "APP DEVELOPMENT",
@@ -372,20 +372,31 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "ach-10",
       tier: 2,
-      title: "Finalist",
-      event: "13th & 14th IT Skills Olympics, Python Programming",
-      badgeText: "PROGRAMMING",
+      title: "Finalist (Top 20 Universities/Colleges)",
+      event: "14th IT Skills Olympics (Python Programming Category)",
+      badgeText: "NATIONAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152627546-bwbjh5.jpg&w=3840&q=75",
+      description:
+        "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
+    },
+    {
+      id: "ach-23",
+      tier: 2,
+      title: "Finalist (Top 20 Universities/Colleges)",
+      event: "13th IT Skills Olympics (Python Programming Category)",
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152627546-bwbjh5.jpg&w=3840&q=75",
       description:
         "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
     },
     {
       id: "ach-11",
-      tier: 2,
+      tier: 1,
       title: "Global Nominee",
       event: "NASA Space Apps Challenge 2024",
-      badgeText: "GLOBAL HACKATHON",
+      badgeText: "INTERNATIONAL COMPETITION",
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
       description:
@@ -398,7 +409,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "1st Cainta Research Congress",
       badgeText: "RESEARCH CONGRESS",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778166115813-shr4a.jpg&w=3840&q=75",
       description:
         "Achieved 8th place representing the institution's top capstone project, defending the technical architecture and research findings against other universities.",
     },
@@ -407,21 +418,21 @@ export const PORTFOLIO_DATA: PortfolioData = {
       tier: 2,
       title: "Top 10 Finalist",
       event: "KMC Hackathon 2024",
-      badgeText: "HACKATHON",
+      badgeText: "NATIONAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778076714562-e8j9ip.jpg&w=3840&q=75",
       description:
         "Advanced to the Top 10 Finals out of numerous competing teams, developing a disruptive technological solution for enterprise real estate and workflow management.",
     },
     {
       id: "ach-14",
       tier: 2,
-      title: "Top 20 Finalist",
+      title: "Ranked among the Top 20 finalists",
       event: "AppCon 2024 Hackathon",
       isFeatured: true,
-      badgeText: "HACKATHON",
+      badgeText: "NATIONAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
       description:
         "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
     },
