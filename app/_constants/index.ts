@@ -406,7 +406,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       event: "NASA Space Apps Challenge 2024",
       badgeText: "INTERNATIONAL COMPETITION",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784382262/Screenshot_2026-07-18_at_9.43.43_PM_ktw3cn.png",
       description:
         "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
     },
@@ -438,6 +438,17 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title: "Ranked among the Top 20 finalists",
       event: "AppCon 2024 Hackathon",
       isFeatured: true,
+      badgeText: "NATIONAL COMPETITION",
+      imageUrl:
+        "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
+      description:
+        "Ranked among the Top 20 best teams nationwide in AppCon 2024, presenting a robust, market-ready mobile application solution.",
+    },
+    {
+      id: "ach-14",
+      tier: 2,
+      title: "Finalist",
+      event: "InterCICSkewla Programming Challenge 2026",
       badgeText: "NATIONAL COMPETITION",
       imageUrl:
         "https://marc-plarisan.vercel.app/_next/image?url=https%3A%2F%2Fldjjwfcxdavecmmqxvwz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fgallery-images%2F1778152096627-wnnl0p.jpg&w=3840&q=75",
