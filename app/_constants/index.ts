@@ -344,6 +344,17 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Developed and pitched a fully functional mobile application during ICT Week, securing the top spot for innovation, design, and technical execution.",
     },
     {
+      id: "ach-11",
+      tier: 1,
+      title: "Global Nominee",
+      event: "NASA International Space Apps Challenge 2024",
+      badgeText: "INTERNATIONAL COMPETITION",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784382262/Screenshot_2026-07-18_at_9.43.43_PM_ktw3cn.png",
+      description:
+        "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
+    },
+    {
       id: "ach-7",
       tier: 1,
       title: "1st Place in Theme Integrity",
@@ -371,9 +382,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       tier: 1,
       title: "1st Runner-Up",
       event: "App Development: ICT Week of June 2024",
-      badgeText: "APP DEVELOPMENT",
+      badgeText: "LOCAL HACKATHON",
       imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://media.licdn.com/dms/image/v2/D562DAQFy4rlBoMizFA/profile-treasury-image-shrink_1920_1920/B56ZwDhcQlHAAc-/0/1769585624772?e=1784988000&v=beta&t=FSoypSnwlMiQNS8jEhp7tncrzk__uJu5rjO03kUWCvw",
       description:
         "Secured 2nd place for an innovative mobile application solution developed within a tight deadline during the June ICT Week activities.",
     },
@@ -400,19 +411,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Qualified as a finalist in two consecutive years for the IT Skills Olympics, demonstrating consistent high-level Python proficiency against top regional talents.",
     },
     {
-      id: "ach-11",
-      tier: 1,
-      title: "Global Nominee",
-      event: "NASA Space Apps Challenge 2024",
-      badgeText: "INTERNATIONAL COMPETITION",
-      imageUrl:
-        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784382262/Screenshot_2026-07-18_at_9.43.43_PM_ktw3cn.png",
-      description:
-        "Nominated globally for creating an innovative space technology software solution utilizing open-source NASA data during a rigorous 48-hour hackathon.",
-    },
-    {
       id: "ach-12",
-      tier: 2,
+      tier: 1,
       title: "8th Place",
       event: "1st Cainta Research Congress",
       badgeText: "RESEARCH CONGRESS",
