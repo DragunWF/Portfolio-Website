@@ -489,7 +489,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       dateObtained: "Mar 2026",
       imageUrl:
         "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784966058/Screenshot_2026-07-25_at_3.54.13_PM_acq8pt.png",
-      credentialUrl: "https://www.credly.com",
+      credentialUrl: "https://www.credly.com/badges/cff8643f-cdff-4ddd-a4d0-e6ad6bb482ca",
     },
     {
       id: "cert-2",
