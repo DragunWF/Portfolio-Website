@@ -1,9 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, ChevronRight } from "lucide-react";
 import { CertificationData } from "../../_types";
+import { CERTIFICATIONS_LINK } from "../../_constants";
 
 interface CertificationsGridProps {
   certifications: CertificationData[];
@@ -12,20 +10,10 @@ interface CertificationsGridProps {
 export default function CertificationsGrid({
   certifications,
 }: CertificationsGridProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  // Split certifications into featured (those with isFeatured: true or first 3 if none) and all
-  const featured =
-    certifications.filter((cert) => cert.isFeatured).length > 0
-      ? certifications.filter((cert) => cert.isFeatured)
-      : certifications.slice(0, 3);
-
-  const displayedCertifications = isExpanded ? certifications : featured;
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {displayedCertifications.map((cert) => (
+        {certifications.map((cert) => (
           <div
             key={cert.id}
             className="relative bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] group flex flex-col"
@@ -51,7 +39,6 @@ export default function CertificationsGrid({
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
                   className="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-950/80 border border-slate-700/80 flex items-center justify-center text-slate-300 transition-all hover:bg-emerald-500 hover:text-slate-950 hover:border-emerald-400 z-10"
                   aria-label={`Verify ${cert.title} credential`}
                 >
@@ -81,27 +68,18 @@ export default function CertificationsGrid({
         ))}
       </div>
 
-      {/* Show More / Show Less Button */}
-      {certifications.length > featured.length && (
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-medium transition-all hover:border-emerald-500/40 hover:text-emerald-400"
-          >
-            {isExpanded ? (
-              <>
-                Show Less
-                <ChevronUp className="w-4 h-4" />
-              </>
-            ) : (
-              <>
-                Explore All Certifications ({certifications.length}+)
-                <ChevronDown className="w-4 h-4" />
-              </>
-            )}
-          </button>
-        </div>
-      )}
+      {/* Action Button to LinkedIn */}
+      <div className="flex justify-center mt-8">
+        <a
+          href={CERTIFICATIONS_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-medium transition-all hover:border-emerald-500/40 hover:text-emerald-400"
+        >
+          Explore All 10+ Certifications on LinkedIn
+          <ChevronRight className="w-4 h-4" />
+        </a>
+      </div>
     </>
   );
 }

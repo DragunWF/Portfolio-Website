@@ -486,100 +486,30 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title:
         "SAP Certified Implementation Consultant - End-to-End Business Processes (C_IEE2E)",
       institution: "SAP",
-      dateObtained: "Jun 2026",
-      imageUrl: "/github-banner.webp",
+      dateObtained: "Mar 2026",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784966058/Screenshot_2026-07-25_at_3.54.13_PM_acq8pt.png",
       credentialUrl: "https://www.credly.com",
-      isFeatured: true,
     },
     {
       id: "cert-2",
-      title: "AWS Certified Solutions Architect – Associate",
-      institution: "Amazon Web Services (AWS)",
-      dateObtained: "Apr 2026",
-      imageUrl: "/game-dev-banner.webp",
-      credentialUrl: "https://www.credly.com",
-      isFeatured: true,
+      title: "CS50: Introduction to Computer Science",
+      institution: "Harvard University",
+      dateObtained: "Mar 2023",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784965757/Screenshot_2026-07-25_at_3.49.12_PM_k0byzt.png",
+      credentialUrl:
+        "https://certificates.cs50.io/5a1e1842-6a46-4402-a0e8-cbc63d5abddd.pdf?size=letter",
     },
     {
       id: "cert-3",
-      title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
-      institution: "Microsoft",
-      dateObtained: "Jan 2026",
-      imageUrl: "/github-banner.webp",
-      credentialUrl: "https://learn.microsoft.com",
-      isFeatured: true,
-    },
-    {
-      id: "cert-4",
-      title: "Google Associate Cloud Engineer",
-      institution: "Google Cloud",
-      dateObtained: "Nov 2025",
-      imageUrl: "/game-dev-banner.webp",
-      credentialUrl: "https://www.credential.net",
-      isFeatured: false,
-    },
-    {
-      id: "cert-5",
-      title: "Meta Front-End Developer Professional Certificate",
-      institution: "Meta / Coursera",
-      dateObtained: "Aug 2025",
-      imageUrl: "/github-banner.webp",
-      credentialUrl: "https://www.coursera.org",
-      isFeatured: false,
-    },
-    {
-      id: "cert-6",
-      title: "Postman API Fundamentals Student Expert",
-      institution: "Postman",
-      dateObtained: "May 2025",
-      imageUrl: "/game-dev-banner.webp",
-      credentialUrl: "https://www.badgr.com",
-      isFeatured: false,
-    },
-    {
-      id: "cert-7",
-      title: "HackerRank Verified Skill: Software Engineer Intern",
-      institution: "HackerRank",
-      dateObtained: "Mar 2025",
-      imageUrl: "/github-banner.webp",
-      credentialUrl: "https://www.hackerrank.com",
-      isFeatured: false,
-    },
-    {
-      id: "cert-8",
-      title: "EF SET English Certificate (C2 Proficient)",
-      institution: "EF Standard English Test (EF SET)",
-      dateObtained: "Feb 2025",
-      imageUrl: "/game-dev-banner.webp",
-      credentialUrl: "https://www.efset.org",
-      isFeatured: false,
-    },
-    {
-      id: "cert-9",
-      title: "Cisco Certified Support Technician (CCST) Networking",
-      institution: "Cisco",
-      dateObtained: "Dec 2024",
-      imageUrl: "/github-banner.webp",
-      credentialUrl: "https://www.credly.com",
-      isFeatured: false,
-    },
-    {
-      id: "cert-10",
-      title: "Oracle Certified Associate, Java SE 8 Programmer",
-      institution: "Oracle",
-      dateObtained: "Oct 2024",
-      imageUrl: "/game-dev-banner.webp",
-      credentialUrl: "https://www.credly.com",
-      isFeatured: false,
-    },
-    {
-      id: "cert-11",
-      title: "IBM Data Science Professional Certificate",
-      institution: "IBM / Coursera",
-      dateObtained: "Aug 2024",
-      imageUrl: "/github-banner.webp",
-      credentialUrl: "https://www.coursera.org",
-      isFeatured: false,
+      title: "Data Structures and Algorithms",
+      institution: "Udemy",
+      dateObtained: "Jun 2024",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784965961/Screenshot_2026-07-25_at_3.52.36_PM_pxt61n.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-8d1711ed-1f76-40c7-bc2e-844bcf597b6e/",
     },
   ],
   projects: [
@@ -639,6 +569,9 @@ export const FOOTER_LINKS = {
   linkedin: "https://www.linkedin.com/in/marc-plarisan/",
   email: "plarisanmarc.dev@gmail.com",
 };
+
+export const CERTIFICATIONS_LINK =
+  "https://www.linkedin.com/in/marc-plarisan/details/certifications/";
 
 export const GALLERY_IMAGES = [
   {

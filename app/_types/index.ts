@@ -112,7 +112,6 @@ export interface CertificationData {
   dateObtained: string;
   imageUrl: string;      // Image URL representing the certificate
   credentialUrl: string; // Verification link
-  isFeatured: boolean;   // To identify if it appears in the primary 3-card view
 }
 
 export interface BlogData {
