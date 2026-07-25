@@ -480,6 +480,38 @@ export const PORTFOLIO_DATA: PortfolioData = {
       date: "April 2026",
     },
   ],
+  certifications: [
+    {
+      id: "cert-1",
+      title:
+        "SAP Certified Implementation Consultant - End-to-End Business Processes (C_IEE2E)",
+      institution: "SAP",
+      dateObtained: "Mar 2026",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784966058/Screenshot_2026-07-25_at_3.54.13_PM_acq8pt.png",
+      credentialUrl: "https://www.credly.com/badges/cff8643f-cdff-4ddd-a4d0-e6ad6bb482ca",
+    },
+    {
+      id: "cert-2",
+      title: "CS50: Introduction to Computer Science",
+      institution: "Harvard University",
+      dateObtained: "Mar 2023",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784965757/Screenshot_2026-07-25_at_3.49.12_PM_k0byzt.png",
+      credentialUrl:
+        "https://certificates.cs50.io/5a1e1842-6a46-4402-a0e8-cbc63d5abddd.pdf?size=letter",
+    },
+    {
+      id: "cert-3",
+      title: "Data Structures and Algorithms",
+      institution: "Udemy",
+      dateObtained: "Jun 2024",
+      imageUrl:
+        "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784965961/Screenshot_2026-07-25_at_3.52.36_PM_pxt61n.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-8d1711ed-1f76-40c7-bc2e-844bcf597b6e/",
+    },
+  ],
   projects: [
     {
       id: "proj-1",
@@ -537,6 +569,9 @@ export const FOOTER_LINKS = {
   linkedin: "https://www.linkedin.com/in/marc-plarisan/",
   email: "plarisanmarc.dev@gmail.com",
 };
+
+export const CERTIFICATIONS_LINK =
+  "https://www.linkedin.com/in/marc-plarisan/details/certifications/";
 
 export const GALLERY_IMAGES = [
   {
