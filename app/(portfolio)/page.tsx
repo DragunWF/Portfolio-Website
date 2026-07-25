@@ -6,6 +6,7 @@ import Experience from "../_components/portfolio/Experience";
 import Education from "../_components/portfolio/Education";
 import Volunteering from "../_components/portfolio/Volunteering";
 import Achievements from "../_components/portfolio/Achievements";
+import Certifications from "../_components/portfolio/Certifications";
 import Projects from "../_components/portfolio/Projects";
 import Blog from "../_components/portfolio/Blog";
 import Gallery from "../_components/portfolio/Gallery";
@@ -43,6 +44,9 @@ export default function PortfolioPage() {
           </ScrollReveal>
           <ScrollReveal>
             <Achievements />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Certifications />
           </ScrollReveal>
           <ScrollReveal>
             <Suspense fallback={<BlogFallback />}>

@@ -105,13 +105,14 @@ export interface ProjectData {
   imageUrl: string;
 }
 
-// TODO: Implement this on the main portfolio data
 export interface CertificationData {
   id: string;
   title: string;
   institution: string;
   dateObtained: string;
-  url: string; // indicates the image URL from Supabase
+  imageUrl: string;      // Image URL representing the certificate
+  credentialUrl: string; // Verification link
+  isFeatured: boolean;   // To identify if it appears in the primary 3-card view
 }
 
 export interface BlogData {
@@ -135,6 +136,7 @@ export interface PortfolioData {
   education: EducationData[];
   volunteering: VolunteerData[];
   achievements: AchievementData[];
+  certifications: CertificationData[];
   projects: ProjectData[];
   blogs: BlogData[];
   gallery: GalleryData[];
