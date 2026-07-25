@@ -37,6 +37,18 @@ Once the sandbox prototype is visually approved, the validated design is ported 
 - **User Action**: Command the AI to "Generate the prompt for the actual implementation of this prototype."
 - **AI Directive**: The AI must output a precision prompt instructing a coding assistant (e.g., Cursor, Copilot) to integrate the UI into the project.
 - **Implementation Prompt Constraints**:
+  - **AI Model Recommendation**: Recommend a specific frontier model best suited for implementing the feature. The following options are:
+    - Gemini 3.6 Flash (High)
+    - Gemini 3.6 Flash (Medium)
+    - Gemini 3.6 Flash (Low)
+    - Gemini 3.5 Flash (High)
+    - Gemini 3.5 Flash (Medium)
+    - Gemini 3.5 Flash (Low)
+    - Gemini 3.1 Pro (High)
+    - Gemini 3.1 Pro (Low)
+    - Claude Sonnet 4.6 (Thinking)
+    - Claude Opus 4.6 (Thinking)
+  - **Formatting (No Markdown Conflicts)**: Wrap the entire generated prompt using **four backticks** (````) or avoid nested triple backticks inside the block to ensure the user can copy-paste the whole prompt cleanly in one go without markdown formatting breaks.
   - **Adherence to Project Rules**: Must explicitly reference local architecture guidelines (Clean Architecture, SOLID, DRY).
   - **Tech Stack**: Must specify the Next.js + TypeScript + Tailwind CSS configuration.
   - **Separation of Concerns**: Must maintain a strict boundary between Server Components (for data fetching and SEO) and Client Components (`"use client"` for interactivity). Presentation markup should be decoupled from complex business logic, utilizing custom hooks for state and side effects.
