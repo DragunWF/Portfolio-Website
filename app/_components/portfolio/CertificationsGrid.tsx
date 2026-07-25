@@ -18,20 +18,20 @@ export default function CertificationsGrid({
             key={cert.id}
             className="relative bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] group flex flex-col"
           >
-            {/* Image Container (16/9 aspect ratio) */}
-            <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-950">
+            {/* Uniform Aspect Ratio Container to Align All Grid Items */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden bg-slate-950 border-b border-slate-800/80">
               {cert.imageUrl && (
                 <Image
                   src={cert.imageUrl}
                   alt={cert.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               )}
 
               {/* Dark overlay that fades on hover */}
-              <div className="absolute inset-0 bg-slate-950/25 transition-opacity duration-300 group-hover:opacity-0" />
+              <div className="absolute inset-0 bg-slate-950/15 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none" />
 
               {/* Top-right external verification button */}
               {cert.credentialUrl && (
@@ -50,7 +50,7 @@ export default function CertificationsGrid({
             {/* Metadata Layout */}
             <div className="p-6 flex flex-col flex-1 justify-between gap-4">
               <div>
-                <h4 className="text-base font-bold text-slate-100 group-hover:text-emerald-300 transition-colors line-clamp-2">
+                <h4 className="text-base font-bold text-slate-100 group-hover:text-emerald-300 transition-colors line-clamp-2 min-h-[3rem]">
                   {cert.title}
                 </h4>
                 <p className="text-sm font-medium text-emerald-400 mt-1">
