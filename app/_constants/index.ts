@@ -105,16 +105,20 @@ export const PORTFOLIO_DATA: PortfolioData = {
           employmentType: "Full-time",
           locationType: "Hybrid",
           skills: [
-            "Salesforce",
+            "Salesforce Development",
+            "Salesforce Administration",
+            "Agentforce",
+            "Flow Builder",
             "CRM Systems",
             "Apex",
             "JavaScript",
             "HTML",
             "CSS",
             "Git",
+            "GitHub",
             "SOQL",
-            "VisualForce",
             "Lightning Web Components (LWC)",
+            "VisualForce",
             "REST APIs",
             "SOAP APIs",
             "Waterfall Methodology",
@@ -122,7 +126,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "SCRUM",
           ],
           description: [
-            "Will update this description after gaining more experience",
+            "Currently undergoing Salesforce Development training, building applications using Apex, SOQL, JavaScript, HTML, CSS, Lightning Web Components (LWC), Git, and GitHub while following software engineering best practices.",
+            "Developing expertise in Salesforce Administration, including platform configuration, security, automation, data management, and CRM systems.",
+            "Applying both Agile and Waterfall Software Development Life Cycle (SDLC) methodologies throughout technical training and collaborative development activities.",
           ],
         },
         {
@@ -489,7 +495,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       dateObtained: "Mar 2026",
       imageUrl:
         "https://res.cloudinary.com/dsfsvpsqi/image/upload/v1784966058/Screenshot_2026-07-25_at_3.54.13_PM_acq8pt.png",
-      credentialUrl: "https://www.credly.com/badges/cff8643f-cdff-4ddd-a4d0-e6ad6bb482ca",
+      credentialUrl:
+        "https://www.credly.com/badges/cff8643f-cdff-4ddd-a4d0-e6ad6bb482ca",
     },
     {
       id: "cert-2",
