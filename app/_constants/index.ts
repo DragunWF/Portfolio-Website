@@ -126,9 +126,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "SCRUM",
           ],
           description: [
-            "Currently undergoing Salesforce Development training, building applications using Apex, SOQL, JavaScript, HTML, CSS, Lightning Web Components (LWC), Git, and GitHub while following software engineering best practices.",
-            "Developing expertise in Salesforce Administration, including platform configuration, security, automation, data management, and CRM systems.",
-            "Applying both Agile and Waterfall Software Development Life Cycle (SDLC) methodologies throughout technical training and collaborative development activities.",
+            "Execute full-stack Salesforce Development to engineer custom applications, utilizing Apex, SOQL, and Lightning Web Components (LWC) alongside modern web technologies (JavaScript, HTML, CSS) and Git version control.",
+            "Perform comprehensive Salesforce Administration, optimizing CRM architectures through scalable security models, complex data management, and business process automation using Flow Builder.",
+            "Drive collaborative enterprise software engineering initiatives, executing the Software Development Life Cycle (SDLC) across both Agile and Waterfall methodologies.",
           ],
         },
         {
