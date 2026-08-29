@@ -286,7 +286,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       organization: "College Student Government of STI College Ortigas-Cainta",
       logoUrl: "/csg-logo.jpg",
       description: [
-        "Designed, developed, and deployed the official College Student Government homepage and the STI GWA Calculator web application, scaling to over 4,000 peak monthly users across multiple STI College campuses nationwide, using React, JavaScript, HTML, Tailwind CSS, Git, and Netlify.",
+        "Designed, developed, and deployed the official College Student Government homepage and the STI GWA Calculator web application, scaling to over 4,000+ peak monthly users across multiple STI College campuses nationwide, using React, JavaScript, HTML, Tailwind CSS, Git, and Netlify.",
         "Served as the elected IT Representative for the student body (securing an 86% vote margin), acting as the primary technical advocate and liaison for all 1st to 4th-year Information Technology students.",
         "Managed technical operations and logistics for a wide array of campus events including seminars, hackathons, the National Career Fest, and corporate partnership events with TrueFM and Unitel Straight Shooters Media Inc., among others.",
         "Facilitated leadership and technical seminars, providing direct manpower and IT support to ensure seamless execution of university-wide initiatives.",
