@@ -49,10 +49,19 @@ export default function Education() {
               </div>
             </div>
 
-            {/* Spotlight Grade Pill */}
-            {edu.grade && (
-              <div className="border border-emerald-500/30 text-emerald-400 bg-emerald-500/10 font-medium text-sm rounded-full py-1.5 px-4 inline-flex items-center gap-2 mt-6 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40 w-fit">
-                🏅 Latin Honors: {edu.grade.honor}
+            {/* Spotlight Grade Pills */}
+            {(edu.grade?.honor || edu.grade?.rank) && (
+              <div className="flex flex-wrap items-center gap-3 mt-6">
+                {edu.grade.honor && (
+                  <div className="border border-emerald-500/30 text-emerald-400 bg-emerald-500/10 font-medium text-sm rounded-full py-1.5 px-4 inline-flex items-center gap-2 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40 w-fit">
+                    🏅 Latin Honors: {edu.grade.honor}
+                  </div>
+                )}
+                {edu.grade.rank && (
+                  <div className="border border-emerald-500/30 text-emerald-400 bg-emerald-500/10 font-medium text-sm rounded-full py-1.5 px-4 inline-flex items-center gap-2 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40 w-fit">
+                    🥇 {edu.grade.rank}
+                  </div>
+                )}
               </div>
             )}
 

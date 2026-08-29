@@ -171,6 +171,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       logoUrl: "/sti-logo.jpg",
       grade: {
         honor: "Magna Cum Laude",
+        rank: "Rank 1 - BSIT Batch 2026 (Out of 200+ Graduates)",
       },
       achievements: [
         {
@@ -234,7 +235,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
         },
         {
           id: "edu-ach-10",
-          title: "IT Representative & Web Developer (Apr 2024 – Jun 2025)",
+          title: "ICT Councilor & Web Developer (Apr 2024 – Jun 2025)",
           description: "College Student Government",
           emoji: "🌐",
         },

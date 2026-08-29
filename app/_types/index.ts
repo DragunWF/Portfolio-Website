@@ -50,6 +50,7 @@ export interface EducationData {
   logoUrl?: string; // Path to school logo
   grade?: {
     honor: string;
+    rank?: string;
     details?: string; // Made optional
   };
   achievements?: {
