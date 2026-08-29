@@ -152,7 +152,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
           ],
           description: [
             "Selected as one of 22 out of 33 trainees (a 66% pass rate) to successfully complete the Accenture SAP Advanced Business Application Programming (ABAP) Academy internship, building expertise in enterprise backend development using SAP ABAP, SAP GUI, and ERP systems.",
-            "Executed the full software development lifecycle (SDLC) during a collaborative technical case study, managing requirements analysis, debugging, testing, and transport logistics and successfully passing the evaluation to officially be tagged as an Accenture Academy Internship Program Completer.",
+            "Executed the full software development lifecycle (SDLC) and implemented Model-View-Controller (MVC) architecture during a collaborative technical case study, managing requirements analysis, debugging, testing, and version control to deliver a fully functional enterprise solution.",
             "Attained the SAP Certified Implementation Consultant for End-to-End Business Processes (C_IEE2E) certificate, effectively bridging technical execution with core business process integration.",
             "Developed robust backend solutions utilizing Object-Oriented ABAP, ALV Reports, and custom Function Modules.",
             "Built cloud-ready applications on SAP BTP using ADT in Eclipse, leveraging CDS Views, OData Services, and the RESTful ABAP Programming Model (RAP) to design and expose RESTful APIs.",
