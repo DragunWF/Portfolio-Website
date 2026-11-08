@@ -86,6 +86,12 @@ function SingleRoleCard({ expGroup }: ExperienceCardProps) {
                   <span>{role.employmentType}</span>
                 </>
               )}
+              {role.locationType && (
+                <>
+                  <span className="text-emerald-500/40 font-bold">•</span>
+                  <span>{role.locationType}</span>
+                </>
+              )}
             </div>
 
             {/* Metadata Row */}
@@ -94,15 +100,13 @@ function SingleRoleCard({ expGroup }: ExperienceCardProps) {
                 <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                 <span>{calculateDuration(role.startDate, role.endDate)}</span>
               </div>
-              {(expGroup.location || role.locationType) && (
+              {expGroup.location && (
                 <>
                   <span className="text-slate-600 hidden sm:inline">•</span>
                   <div className="flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                     <span>
-                      {[expGroup.location, role.locationType]
-                        .filter(Boolean)
-                        .join(" • ")}
+                      {[expGroup.location].filter(Boolean).join(" • ")}
                     </span>
                   </div>
                 </>
@@ -182,10 +186,7 @@ function MultiRoleCard({ expGroup }: ExperienceCardProps) {
             const isActive = role.endDate.trim().toLowerCase() === "present";
 
             return (
-              <div
-                key={role.id}
-                className="relative pl-10 w-full text-left"
-              >
+              <div key={role.id} className="relative pl-10 w-full text-left">
                 {/* Timeline Bullet */}
                 <div className="absolute left-[15px] top-3.5 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
                   {isActive ? (
@@ -212,13 +213,9 @@ function MultiRoleCard({ expGroup }: ExperienceCardProps) {
                         <span>{role.employmentType}</span>
                       )}
                       {role.employmentType && role.locationType && (
-                        <span className="text-emerald-500/40 font-bold">
-                          •
-                        </span>
+                        <span className="text-emerald-500/40 font-bold">•</span>
                       )}
-                      {role.locationType && (
-                        <span>{role.locationType}</span>
-                      )}
+                      {role.locationType && <span>{role.locationType}</span>}
                     </div>
                   </div>
 
