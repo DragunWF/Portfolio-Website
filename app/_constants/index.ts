@@ -206,7 +206,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "Trello",
           ],
           description: [
-            "Co-founded and helped develop an early-stage edtech startup originating as a hackathon concept, placing as an AppCon 2024 Top 20 Finalist and collaborating with the team to evolve the initial prototype into a learning platform.",
+            "Co-founded and helped develop an early-stage edtech startup that evolved from a hackathon concept into a learning platform, earning a place among the Top 20 teams out of 178 entries at AppCon 2024.",
             "Led backend development and architected a modular microservices architecture using Python (Django), Node.js, and MongoDB. Designed and implemented RESTful APIs for session tracking and data management, while overseeing backend code integration and version control through Git/GitHub.",
             "Built dynamic, responsive frontend experiences using Next.js, integrating Generative AI endpoints to support personalized study workflows and adaptive review modules.",
             "Collaborated with a cross-functional team of 10 members throughout the software development lifecycle, applying Agile/Scrum practices to sprint planning, user stories, backlog management, and task prioritization using Trello.",
