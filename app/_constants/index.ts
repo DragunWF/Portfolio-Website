@@ -185,9 +185,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
           role: "Co-Founder & Full-Stack Developer",
           startDate: "Nov 2024",
           endDate: "Apr 2026",
-          employmentType: "Co-Founder",
+          employmentType: "Self-Employed",
           locationType: "Remote",
           skills: [
+            "Full-Stack Development",
             "Python",
             "Django",
             "JavaScript",
