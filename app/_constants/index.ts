@@ -2,7 +2,7 @@ import { PortfolioData } from "../_types";
 
 // Skills Section
 export const CURRENT_FOCUS = [
-  "SAP ABAP",
+  "Salesforce Development",
   "Python",
   "TypeScript",
   "React Native",
