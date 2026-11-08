@@ -70,52 +70,59 @@ function SingleRoleCard({ expGroup }: ExperienceCardProps) {
         </div>
 
         {/* Header Info */}
-        <div className="flex flex-col mt-0.5">
-          {/* Primary Title */}
-          <h4 className="text-slate-200 text-lg font-bold leading-tight">
-            {role.role}
-          </h4>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 w-full mt-0.5">
+          <div className="flex flex-col">
+            {/* Primary Title */}
+            <h4 className="text-slate-200 text-lg font-bold leading-tight">
+              {role.role}
+            </h4>
 
-          {/* Subheading: Company name & employment type */}
-          <div className="flex items-center flex-wrap gap-2 text-emerald-450 text-sm font-semibold mt-1">
-            <span>{expGroup.company}</span>
-            {role.employmentType && (
-              <>
-                <span className="text-emerald-500/40 font-bold">•</span>
-                <span>{role.employmentType}</span>
-              </>
-            )}
+            {/* Subheading: Company name & employment type */}
+            <div className="flex items-center flex-wrap gap-2 text-emerald-450 text-sm font-semibold mt-1">
+              <span>{expGroup.company}</span>
+              {role.employmentType && (
+                <>
+                  <span className="text-emerald-500/40 font-bold">•</span>
+                  <span>{role.employmentType}</span>
+                </>
+              )}
+            </div>
+
+            {/* Metadata Row */}
+            <div className="flex flex-wrap items-center text-slate-400 text-xs font-mono gap-x-2.5 gap-y-1.5 mt-2">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <span>{calculateDuration(role.startDate, role.endDate)}</span>
+              </div>
+              {(expGroup.location || role.locationType) && (
+                <>
+                  <span className="text-slate-600 hidden sm:inline">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span>
+                      {[expGroup.location, role.locationType]
+                        .filter(Boolean)
+                        .join(" • ")}
+                    </span>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
-          {/* Metadata Row */}
-          <div className="flex flex-wrap items-center text-slate-400 text-xs font-mono gap-x-2.5 gap-y-1.5 mt-2">
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-              <span>
-                {role.startDate} — {role.endDate}
-              </span>
+          {/* Date Pill */}
+          <div className="shrink-0 md:mt-0.5">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-slate-950/80 text-slate-350 text-xs font-mono rounded-full border border-slate-800 tracking-wider">
               {isActive && (
-                <span className="relative flex h-2 w-2 ml-0.5">
+                <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
                 </span>
               )}
-              <span className="text-slate-600">•</span>
-              <span>{calculateDuration(role.startDate, role.endDate)}</span>
-            </div>
-            {(expGroup.location || role.locationType) && (
-              <>
-                <span className="text-slate-600 hidden sm:inline">•</span>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                  <span>
-                    {[expGroup.location, role.locationType]
-                      .filter(Boolean)
-                      .join(" • ")}
-                  </span>
-                </div>
-              </>
-            )}
+              <span>
+                {role.startDate} — {role.endDate}
+              </span>
+            </span>
           </div>
         </div>
       </div>
