@@ -210,7 +210,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "Led backend development and architected a modular microservices architecture using Python (Django), Node.js, and MongoDB. Designed and implemented RESTful APIs for session tracking and data management, while overseeing backend code integration and version control through Git/GitHub.",
             "Built dynamic, responsive frontend experiences using Next.js, integrating Generative AI endpoints to support personalized study workflows and adaptive review modules.",
             "Collaborated with a cross-functional team of 10 members throughout the software development lifecycle, applying Agile/Scrum practices to sprint planning, user stories, backlog management, and task prioritization using Trello.",
-            "Developed the foundational codebase and technical MVP before completing a technical handoff to my co-founder upon my departure in April 2026. My co-founder subsequently continued development, rebranded the platform as LETPass, and grew it to 4,000+ monthly active users.",
+            "Following my departure in April 2026, the startup continued under my co-founder's leadership and got rebranded as LETPass, a BIR-registered, revenue-generating edtech business that has since grown to 4,000+ monthly active users.",
           ],
         },
       ],
