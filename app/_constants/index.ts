@@ -120,6 +120,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "CRM Systems",
             "Apex",
             "JavaScript",
+            "TypeScript",
+            "React.js",
             "HTML",
             "CSS",
             "Git",
@@ -135,9 +137,12 @@ export const PORTFOLIO_DATA: PortfolioData = {
             "Jira",
           ],
           description: [
-            "Engineer custom applications through full-stack Salesforce Development, leveraging Apex, SOQL, SOSL, Git, GitHub, and Lightning Web Components (LWC) integrated with JavaScript, HTML, and CSS.",
+            "Developed custom server-side solutions using object-oriented Apex to drive complex business processes, executing efficient data management through advanced SOQL and SOSL querying while maintaining version control via Git/GitHub.",
+            "Built dynamic frontend experiences using Lightning Web Components (LWC) and Salesforce Multi-framework with React.js, powered by TypeScript, JavaScript, HTML, and CSS.",
             "Perform comprehensive Salesforce Administration, optimizing CRM architectures through scalable security models, complex data management, and business process automation using Flow Builder.",
-            "Drive collaborative enterprise software engineering initiatives, executing the Software Development Life Cycle (SDLC) across both Agile and Waterfall methodologies.",
+            "Integrated Salesforce with external systems via REST/SOAP APIs, driving end-to-end endpoint testing and validation using Postman.",
+            "Drive collaborative enterprise software engineering initiatives with international clients, executing the Software Development Life Cycle (SDLC) across both Agile and Waterfall methodologies.",
+            "Recognized as one of the Top Performers across an intensive Salesforce Developer bootcamp cohort, demonstrating rapid technical mastery in core platform development and architecture.",
           ],
         },
         {
